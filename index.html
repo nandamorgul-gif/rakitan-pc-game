@@ -3,131 +3,132 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jasa Rakitan PC Game</title>
+  <title>Rakitan PC Gaming Impian</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- AOS (Animate On Scroll) -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
-<body class="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white">
+<body class="bg-gray-100 text-gray-900 font-sans">
 
-  <!-- Hero -->
-  <section class="text-center py-20 relative overflow-hidden">
-    <h1 class="text-4xl md:text-6xl font-bold mb-6" data-aos="fade-down">
-      Rakit PC Gaming Impianmu 🚀
-    </h1>
-    <p class="mb-8 max-w-xl mx-auto text-gray-200" data-aos="fade-up">
-      Pilih paket siap pakai atau konfigurasi sendiri sesuai budget.
-    </p>
-    <a href="#configurator" class="bg-cyan-500 text-black px-6 py-3 rounded-2xl font-semibold hover:scale-105 transition">
-      Coba Konfigurator
-    </a>
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center px-6 py-4 bg-white shadow">
+    <div class="font-bold text-xl">LOGO</div>
+    <div class="space-x-6">
+      <a href="#paket" class="hover:underline">Paket</a>
+      <a href="#configurator" class="hover:underline">Konfigurator</a>
+      <a href="#testimoni" class="hover:underline">Testimoni</a>
+      <a href="#kontak" class="hover:underline">Kontak</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="text-center py-20 bg-gray-200" id="hero">
+    <h1 class="text-4xl font-bold mb-4">Rakit PC Gaming Impianmu 🚀</h1>
+    <p class="mb-6 max-w-xl mx-auto">Pilih paket siap pakai atau konfigurasi sendiri sesuai budget.</p>
+    <button class="bg-gray-800 text-white px-6 py-3 rounded-full hover:bg-gray-700">Coba Konfigurator</button>
   </section>
 
-  <!-- Konfigurator -->
-  <section id="configurator" class="max-w-4xl mx-auto px-4 py-16">
-    <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Konfigurator PC Interaktif</h2>
-    <form class="space-y-6 bg-slate-800 p-6 rounded-2xl shadow-lg" data-aos="zoom-in">
+  <!-- Preset Build Section -->
+  <section id="paket" class="py-16 px-6 bg-white">
+    <h2 class="text-3xl font-bold text-center mb-12">Paket Rakitan</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-gray-100 p-6 rounded-lg shadow text-center">
+        <div class="h-32 bg-gray-300 mb-4"></div>
+        <h3 class="font-bold text-xl mb-2">Entry Level</h3>
+        <p>Rp 5.000.000</p>
+        <p>Estimasi FPS: 60</p>
+        <button class="mt-4 bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700">Pilih</button>
+      </div>
+      <div class="bg-gray-100 p-6 rounded-lg shadow text-center">
+        <div class="h-32 bg-gray-300 mb-4"></div>
+        <h3 class="font-bold text-xl mb-2">Mid Range</h3>
+        <p>Rp 9.000.000</p>
+        <p>Estimasi FPS: 100</p>
+        <button class="mt-4 bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700">Pilih</button>
+      </div>
+      <div class="bg-gray-100 p-6 rounded-lg shadow text-center">
+        <div class="h-32 bg-gray-300 mb-4"></div>
+        <h3 class="font-bold text-xl mb-2">Pro Gamer</h3>
+        <p>Rp 15.000.000</p>
+        <p>Estimasi FPS: 140</p>
+        <button class="mt-4 bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700">Pilih</button>
+      </div>
+    </div>
+  </section>
 
-      <!-- CPU -->
+  <!-- Configurator Section -->
+  <section id="configurator" class="py-16 px-6 bg-gray-200">
+    <h2 class="text-3xl font-bold text-center mb-12">Konfigurator PC Interaktif</h2>
+    <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow space-y-6">
       <div>
         <label class="block font-semibold mb-2">Pilih CPU</label>
-        <select id="cpu" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
-          <option value="2500000-60">Ryzen 5 5600G – Rp 2.500.000</option>
-          <option value="4200000-85">Ryzen 7 5800X – Rp 4.200.000</option>
-          <option value="7500000-100">Ryzen 9 7900X – Rp 7.500.000</option>
+        <select class="w-full p-3 rounded bg-gray-100">
+          <option>Ryzen 5 5600G</option>
+          <option>Ryzen 7 5800X</option>
+          <option>Ryzen 9 7900X</option>
         </select>
       </div>
-
-      <!-- GPU -->
       <div>
         <label class="block font-semibold mb-2">Pilih GPU</label>
-        <select id="gpu" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
-          <option value="4000000-70">GTX 1660 Super – Rp 4.000.000</option>
-          <option value="6500000-100">RTX 3060 Ti – Rp 6.500.000</option>
-          <option value="12000000-140">RTX 4070 Ti – Rp 12.000.000</option>
+        <select class="w-full p-3 rounded bg-gray-100">
+          <option>GTX 1660 Super</option>
+          <option>RTX 3060 Ti</option>
+          <option>RTX 4070 Ti</option>
         </select>
       </div>
-
-      <!-- RAM -->
       <div>
         <label class="block font-semibold mb-2">Pilih RAM</label>
-        <select id="ram" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
-          <option value="800000-0">16GB – Rp 800.000</option>
-          <option value="1600000-10">32GB – Rp 1.600.000</option>
-          <option value="3000000-20">64GB – Rp 3.000.000</option>
+        <select class="w-full p-3 rounded bg-gray-100">
+          <option>16GB</option>
+          <option>32GB</option>
+          <option>64GB</option>
         </select>
       </div>
-
-      <!-- Storage -->
       <div>
         <label class="block font-semibold mb-2">Pilih Storage</label>
-        <select id="storage" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
-          <option value="600000-0">512GB SSD – Rp 600.000</option>
-          <option value="1200000-5">1TB SSD NVMe – Rp 1.200.000</option>
-          <option value="2500000-10">2TB SSD NVMe Gen4 – Rp 2.500.000</option>
+        <select class="w-full p-3 rounded bg-gray-100">
+          <option>512GB SSD</option>
+          <option>1TB SSD NVMe</option>
+          <option>2TB SSD NVMe Gen4</option>
         </select>
       </div>
-
-      <!-- Hasil -->
-      <div class="bg-slate-900 p-4 rounded-lg">
-        <p class="font-bold text-xl">Estimasi Harga: <span id="totalHarga">Rp 0</span></p>
-        <p class="text-gray-300">Performa Gaming (FPS 1080p rata-rata): <span id="estimasiFPS">0 FPS</span></p>
+      <div class="bg-gray-100 p-4 rounded">
+        <p class="font-bold text-xl">Estimasi Harga: Rp 0</p>
+        <p>Performa Gaming (FPS 1080p rata-rata): 0 FPS</p>
       </div>
+      <button class="w-full bg-green-600 text-white py-3 rounded hover:bg-green-500">Kirim WA</button>
+    </div>
+  </section>
 
-      <!-- Buttons -->
-      <div class="flex gap-4">
-        <button type="button" onclick="hitungPC()" 
-          class="bg-cyan-500 text-black px-6 py-3 rounded-2xl font-semibold hover:scale-105 transition w-full">
-          Hitung Sekarang
-        </button>
-        <a id="waButton" target="_blank"
-          class="bg-green-500 text-black px-6 py-3 rounded-2xl font-semibold hover:scale-105 transition w-full text-center">
-          Kirim WA (Cash)
-        </a>
+  <!-- Testimoni Section -->
+  <section id="testimoni" class="py-16 px-6 bg-white">
+    <h2 class="text-3xl font-bold text-center mb-12">Testimoni</h2>
+    <div class="max-w-xl mx-auto text-center">
+      <p class="italic mb-4">"Lorem ipsum dolor sit amet, consectetur adipiscing elit."</p>
+      <div class="w-16 h-16 bg-gray-300 rounded-full mx-auto mb-2"></div>
+      <p class="font-semibold">Nama Pengguna</p>
+    </div>
+  </section>
+
+  <!-- CTA & FAQ -->
+  <section id="kontak" class="py-16 px-6 bg-gray-200">
+    <div class="max-w-xl mx-auto text-center">
+      <button class="bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-500 mb-6">Kirim WA</button>
+      <div class="text-left space-y-4">
+        <p><strong>Pertanyaan?</strong> Apakah ada garansi rakitan?</p>
+        <p><strong>Pertanyaan?</strong> Berapa lama proses rakit?</p>
+        <p><strong>Pertanyaan?</strong> Apakah bisa COD?</p>
       </div>
-    </form>
+    </div>
   </section>
 
   <!-- Footer -->
-  <footer class="border-t border-slate-800 py-6 text-center text-gray-400 text-sm">
+  <footer class="text-center py-6 bg-white text-sm text-gray-500">
+    <div class="space-x-4 mb-2">
+      <span>📘</span>
+      <span>🐦</span>
+      <span>📸</span>
+    </div>
     © 2025 RakitanPC.id – Semua Hak Dilindungi
   </footer>
 
-  <!-- AOS Init -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init({ duration: 800, once: true });</script>
-
-  <!-- Kalkulasi -->
-  <script>
-    function hitungPC() {
-      let cpu = document.getElementById("cpu").value.split("-");
-      let gpu = document.getElementById("gpu").value.split("-");
-      let ram = document.getElementById("ram").value.split("-");
-      let storage = document.getElementById("storage").value.split("-");
-
-      let totalHarga = parseInt(cpu[0]) + parseInt(gpu[0]) + parseInt(ram[0]) + parseInt(storage[0]);
-      let estimasiFPS = parseInt(cpu[1]) + parseInt(gpu[1]) + parseInt(ram[1]) + parseInt(storage[1]);
-
-      document.getElementById("totalHarga").innerText = "Rp " + totalHarga.toLocaleString("id-ID");
-      document.getElementById("estimasiFPS").innerText = estimasiFPS + " FPS";
-
-      // Update WA link
-      let pesan = `Halo Admin, saya ingin memesan PC Gaming dengan spesifikasi:
-- CPU: ${document.getElementById("cpu").selectedOptions[0].text}
-- GPU: ${document.getElementById("gpu").selectedOptions[0].text}
-- RAM: ${document.getElementById("ram").selectedOptions[0].text}
-- Storage: ${document.getElementById("storage").selectedOptions[0].text}
-
-Estimasi Harga: Rp ${totalHarga.toLocaleString("id-ID")}
-Estimasi FPS: ${estimasiFPS} FPS
-
-Metode Pembayaran: Cash`;
-
-      document.getElementById("waButton").href = "https://wa.me/6281234567890?text=" + encodeURIComponent(pesan);
-    }
-
-    // Hitung default
-    window.onload = hitungPC;
-  </script>
 </body>
 </html>
