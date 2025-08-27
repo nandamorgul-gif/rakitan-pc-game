@@ -131,7 +131,7 @@
 
       <!-- Estimasi Harga & FPS -->
       <div class="bg-slate-900 p-4 rounded-lg text-white">
-        <p class="font-bold text-xl">Estimasi Harga: <span id="totalHarga">Rp 0</span></p>
+        <p class="font-bold text-xl">Estimasi Harga: <span id="totalHarga" class="text-white">Rp 0</span></p>
         <p class="text-gray-300">FPS Rata-rata:</p>
         <ul class="ml-4 text-sm">
           <li>🎮 1080p: <span id="fps1080p">0</span> FPS</li>
@@ -183,9 +183,19 @@
 
       // Tambahan layanan
       let tambahan = 0;
-      if (document.getElementById("rakit").checked) tambahan += 150000;
-      if (document.getElementById("install").checked) tambahan += 100000;
-      if (document.getElementById("game").checked) tambahan += 50000;
+      let layananTambahanList = [];
+      if (document.getElementById("rakit").checked) {
+        tambahan += 150000;
+        layananTambahanList.push("Jasa Rakit PC");
+      }
+      if (document.getElementById("install").checked) {
+        tambahan += 100000;
+        layananTambahanList.push("Install Windows & Driver");
+      }
+      if (document.getElementById("game").checked) {
+        tambahan += 50000;
+        layananTambahanList.push("Install Game Awal");
+      }
 
       totalHarga += tambahan;
 
@@ -217,8 +227,74 @@ Performa Gaming:
 - 1440p: ${fps1440p} FPS
 - 4K: ${fps4k} FPS`;
 
-      if (tambahan > 0) {
-        pesan += `\n\nLayanan Tambahan:\n`;
-        if (document.getElementById("rakit").checked) pesan += "- Jasa Rakit PC\n";
-        if (document.getElementById("install").checked)
+      if (layananTambahanList.length > 0) {
+        pesan += `
 
+Layanan Tambahan:
+- ${layananTambahanList.join("\n- ")}`;
+      }
+
+      // Encode pesan untuk URL WA
+      let encodedPesan = encodeURIComponent(pesan);
+      let waUrl = `https://wa.me/6281234567890?text=${encodedPesan}`; // Ganti nomor dengan nomor WA tujuan Anda
+      document.getElementById("waButton").href = waUrl;
+    }
+
+    function downloadPDF() {
+      const { jsPDF } = window.jspdf;
+      let doc = new jsPDF();
+
+      let cpuText = document.getElementById("cpu").selectedOptions[0].text;
+      let gpuText = document.getElementById("gpu").selectedOptions[0].text;
+      let ramText = document.getElementById("ram").selectedOptions[0].text;
+      let storageText = document.getElementById("storage").selectedOptions[0].text;
+      let motherboardText = document.getElementById("motherboard").selectedOptions[0].text;
+      let psuText = document.getElementById("psu").selectedOptions[0].text;
+      let metodeText = document.getElementById("metode").value;
+      let totalHargaText = document.getElementById("totalHarga").innerText;
+      let fps1080pText = document.getElementById("fps1080p").innerText;
+      let fps1440pText = document.getElementById("fps1440p").innerText;
+      let fps4kText = document.getElementById("fps4k").innerText;
+
+      let layananTambahanText = [];
+      if (document.getElementById("rakit").checked) layananTambahanText.push("Jasa Rakit PC");
+      if (document.getElementById("install").checked) layananTambahanText.push("Install Windows & Driver");
+      if (document.getElementById("game").checked) layananTambahanText.push("Install Game Awal");
+
+      doc.setFontSize(18);
+      doc.text("Rakit PC Gaming Impianmu", 14, 20);
+
+      doc.setFontSize(12);
+      doc.text("Spesifikasi PC:", 14, 30);
+      doc.text(`- CPU: ${cpuText}`, 14, 38);
+      doc.text(`- GPU: ${gpuText}`, 14, 46);
+      doc.text(`- RAM: ${ramText}`, 14, 54);
+      doc.text(`- Storage: ${storageText}`, 14, 62);
+      doc.text(`- Motherboard: ${motherboardText}`, 14, 70);
+      doc.text(`- PSU: ${psuText}`, 14, 78);
+
+      if (layananTambahanText.length > 0) {
+        doc.text("Layanan Tambahan:", 14, 88);
+        layananTambahanText.forEach((item, i) => {
+          doc.text(`- ${item}`, 20, 96 + i * 8);
+        });
+      }
+
+      let offsetY = 96 + layananTambahanText.length * 8 + 10;
+
+      doc.text(`Metode Pembayaran: ${metodeText}`, 14, offsetY);
+      doc.text(`Estimasi Harga: ${totalHargaText}`, 14, offsetY + 8);
+
+      doc.text("Performa Gaming (FPS):", 14, offsetY + 20);
+      doc.text(`- 1080p: ${fps1080pText} FPS`, 20, offsetY + 28);
+      doc.text(`- 1440p: ${fps1440pText} FPS`, 20, offsetY + 36);
+      doc.text(`- 4K: ${fps4kText} FPS`, 20, offsetY + 44);
+
+      doc.save("RakitPC-Gaming.pdf");
+    }
+
+    // Hitung otomatis saat load pertama
+    window.onload = hitungPC;
+  </script>
+</body>
+</html>
