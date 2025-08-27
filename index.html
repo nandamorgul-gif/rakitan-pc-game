@@ -15,48 +15,83 @@
     <a href="#configurator" class="bg-cyan-500 text-black px-4 py-2 rounded-full font-semibold hover:scale-105 transition">Mulai Konfigurasi</a>
   </section>
 
-  <!-- Paketan Rakitan PC -->
 <section id="paketan" class="max-w-6xl mx-auto px-4 py-12">
-  <h2 class="text-2xl font-bold mb-8 text-center">🎯 Paketan Rakitan PC</h2>
+  <h2 class="text-3xl font-bold mb-8 text-center">🎯 Paketan Rakitan PC + Simulasi Game</h2>
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-    <!-- Paket Low -->
+    <!-- Paket Low Range -->
     <div class="bg-slate-900 p-6 rounded-xl shadow-md w-full">
       <h3 class="text-xl font-semibold mb-2">💡 Low Range – Rp 8.000.000</h3>
       <ul class="list-disc list-inside text-sm text-gray-300 mb-3">
-        <li>Ryzen 5 5600G, GTX 1660 Super, 16GB DDR4, 512GB SSD</li>
-        <li>B550M Mortar, CV550 Bronze, Q300L, SE-224-XT</li>
-        <li>Jasa Rakit + Install Windows + Game</li>
-        <li>Garansi: CPU 3 thn, GPU 2 thn, RAM lifetime, SSD 3 thn, PSU 3 thn, Jasa 30 hari</li>
+        <li>CPU: Ryzen 5 5600G</li>
+        <li>GPU: GTX 1660 Super (6GB)</li>
+        <li>RAM: 16GB DDR4 Corsair</li>
+        <li>Storage: Kingston NV2 500GB Gen4</li>
+        <li>Motherboard: MSI B450M Mortar Max</li>
+        <li>PSU: Corsair CV550 Bronze</li>
+        <li>Casing: Cooler Master Q300L</li>
+        <li>Cooler: SE-224-XT Air</li>
+        <li>Jasa: Rakit + Install Windows + Game</li>
       </ul>
-      <p class="text-sm text-cyan-400 mb-3">🎮 Estimasi FPS: 1080p ~60–75 FPS</p>
+      <p class="text-sm text-cyan-400 mb-2">🎮 Simulasi Game 1080p:</p>
+      <ul class="text-sm text-gray-300 mb-3 space-y-1">
+        <li>Valorant: 120 FPS (High)</li>
+        <li>GTA V: 65 FPS (Medium)</li>
+        <li>CS:GO: 140 FPS (High)</li>
+        <li>Minecraft: 100+ FPS (Max)</li>
+        <li>Fortnite: 75 FPS (Medium)</li>
+      </ul>
       <button onclick="paketLow()" class="w-full bg-cyan-600 text-white px-4 py-2 rounded hover:scale-105 transition">Gunakan Paket Ini</button>
     </div>
 
-    <!-- Paket Mid -->
+    <!-- Paket Mid Range -->
     <div class="bg-slate-900 p-6 rounded-xl shadow-md w-full">
       <h3 class="text-xl font-semibold mb-2">⚙️ Mid Range – Rp 13.500.000</h3>
       <ul class="list-disc list-inside text-sm text-gray-300 mb-3">
-        <li>Core i5-12400F, RTX 3060 Ti, 32GB DDR4, 1TB NVMe</li>
-        <li>B760M AORUS, RM850x Gold, 4000D Airflow, Hyper 212</li>
-        <li>Jasa Rakit + Install Windows + Game</li>
-        <li>Garansi: CPU 3 thn, GPU 3 thn, RAM lifetime, SSD 5 thn, PSU 5 thn, Jasa 30 hari</li>
+        <li>CPU: Core i5-12400F</li>
+        <li>GPU: RTX 3060 Ti (8GB)</li>
+        <li>RAM: 32GB DDR4 G.Skill</li>
+        <li>Storage: WD Black SN770 1TB Gen4</li>
+        <li>Motherboard: Gigabyte B760M AORUS Elite</li>
+        <li>PSU: Corsair RM850x Gold</li>
+        <li>Casing: Corsair 4000D Airflow</li>
+        <li>Cooler: Hyper 212 Black</li>
+        <li>Jasa: Rakit + Install Windows + Game</li>
       </ul>
-      <p class="text-sm text-cyan-400 mb-3">🎮 Estimasi FPS: 1080p ~100 FPS, 1440p ~75 FPS</p>
+      <p class="text-sm text-cyan-400 mb-2">🎮 Simulasi Game 1080p & 1440p:</p>
+      <ul class="text-sm text-gray-300 mb-3 space-y-1">
+        <li>Cyberpunk 2077: 60 FPS (High 1080p)</li>
+        <li>Fortnite: 144 FPS (Epic 1080p)</li>
+        <li>Valorant: 240 FPS (Max 1440p)</li>
+        <li>Genshin Impact: 90 FPS (High)</li>
+        <li>COD Warzone: 100 FPS (Balanced)</li>
+      </ul>
       <button onclick="paketMid()" class="w-full bg-cyan-600 text-white px-4 py-2 rounded hover:scale-105 transition">Gunakan Paket Ini</button>
     </div>
 
-    <!-- Paket High -->
+    <!-- Paket High Range -->
     <div class="bg-slate-900 p-6 rounded-xl shadow-md w-full">
       <h3 class="text-xl font-semibold mb-2">🚀 High Range – Rp 24.000.000</h3>
       <ul class="list-disc list-inside text-sm text-gray-300 mb-3">
-        <li>Ryzen 9 7900X, RTX 4070 Ti, 64GB DDR5, 2TB Gen4</li>
-        <li>Z790-I ROG, Thor 850W Platinum, NR200P, Kraken X53 AIO</li>
-        <li>Jasa Rakit + Install Windows + Game</li>
-        <li>Garansi: CPU 3 thn, GPU 3 thn, RAM lifetime, SSD 5 thn, PSU 5 thn, Jasa 30 hari</li>
+        <li>CPU: Ryzen 9 7900X</li>
+        <li>GPU: RTX 4070 Ti (12GB)</li>
+        <li>RAM: 64GB DDR5 Trident Z5</li>
+        <li>Storage: Samsung 990 PRO 2TB Gen4</li>
+        <li>Motherboard: ASUS ROG Strix Z790-I</li>
+        <li>PSU: ASUS ROG Thor 850W Platinum</li>
+        <li>Casing: Cooler Master NR200P</li>
+        <li>Cooler: NZXT Kraken X53 AIO</li>
+        <li>Jasa: Rakit + Install Windows + Game</li>
       </ul>
-      <p class="text-sm text-cyan-400 mb-3">🎮 Estimasi FPS: 1440p ~120 FPS, 4K ~90 FPS</p>
+      <p class="text-sm text-cyan-400 mb-2">🎮 Simulasi Game 1440p & 4K:</p>
+      <ul class="text-sm text-gray-300 mb-3 space-y-1">
+        <li>Cyberpunk 2077: 90 FPS (Ultra RT 1440p)</li>
+        <li>Starfield: 100 FPS (High 1440p)</li>
+        <li>Red Dead Redemption 2: 120 FPS (Ultra 1440p)</li>
+        <li>Hogwarts Legacy: 100 FPS (Ultra 4K)</li>
+        <li>COD Warzone: 144+ FPS (Competitive 1440p)</li>
+      </ul>
       <button onclick="paketHigh()" class="w-full bg-cyan-600 text-white px-4 py-2 rounded hover:scale-105 transition">Gunakan Paket Ini</button>
     </div>
 
