@@ -3,132 +3,204 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rakitan PC Gaming Impian</title>
+  <title>Konfigurator PC Gaming</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 text-gray-900 font-sans">
+<body class="bg-slate-950 text-white font-sans">
 
-  <!-- Navbar -->
-  <nav class="flex justify-between items-center px-6 py-4 bg-white shadow">
-    <div class="font-bold text-xl">LOGO</div>
-    <div class="space-x-6">
-      <a href="#paket" class="hover:underline">Paket</a>
-      <a href="#configurator" class="hover:underline">Konfigurator</a>
-      <a href="#testimoni" class="hover:underline">Testimoni</a>
-      <a href="#kontak" class="hover:underline">Kontak</a>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="text-center py-20 bg-gray-200" id="hero">
+  <!-- Hero -->
+  <section class="text-center py-16 px-4">
     <h1 class="text-4xl font-bold mb-4">Rakit PC Gaming Impianmu 🚀</h1>
-    <p class="mb-6 max-w-xl mx-auto">Pilih paket siap pakai atau konfigurasi sendiri sesuai budget.</p>
-    <button class="bg-gray-800 text-white px-6 py-3 rounded-full hover:bg-gray-700">Coba Konfigurator</button>
+    <p class="text-gray-300 mb-6 max-w-xl mx-auto">Pilih komponen, tambahkan jasa, dan lihat estimasi performa langsung.</p>
+    <a href="#configurator" class="bg-cyan-500 text-black px-6 py-3 rounded-full font-semibold hover:scale-105 transition">Mulai Konfigurasi</a>
   </section>
 
-  <!-- Preset Build Section -->
-  <section id="paket" class="py-16 px-6 bg-white">
-    <h2 class="text-3xl font-bold text-center mb-12">Paket Rakitan</h2>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-gray-100 p-6 rounded-lg shadow text-center">
-        <div class="h-32 bg-gray-300 mb-4"></div>
-        <h3 class="font-bold text-xl mb-2">Entry Level</h3>
-        <p>Rp 5.000.000</p>
-        <p>Estimasi FPS: 60</p>
-        <button class="mt-4 bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700">Pilih</button>
-      </div>
-      <div class="bg-gray-100 p-6 rounded-lg shadow text-center">
-        <div class="h-32 bg-gray-300 mb-4"></div>
-        <h3 class="font-bold text-xl mb-2">Mid Range</h3>
-        <p>Rp 9.000.000</p>
-        <p>Estimasi FPS: 100</p>
-        <button class="mt-4 bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700">Pilih</button>
-      </div>
-      <div class="bg-gray-100 p-6 rounded-lg shadow text-center">
-        <div class="h-32 bg-gray-300 mb-4"></div>
-        <h3 class="font-bold text-xl mb-2">Pro Gamer</h3>
-        <p>Rp 15.000.000</p>
-        <p>Estimasi FPS: 140</p>
-        <button class="mt-4 bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700">Pilih</button>
-      </div>
-    </div>
-  </section>
+  <!-- Konfigurator -->
+  <section id="configurator" class="max-w-4xl mx-auto px-4 py-12">
+    <form class="space-y-6 bg-slate-800 p-6 rounded-2xl shadow-lg">
 
-  <!-- Configurator Section -->
-  <section id="configurator" class="py-16 px-6 bg-gray-200">
-    <h2 class="text-3xl font-bold text-center mb-12">Konfigurator PC Interaktif</h2>
-    <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow space-y-6">
+      <!-- CPU -->
       <div>
         <label class="block font-semibold mb-2">Pilih CPU</label>
-        <select class="w-full p-3 rounded bg-gray-100">
-          <option>Ryzen 5 5600G</option>
-          <option>Ryzen 7 5800X</option>
-          <option>Ryzen 9 7900X</option>
+        <select id="cpu" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+          <optgroup label="AMD">
+            <option value="2500000-60">Ryzen 5 5600G – Rp 2.500.000</option>
+            <option value="4200000-85">Ryzen 7 5800X – Rp 4.200.000</option>
+            <option value="7500000-100">Ryzen 9 7900X – Rp 7.500.000</option>
+          </optgroup>
+          <optgroup label="Intel">
+            <option value="2700000-65">Core i5-12400F – Rp 2.700.000</option>
+            <option value="4800000-90">Core i7-12700K – Rp 4.800.000</option>
+            <option value="8500000-110">Core i9-13900K – Rp 8.500.000</option>
+          </optgroup>
         </select>
       </div>
+
+      <!-- GPU -->
       <div>
         <label class="block font-semibold mb-2">Pilih GPU</label>
-        <select class="w-full p-3 rounded bg-gray-100">
-          <option>GTX 1660 Super</option>
-          <option>RTX 3060 Ti</option>
-          <option>RTX 4070 Ti</option>
+        <select id="gpu" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+          <option value="4000000-70">GTX 1660 Super – Rp 4.000.000</option>
+          <option value="6500000-100">RTX 3060 Ti – Rp 6.500.000</option>
+          <option value="12000000-140">RTX 4070 Ti – Rp 12.000.000</option>
         </select>
       </div>
+
+      <!-- RAM -->
       <div>
         <label class="block font-semibold mb-2">Pilih RAM</label>
-        <select class="w-full p-3 rounded bg-gray-100">
-          <option>16GB</option>
-          <option>32GB</option>
-          <option>64GB</option>
+        <select id="ram" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+          <optgroup label="DDR4">
+            <option value="800000-0">Corsair Vengeance 16GB – Rp 800.000</option>
+            <option value="1600000-10">G.Skill Ripjaws 32GB – Rp 1.600.000</option>
+          </optgroup>
+          <optgroup label="DDR5">
+            <option value="2200000-15">Kingston Fury Beast 32GB – Rp 2.200.000</option>
+            <option value="3500000-20">G.Skill Trident Z5 64GB – Rp 3.500.000</option>
+          </optgroup>
         </select>
       </div>
+
+      <!-- Storage -->
       <div>
         <label class="block font-semibold mb-2">Pilih Storage</label>
-        <select class="w-full p-3 rounded bg-gray-100">
-          <option>512GB SSD</option>
-          <option>1TB SSD NVMe</option>
-          <option>2TB SSD NVMe Gen4</option>
+        <select id="storage" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+          <option value="600000-0">512GB SSD – Rp 600.000</option>
+          <option value="1200000-5">1TB SSD NVMe – Rp 1.200.000</option>
+          <option value="2500000-10">2TB SSD NVMe Gen4 – Rp 2.500.000</option>
         </select>
       </div>
-      <div class="bg-gray-100 p-4 rounded">
-        <p class="font-bold text-xl">Estimasi Harga: Rp 0</p>
-        <p>Performa Gaming (FPS 1080p rata-rata): 0 FPS</p>
+
+      <!-- Motherboard -->
+      <div>
+        <label class="block font-semibold mb-2">Pilih Motherboard</label>
+        <select id="mobo" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+          <option value="1800000">ATX – ASUS ROG Strix B550-F – Rp 1.800.000</option>
+          <option value="1400000">mATX – Gigabyte B550M DS3H – Rp 1.400.000</option>
+          <option value="2000000">Mini-ITX – MSI MPG B760I Edge – Rp 2.000.000</option>
+        </select>
       </div>
-      <button class="w-full bg-green-600 text-white py-3 rounded hover:bg-green-500">Kirim WA</button>
-    </div>
+
+      <!-- PSU -->
+      <div>
+        <label class="block font-semibold mb-2">Pilih PSU</label>
+        <select id="psu" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+          <option value="1200000">ATX – Corsair RM750x – Rp 1.200.000</option>
+          <option value="1300000">ATX – Seasonic Focus GX – Rp 1.300.000</option>
+          <option value="1500000">Mini-ITX – SilverStone SX700 – Rp 1.500.000</option>
+        </select>
+      </div>
+
+      <!-- Casing -->
+      <div>
+        <label class="block font-semibold mb-2">Pilih Casing</label>
+        <select id="casing" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+          <optgroup label="ATX">
+            <option value="1200000">NZXT H510 – Rp 1.200.000</option>
+            <option value="1300000">Corsair 4000D – Rp 1.300.000</option>
+          </optgroup>
+          <optgroup label="mATX">
+            <option value="850000">Cooler Master Q300L – Rp 850.000</option>
+            <option value="950000">Deepcool MATREXX 40 – Rp 950.000</option>
+          </optgroup>
+          <optgroup label="Mini-ITX">
+            <option value="1800000">Cooler Master NR200P – Rp 1.800.000</option>
+            <option value="1200000">SilverStone SG13 – Rp 1.200.000</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <!-- Jasa Tambahan -->
+      <div>
+        <label class="block font-semibold mb-2">Tambahan Jasa</label>
+        <div class="space-y-2">
+          <label class="flex items-center"><input type="checkbox" id="jasaRakit" value="250000" class="mr-2"> Jasa Rakit PC – Rp 250.000</label>
+          <label class="flex items-center"><input type="checkbox" id="jasaInstall" value="150000" class="mr-2"> Install Windows + Software – Rp 150.000</label>
+          <label class="flex items-center"><input type="checkbox" id="jasaGame" value="100000" class="mr-2"> Install Game Populer – Rp 100.000</label>
+        </div>
+      </div>
+
+      <!-- Hasil -->
+      <div class="bg-slate-900 p-4 rounded-lg space-y-2">
+        <p class="font-bold text-xl">Estimasi Harga: <span id="totalHarga">Rp 0</span></p>
+        <p class="text-gray-300">FPS 1080p: <span id="fps1080">0</span> FPS</p>
+        <p class="text-gray-300">FPS 1440p: <span id="fps1440">0</span> FPS</p>
+        <p class="text-gray-300">FPS 4K: <span id="fps4k">0</span> FPS</p>
+      </div>
+
+      <!-- Tombol -->
+      <div class="flex flex-col md:flex-row gap-4 pt-4">
+        <button type="button" onclick="hitungPC()" class="bg-cyan-500 text-black px-6 py-3 rounded-2xl font-semibold hover:scale-105 transition w-full">
+          Hitung Sekarang
+        </button>
+        <a id="waButton" target="_blank" class="bg-green-500 text-black px-6 py-3 rounded-2xl font-semibold hover:scale-105 transition w-full text-center">
+          Hubungi via WhatsApp
+        </a>
+      </div>
+    </form>
   </section>
 
-  <!-- Testimoni Section -->
-  <section id="testimoni" class="py-16 px-6 bg-white">
-    <h2 class="text-3xl font-bold text-center mb-12">Testimoni</h2>
-    <div class="max-w-xl mx-auto text-center">
-      <p class="italic mb-4">"Lorem ipsum dolor sit amet, consectetur adipiscing elit."</p>
-      <div class="w-16 h-16 bg-gray-300 rounded-full mx-auto mb-2"></div>
-      <p class="font-semibold">Nama Pengguna</p>
-    </div>
-  </section>
-
-  <!-- CTA & FAQ -->
-  <section id="kontak" class="py-16 px-6 bg-gray-200">
-    <div class="max-w-xl mx-auto text-center">
-      <button class="bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-500 mb-6">Kirim WA</button>
-      <div class="text-left space-y-4">
-        <p><strong>Pertanyaan?</strong> Apakah ada garansi rakitan?</p>
-        <p><strong>Pertanyaan?</strong> Berapa lama proses rakit?</p>
-        <p><strong>Pertanyaan?</strong> Apakah bisa COD?</p>
-      </div>
-    </div>
+  <!-- Sosial Media -->
+  <section class="py-10 bg-slate-900 text-center space-x-4">
+    <a href="https://wa.me/6281234567890" target="_blank" class="inline-block bg-green-500 text-black px-4 py-2 rounded-full hover:scale-105 transition">WhatsApp</a>
+    <a href="https://instagram.com/rakitanpc.id" target="_blank" class="inline-block bg-pink-500 text-white px-4 py-2 rounded-full hover:scale-105 transition">Instagram</a>
+    <a href="https://t.me/rakitanpc" target="_blank" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-full hover:scale-105 transition">Telegram</a>
   </section>
 
   <!-- Footer -->
-  <footer class="text-center py-6 bg-white text-sm text-gray-500">
-    <div class="space-x-4 mb-2">
-      <span>📘</span>
-      <span>🐦</span>
-      <span>📸</span>
-    </div>
+  <footer class="text-center py-6 bg-slate-950 text-sm text-gray-500">
     © 2025 RakitanPC.id – Semua Hak Dilindungi
   </footer>
 
+  <!-- Script Kalkulasi -->
+  <script>
+    function hitungPC() {
+      const getVal = (id) => document.getElementById(id).value.split("-");
+      const cpu = getVal("cpu");
+      const gpu = getVal("gpu");
+      const ram = getVal("ram");
+      const storage = getVal("storage");
+      const mobo = parseInt(document.getElementById("mobo").value);
+      const psu = parseInt(document.getElementById("psu").value);
+      const casing = parseInt(document.getElementById("casing").value);
+
+      // Jasa tambahan
+      const jasaRakit = document.getElementById("jasaRakit").checked ? parseInt(document.getElementById("jasaRakit").value) : 0;
+      const jasaInstall = document.getElementById("jasaInstall").checked ? parseInt(document.getElementById("jasaInstall").value) : 0;
+      const jasaGame = document.getElementById("jasaGame").checked ? parseInt(document.getElementById("jasaGame").value) : 0;
+
+      const hargaTotal = parseInt(cpu[0]) + parseInt(gpu[0]) + parseInt(ram[0]) + parseInt(storage[0]) + mobo + psu + casing + jasaRakit + jasaInstall + jasaGame;
+      const baseFPS = parseInt(cpu[1]) + parseInt(gpu[1]) + parseInt(ram[1]) + parseInt(storage[1]);
+
+      const fps1080 = baseFPS;
+      const fps1440 = Math.round(baseFPS * 0.75);
+      const fps4k = Math.round(baseFPS * 0.5);
+
+      document.getElementById("totalHarga").innerText = "Rp " + hargaTotal.toLocaleString("id-ID");
+      document.getElementById("fps1080").innerText = fps1080;
+      document.getElementById("fps1440").innerText = fps1440;
+      document.getElementById("fps4k").innerText = fps4k;
+
+      // WhatsApp link
+      const pesan = `Halo Admin, saya ingin memesan PC Gaming dengan spesifikasi:
+- CPU: ${document.getElementById("cpu").selectedOptions[0].text}
+- GPU: ${document.getElementById("gpu").selectedOptions[0].text}
+- RAM: ${document.getElementById("ram").selectedOptions[0].text}
+- Storage: ${document.getElementById("storage").selectedOptions[0].text}
+- Motherboard: ${document.getElementById("mobo").selectedOptions[0].text}
+- PSU: ${document.getElementById("psu").selectedOptions[0].text}
+- Casing: ${document.getElementById("casing").selectedOptions[0].text}
+- Jasa: ${jasaRakit ? "Rakit PC, " : ""}${jasaInstall ? "Install Windows, " : ""}${jasaGame ? "Install Game" : ""}
+
+Estimasi Harga: Rp ${hargaTotal.toLocaleString("id-ID")}
+FPS 1080p: ${fps1080}, 1440p: ${fps1440}, 4K: ${fps4k}
+
+Terima kasih!`;
+
+      document.getElementById("waButton").href = "https://wa.me/6281234567890?text=" + encodeURIComponent(pesan);
+    }
+
+    window.onload = hitungPC;
+  </script>
 </body>
 </html>
