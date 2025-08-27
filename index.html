@@ -121,42 +121,42 @@
         </p>
       </div>
 
-      <!-- Storage SSD -->
+      <!-- Storage: SSD & HDD -->
       <div class="mb-6">
-        <label for="storage" class="block font-semibold mb-2 text-white">Pilih Storage (SSD)</label>
-        <select id="storage" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
-          <option value="">-- Pilih SSD --</option>
+        <label for="storage" class="block font-semibold mb-2 text-white">Pilih Storage</label>
+        <select id="storage" onchange="previewStorage()" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+          <option value="">-- Pilih Storage --</option>
       
-          <optgroup label="SATA SSD 2.5&quot;">
-            <option value="600000-0">Kingston A400 480GB SATA – Rp 600.000</option>
-            <option value="850000-2">WD Blue 1TB SATA – Rp 850.000</option>
+          <optgroup label="SSD M.2 2280 NVMe Gen3">
+            <option value="950000-5" data-type="SSD" data-read="3500 MB/s">ADATA XPG SX8200 Pro 512GB – Rp 950.000</option>
+            <option value="1800000-6" data-type="SSD" data-read="3500 MB/s">Samsung 970 EVO Plus 1TB – Rp 1.800.000</option>
           </optgroup>
       
-          <optgroup label="NVMe Gen3 M.2 2280">
-            <option value="950000-5">ADATA XPG SX8200 Pro 512GB – Rp 950.000</option>
-            <option value="1800000-6">Samsung 970 EVO Plus 1TB – Rp 1.800.000</option>
+          <optgroup label="SSD M.2 2280 NVMe Gen4">
+            <option value="720000-2" data-type="SSD" data-read="3500 MB/s">Kingston NV2 500GB – Rp 720.000</option>
+            <option value="1100000-4" data-type="SSD" data-read="5000 MB/s">Lexar NM790 1TB – Rp 1.100.000</option>
+            <option value="1200000-5" data-type="SSD" data-read="5150 MB/s">WD Black SN770 1TB – Rp 1.200.000</option>
+            <option value="1350000-5" data-type="SSD" data-read="4700 MB/s">Crucial P3 Plus 1TB – Rp 1.350.000</option>
+            <option value="2200000-10" data-type="SSD" data-read="7000 MB/s">Kingston KC3000 1TB – Rp 2.200.000</option>
+            <option value="2500000-12" data-type="SSD" data-read="7000 MB/s">Corsair MP600 Pro XT 2TB – Rp 2.500.000</option>
+            <option value="2900000-11" data-type="SSD" data-read="7100 MB/s">Sabrent Rocket 4 Plus 2TB – Rp 2.900.000</option>
+            <option value="3200000-15" data-type="SSD" data-read="7450 MB/s">Samsung 990 PRO 2TB – Rp 3.200.000</option>
           </optgroup>
       
-          <optgroup label="NVMe Gen4 M.2 2280">
-            <option value="720000-2">Kingston NV2 500GB Gen4 – Rp 720.000</option>
-            <option value="1200000-5">WD Black SN770 1TB Gen4 – Rp 1.200.000</option>
-            <option value="1350000-5">Crucial P3 Plus 1TB Gen4 – Rp 1.350.000</option>
-            <option value="2200000-10">Kingston KC3000 1TB Gen4 – Rp 2.200.000</option>
-            <option value="2500000-12">Corsair MP600 Pro XT 2TB Gen4 – Rp 2.500.000</option>
-            <option value="2900000-11">Sabrent Rocket 4 Plus 2TB Gen4 – Rp 2.900.000</option>
-            <option value="3200000-15">Samsung 990 PRO 2TB Gen4 – Rp 3.200.000</option>
-            <option value="1100000-4">Lexar NM790 1TB Gen4 – Rp 1.100.000</option>
+          <optgroup label="HDD 3.5&quot; SATA">
+            <option value="550000-0" data-type="HDD">Seagate Barracuda 1TB 7200RPM – Rp 550.000</option>
+            <option value="750000-0" data-type="HDD">WD Blue 1TB 7200RPM – Rp 750.000</option>
+            <option value="950000-0" data-type="HDD">Toshiba P300 2TB 7200RPM – Rp 950.000</option>
+            <option value="1350000-0" data-type="HDD">Seagate IronWolf 4TB NAS – Rp 1.350.000</option>
           </optgroup>
         </select>
       
-        <p class="text-xs text-gray-400 mt-2">
-          🛡️ Garansi SSD:
-          <br>• Kingston & ADATA: 3 tahun
-          <br>• WD, Crucial, Corsair, Lexar, Sabrent, Samsung: 5 tahun
+        <p id="storagePreview" class="text-sm text-cyan-400 mt-2">📊 Preview kecepatan baca akan muncul di sini...</p>
+        <p class="text-xs text-gray-400 mt-1">
+          🛡️ Garansi: SSD Kingston & ADATA 3 tahun, lainnya 5 tahun. HDD Seagate/WD/Toshiba 2–3 tahun tergantung seri.
           <br>• Semua SSD M.2 2280 NVMe cocok untuk gaming, editing, dan boot cepat
         </p>
       </div>
-
       
        <!-- Motherboard -->
       <div>
@@ -395,7 +395,22 @@ function paketHigh() {
   document.getElementById("jasaGame").checked = true;
   hitungPC();
 }
+function previewStorage() {
+  const select = document.getElementById("storage");
+  const selected = select.options[select.selectedIndex];
+  const type = selected.getAttribute("data-type");
+  const speed = selected.getAttribute("data-read");
 
+  const preview = document.getElementById("storagePreview");
+
+  if (type === "SSD" && speed) {
+    preview.innerText = `💾 SSD NVMe – Kecepatan Baca: ${speed}`;
+  } else if (type === "HDD") {
+    preview.innerText = `🧱 HDD SATA – Kecepatan Baca: ±150 MB/s (estimasi)`;
+  } else {
+    preview.innerText = "📊 Preview kecepatan baca akan muncul di sini...";
+  }
+}
     
   </script>
 </body>
