@@ -23,6 +23,7 @@
       <div>
         <label class="block font-semibold mb-2">Pilih CPU</label>
         <select id="cpu" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+          <option value="">-- Pilih CPU --</option>
           <optgroup label="AMD">
             <option value="2500000-60">Ryzen 5 5600G – Rp 2.500.000</option>
             <option value="4200000-85">Ryzen 7 5800X – Rp 4.200.000</option>
@@ -40,6 +41,7 @@
       <div>
         <label class="block font-semibold mb-2">Pilih GPU</label>
         <select id="gpu" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+          <option value="">-- Pilih GPU --</option>
           <option value="4000000-70">GTX 1660 Super – Rp 4.000.000</option>
           <option value="6500000-100">RTX 3060 Ti – Rp 6.500.000</option>
           <option value="12000000-140">RTX 4070 Ti – Rp 12.000.000</option>
@@ -50,6 +52,7 @@
       <div>
         <label class="block font-semibold mb-2">Pilih RAM</label>
         <select id="ram" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+          <option value="">-- Pilih RAM --</option>
           <optgroup label="DDR4">
             <option value="800000-0">Corsair Vengeance 16GB – Rp 800.000</option>
             <option value="1600000-10">G.Skill Ripjaws 32GB – Rp 1.600.000</option>
@@ -65,6 +68,7 @@
       <div>
         <label class="block font-semibold mb-2">Pilih Storage</label>
         <select id="storage" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+          <option value="">-- Pilih Storage --</option>
           <option value="600000-0">512GB SSD – Rp 600.000</option>
           <option value="1200000-5">1TB SSD NVMe – Rp 1.200.000</option>
           <option value="2500000-10">2TB SSD NVMe Gen4 – Rp 2.500.000</option>
@@ -75,26 +79,30 @@
       <div>
         <label class="block font-semibold mb-2">Pilih Motherboard DDR4</label>
         <select id="mobo_ddr4" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+          <option value="">-- Pilih Motherboard DDR4 --</option>
           <option value="1800000">ATX – ASUS ROG Strix B550-F – Rp 1.800.000</option>
           <option value="1350000">mATX – MSI B450M Mortar Max – Rp 1.350.000</option>
           <option value="1500000">mATX – ASRock B550M Steel Legend – Rp 1.500.000</option>
           <option value="2000000">Mini-ITX – ASUS ROG Strix B550-I – Rp 2.000.000</option>
         </select>
       </div>
+
       <!-- Motherboard DDR5 -->
       <div>
         <label class="block font-semibold mb-2">Pilih Motherboard DDR5</label>
         <select id="mobo_ddr5" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+          <option value="">-- Pilih Motherboard DDR5 --</option>
           <option value="2500000">ATX – MSI Z690 Pro DDR5 – Rp 2.500.000</option>
           <option value="2200000">mATX – Gigabyte B760M AORUS Elite – Rp 2.200.000</option>
           <option value="3200000">Mini-ITX – ASUS ROG Strix Z790-I – Rp 3.200.000</option>
         </select>
       </div>
-      
+
       <!-- PSU -->
       <div>
         <label class="block font-semibold mb-2">Pilih PSU</label>
         <select id="psu" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+          <option value="">-- Pilih PSU --</option>
           <option value="1200000">ATX – Corsair RM750x – Rp 1.200.000</option>
           <option value="1300000">ATX – Seasonic Focus GX – Rp 1.300.000</option>
           <option value="1500000">Mini-ITX – SilverStone SX700 – Rp 1.500.000</option>
@@ -105,18 +113,13 @@
       <div>
         <label class="block font-semibold mb-2">Pilih Casing</label>
         <select id="casing" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
-          <optgroup label="ATX">
-            <option value="1200000">NZXT H510 – Rp 1.200.000</option>
-            <option value="1300000">Corsair 4000D – Rp 1.300.000</option>
-          </optgroup>
-          <optgroup label="mATX">
-            <option value="850000">Cooler Master Q300L – Rp 850.000</option>
-            <option value="950000">Deepcool MATREXX 40 – Rp 950.000</option>
-          </optgroup>
-          <optgroup label="Mini-ITX">
-            <option value="1800000">Cooler Master NR200P – Rp 1.800.000</option>
-            <option value="1200000">SilverStone SG13 – Rp 1.200.000</option>
-          </optgroup>
+          <option value="">-- Pilih Casing --</option>
+          <option value="1200000">NZXT H510 – Rp 1.200.000</option>
+          <option value="1300000">Corsair 4000D – Rp 1.300.000</option>
+          <option value="850000">Cooler Master Q300L – Rp 850.000</option>
+          <option value="950000">Deepcool MATREXX 40 – Rp 950.000</option>
+          <option value="1800000">Cooler Master NR200P – Rp 1.800.000</option>
+          <option value="1200000">SilverStone SG13 – Rp 1.200.000</option>
         </select>
       </div>
 
@@ -152,9 +155,9 @@
 
   <!-- Sosial Media -->
   <section class="py-10 bg-slate-900 text-center space-x-4">
-    <a href="https://wa.me/6281234567890" target="_blank" class="inline-block bg-green-500 text-black px-4 py-2 rounded-full hover:scale-105 transition">WhatsApp</a>
-    <a href="https://instagram.com/rakitanpc.id" target="_blank" class="inline-block bg-pink-500 text-white px-4 py-2 rounded-full hover:scale-105 transition">Instagram</a>
-    <a href="https://t.me/rakitanpc" target="_blank" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-full hover:scale-105 transition">Telegram</a>
+    <a href="https://wa.me/6288291967659" target="_blank" class="inline-block bg-green-500 text-black px-4 py-2 rounded-full hover:scale-105 transition">WhatsApp</a>
+    <a href="https://instagram.com/nandamorgul" target="_blank" class="inline-block bg-pink-500 text-white px-4 py-2 rounded-full hover:scale-105 transition">Instagram</a>
+    <a href="https://t.me/nandamorgul" target="_blank" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-full hover:scale-105 transition">Telegram</a>
   </section>
 
   <!-- Footer -->
@@ -165,25 +168,30 @@
   <!-- Script Kalkulasi -->
   <script>
     function hitungPC() {
-      const getVal = (id) => document.getElementById(id).value.split("-");
+      const getVal = (id) => {
+        const val = document.getElementById(id).value;
+        return val ? val.split("-").map(Number) : [0, 0];
+      };
+
       const cpu = getVal("cpu");
       const gpu = getVal("gpu");
       const ram = getVal("ram");
       const storage = getVal("storage");
-      const ramType = document.getElementById("ram").selectedOptions[0].parentNode.label;
-      const mobo = ramType === "DDR4"
-        ? parseInt(document.getElementById("mobo_ddr4").value)
-        : parseInt(document.getElementById("mobo_ddr5").value);
-      const psu = parseInt(document.getElementById("psu").value);
-      const casing = parseInt(document.getElementById("casing").value);
 
-      // Jasa tambahan
+      const ramType = document.getElementById("ram").selectedOptions[0]?.parentNode?.label || "";
+      const mobo = ramType === "DDR4"
+        ? parseInt(document.getElementById("mobo_ddr4").value) || 0
+        : parseInt(document.getElementById("mobo_ddr5").value) || 0;
+
+      const psu = parseInt(document.getElementById("psu").value) || 0;
+      const casing = parseInt(document.getElementById("casing").value) || 0;
+
       const jasaRakit = document.getElementById("jasaRakit").checked ? parseInt(document.getElementById("jasaRakit").value) : 0;
       const jasaInstall = document.getElementById("jasaInstall").checked ? parseInt(document.getElementById("jasaInstall").value) : 0;
       const jasaGame = document.getElementById("jasaGame").checked ? parseInt(document.getElementById("jasaGame").value) : 0;
 
-      const hargaTotal = parseInt(cpu[0]) + parseInt(gpu[0]) + parseInt(ram[0]) + parseInt(storage[0]) + mobo + psu + casing + jasaRakit + jasaInstall + jasaGame;
-      const baseFPS = parseInt(cpu[1]) + parseInt(gpu[1]) + parseInt(ram[1]) + parseInt(storage[1]);
+      const hargaTotal = cpu[0] + gpu[0] + ram[0] + storage[0] + mobo + psu + casing + jasaRakit + jasaInstall + jasaGame;
+      const baseFPS = cpu[1] + gpu[1] + ram[1] + storage[1];
 
       const fps1080 = baseFPS;
       const fps1440 = Math.round(baseFPS * 0.75);
@@ -194,15 +202,14 @@
       document.getElementById("fps1440").innerText = fps1440;
       document.getElementById("fps4k").innerText = fps4k;
 
-      // WhatsApp link
       const pesan = `Halo Admin, saya ingin memesan PC Gaming dengan spesifikasi:
-- CPU: ${document.getElementById("cpu").selectedOptions[0].text}
-- GPU: ${document.getElementById("gpu").selectedOptions[0].text}
-- RAM: ${document.getElementById("ram").selectedOptions[0].text}
-- Storage: ${document.getElementById("storage").selectedOptions[0].text}
-- Motherboard: ${document.getElementById("mobo").selectedOptions[0].text}
-- PSU: ${document.getElementById("psu").selectedOptions[0].text}
-- Casing: ${document.getElementById("casing").selectedOptions[0].text}
+- CPU: ${document.getElementById("cpu").selectedOptions[0]?.text || "-"}
+- GPU: ${document.getElementById("gpu").selectedOptions[0]?.text || "-"}
+- RAM: ${document.getElementById("ram").selectedOptions[0]?.text || "-"}
+- Storage: ${document.getElementById("storage").selectedOptions[0]?.text || "-"}
+- Motherboard: ${ramType === "DDR4" ? document.getElementById("mobo_ddr4").selectedOptions[0]?.text : document.getElementById("mobo_ddr5").selectedOptions[0]?.text || "-"}
+- PSU: ${document.getElementById("psu").selectedOptions[0]?.text || "-"}
+- Casing: ${document.getElementById("casing").selectedOptions[0]?.text || "-"}
 - Jasa: ${jasaRakit ? "Rakit PC, " : ""}${jasaInstall ? "Install Windows, " : ""}${jasaGame ? "Install Game" : ""}
 
 Estimasi Harga: Rp ${hargaTotal.toLocaleString("id-ID")}
@@ -210,10 +217,8 @@ FPS 1080p: ${fps1080}, 1440p: ${fps1440}, 4K: ${fps4k}
 
 Terima kasih!`;
 
-      document.getElementById("waButton").href = "https://wa.me/6281234567890?text=" + encodeURIComponent(pesan);
+      document.getElementById("waButton").href = "https://wa.me/6288291967659?text=" + encodeURIComponent(pesan);
     }
-
-    window.onload = hitungPC;
   </script>
 </body>
 </html>
