@@ -117,18 +117,44 @@
         <p class="text-xs text-gray-400 mt-1">🛡️ Garansi lifetime untuk sebagian merk RAM.</p>
       </div>
 
-      <!-- Storage -->
-      <div>
-        <label class="block font-semibold mb-2">Pilih Storage</label>
+      <!-- Storage SSD -->
+      <div class="mb-6">
+        <label for="storage" class="block font-semibold mb-2 text-white">Pilih Storage (SSD)</label>
         <select id="storage" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
-          <option value="">-- Pilih Storage --</option>
-          <option value="600000-0">512GB SSD – Rp 600.000</option>
-          <option value="1200000-5">1TB SSD NVMe – Rp 1.200.000</option>
-          <option value="2500000-10">2TB SSD NVMe Gen4 – Rp 2.500.000</option>
+          <option value="">-- Pilih SSD --</option>
+      
+          <optgroup label="SATA SSD 2.5&quot;">
+            <option value="600000-0">Kingston A400 480GB SATA – Rp 600.000</option>
+            <option value="850000-2">WD Blue 1TB SATA – Rp 850.000</option>
+          </optgroup>
+      
+          <optgroup label="NVMe Gen3 M.2 2280">
+            <option value="950000-5">ADATA XPG SX8200 Pro 512GB – Rp 950.000</option>
+            <option value="1800000-6">Samsung 970 EVO Plus 1TB – Rp 1.800.000</option>
+          </optgroup>
+      
+          <optgroup label="NVMe Gen4 M.2 2280">
+            <option value="720000-2">Kingston NV2 500GB Gen4 – Rp 720.000</option>
+            <option value="1200000-5">WD Black SN770 1TB Gen4 – Rp 1.200.000</option>
+            <option value="1350000-5">Crucial P3 Plus 1TB Gen4 – Rp 1.350.000</option>
+            <option value="2200000-10">Kingston KC3000 1TB Gen4 – Rp 2.200.000</option>
+            <option value="2500000-12">Corsair MP600 Pro XT 2TB Gen4 – Rp 2.500.000</option>
+            <option value="2900000-11">Sabrent Rocket 4 Plus 2TB Gen4 – Rp 2.900.000</option>
+            <option value="3200000-15">Samsung 990 PRO 2TB Gen4 – Rp 3.200.000</option>
+            <option value="1100000-4">Lexar NM790 1TB Gen4 – Rp 1.100.000</option>
+          </optgroup>
         </select>
-        <p class="text-xs text-gray-400 mt-1">🛡️ Garansi 3–5 tahun tergantung merk dan seri SSD.</p>
+      
+        <p class="text-xs text-gray-400 mt-2">
+          🛡️ Garansi SSD:
+          <br>• Kingston & ADATA: 3 tahun
+          <br>• WD, Crucial, Corsair, Lexar, Sabrent, Samsung: 5 tahun
+          <br>• Semua SSD M.2 2280 NVMe cocok untuk gaming, editing, dan boot cepat
+        </p>
       </div>
-            <!-- Motherboard -->
+
+      
+       <!-- Motherboard -->
       <div>
         <label class="block font-semibold mb-2">Pilih Motherboard</label>
         <select id="mobo_ddr4" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
