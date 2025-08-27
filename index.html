@@ -101,20 +101,24 @@
       </div>
 
       <!-- RAM -->
-      <div>
-        <label class="block font-semibold mb-2">Pilih RAM</label>
+      <div class="mb-6">
+        <label for="ram" class="block font-semibold mb-2 text-white">Pilih RAM</label>
         <select id="ram" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
           <option value="">-- Pilih RAM --</option>
           <optgroup label="DDR4">
-            <option value="800000-0">Corsair Vengeance 16GB – Rp 800.000</option>
-            <option value="1600000-10">G.Skill Ripjaws 32GB – Rp 1.600.000</option>
+            <option value="800000-0">Corsair Vengeance LPX 16GB (2x8GB) 3200MHz – Rp 800.000</option>
+            <option value="1600000-10">G.Skill Ripjaws V 32GB (2x16GB) 3600MHz – Rp 1.600.000</option>
+            <option value="2200000-12">Team T-Force Delta RGB 32GB 3600MHz – Rp 2.200.000</option>
           </optgroup>
           <optgroup label="DDR5">
-            <option value="2200000-15">Kingston Fury Beast 32GB – Rp 2.200.000</option>
-            <option value="3500000-20">G.Skill Trident Z5 64GB – Rp 3.500.000</option>
+            <option value="2200000-15">Kingston Fury Beast 32GB (2x16GB) 5600MHz – Rp 2.200.000</option>
+            <option value="3500000-20">G.Skill Trident Z5 RGB 64GB (2x32GB) 6000MHz – Rp 3.500.000</option>
+            <option value="4000000-22">Corsair Dominator Platinum 64GB DDR5 – Rp 4.000.000</option>
           </optgroup>
         </select>
-        <p class="text-xs text-gray-400 mt-1">🛡️ Garansi lifetime untuk sebagian merk RAM.</p>
+        <p class="text-xs text-gray-400 mt-2">
+          🛡️ Garansi RAM: Lifetime untuk Corsair, G.Skill, Kingston, Team T-Force. Cocok untuk multitasking, editing, dan gaming berat.
+        </p>
       </div>
 
       <!-- Storage SSD -->
@@ -174,8 +178,8 @@
       </div>
 
       <!-- PSU -->
-      <div>
-        <label class="block font-semibold mb-2">Pilih PSU</label>
+      <div class="mb-6">
+        <label for="psu_atx" class="block font-semibold mb-2 text-white">Pilih PSU</label>
         <select id="psu_atx" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
           <option value="">-- Pilih PSU ATX --</option>
           <option value="750000">Corsair CV550 – 80+ Bronze – Rp 750.000</option>
@@ -184,13 +188,17 @@
           <option value="1500000">Corsair RM850x – 80+ Gold – Rp 1.500.000</option>
           <option value="2800000">ASUS ROG Thor 850W – 80+ Platinum – Rp 2.800.000</option>
         </select>
+      
         <select id="psu_sfx" class="w-full mt-2 p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
           <option value="">-- Pilih PSU SFX --</option>
           <option value="1600000">SilverStone SX500-LG – 80+ Gold – Rp 1.600.000</option>
           <option value="1700000">Corsair SF600 – 80+ Gold – Rp 1.700.000</option>
           <option value="1800000">Cooler Master V850 SFX Gold – Rp 1.800.000</option>
         </select>
-        <p class="text-xs text-gray-400 mt-1">🛡️ Garansi 3–5 tahun tergantung tipe dan sertifikasi PSU.</p>
+      
+        <p class="text-xs text-gray-400 mt-2">
+          🛡️ Garansi PSU: Bronze 3 tahun, Gold/Platinum 5 tahun. Pilih sesuai kebutuhan daya dan ukuran casing.
+        </p>
       </div>
 
       <!-- Casing -->
