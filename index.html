@@ -158,23 +158,27 @@
         </p>
       </div>
       
-       <!-- Motherboard -->
-      <div>
-        <label class="block font-semibold mb-2">Pilih Motherboard</label>
-        <select id="mobo_ddr4" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
-          <option value="">-- Pilih Motherboard DDR4 --</option>
-          <option value="1800000">ATX – ASUS ROG Strix B550-F – Rp 1.800.000</option>
-          <option value="1350000">mATX – MSI B450M Mortar Max – Rp 1.350.000</option>
-          <option value="1500000">mATX – ASRock B550M Steel Legend – Rp 1.500.000</option>
-          <option value="2000000">Mini-ITX – ASUS ROG Strix B550-I – Rp 2.000.000</option>
+      <!-- Motherboard -->
+      <div class="mb-6">
+        <label for="motherboard" class="block font-semibold mb-2 text-white">Pilih Motherboard</label>
+        <select id="motherboard" onchange="previewMobo()" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+          <option value="">-- Pilih Motherboard --</option>
+      
+          <optgroup label="DDR4">
+            <option value="1350000" data-ram="DDR4" data-chipset="B450" data-fitur="mATX, Ryzen 3000/5000, 4 slot RAM">MSI B450M Mortar Max – Rp 1.350.000</option>
+            <option value="1500000" data-ram="DDR4" data-chipset="B550" data-fitur="mATX, PCIe Gen4, RGB header">ASRock B550M Steel Legend – Rp 1.500.000</option>
+            <option value="1800000" data-ram="DDR4" data-chipset="B550" data-fitur="ATX, overclocking support, WiFi onboard">ASUS ROG Strix B550-F – Rp 1.800.000</option>
+          </optgroup>
+      
+          <optgroup label="DDR5">
+            <option value="2200000" data-ram="DDR5" data-chipset="B760" data-fitur="mATX, Intel 12/13th Gen, PCIe Gen5">Gigabyte B760M AORUS Elite – Rp 2.200.000</option>
+            <option value="2500000" data-ram="DDR5" data-chipset="Z690" data-fitur="ATX, high-end build, WiFi 6E">MSI Z690 Pro DDR5 – Rp 2.500.000</option>
+            <option value="3200000" data-ram="DDR5" data-chipset="Z790" data-fitur="Mini-ITX, Thunderbolt, RGB, WiFi 6E">ASUS ROG Strix Z790-I – Rp 3.200.000</option>
+          </optgroup>
         </select>
-        <select id="mobo_ddr5" class="w-full mt-2 p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
-          <option value="">-- Pilih Motherboard DDR5 --</option>
-          <option value="2500000">ATX – MSI Z690 Pro DDR5 – Rp 2.500.000</option>
-          <option value="2200000">mATX – Gigabyte B760M AORUS Elite – Rp 2.200.000</option>
-          <option value="3200000">Mini-ITX – ASUS ROG Strix Z790-I – Rp 3.200.000</option>
-        </select>
-        <p class="text-xs text-gray-400 mt-1">🛡️ Garansi resmi 3 tahun untuk semua motherboard.</p>
+      
+        <p id="moboPreview" class="text-sm text-cyan-400 mt-2">🧩 Preview motherboard akan muncul di sini...</p>
+        <p class="text-xs text-gray-400 mt-1">🛡️ Garansi motherboard: 3 tahun resmi distributor.</p>
       </div>
 
       <!-- PSU -->
@@ -202,27 +206,32 @@
       </div>
 
       <!-- Casing -->
-      <div>
-        <label class="block font-semibold mb-2">Pilih Casing</label>
-        <select id="casing_atx" class="w-full p-3 mb-2 rounded-lg bg-slate-900 border border-slate-700 text-white">
-          <option value="">-- Pilih Casing ATX --</option>
-          <option value="1200000">NZXT H510 – Rp 1.200.000</option>
-          <option value="1300000">Corsair 4000D Airflow – Rp 1.300.000</option>
-          <option value="1500000">Lian Li Lancool III – Rp 1.500.000</option>
+      <div class="mb-6">
+        <label for="casing" class="block font-semibold mb-2 text-white">Pilih Casing</label>
+        <select id="casing" onchange="previewCasing()" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+          <option value="">-- Pilih Casing --</option>
+      
+          <optgroup label="ATX">
+            <option value="1200000" data-form="ATX" data-fitur="Minimalis, airflow optimal, support GPU panjang">NZXT H510 – Rp 1.200.000</option>
+            <option value="1300000" data-form="ATX" data-fitur="Front mesh, airflow tinggi, cable management luas">Corsair 4000D Airflow – Rp 1.300.000</option>
+            <option value="1500000" data-form="ATX" data-fitur="Modular panel, tempered glass, RGB ready">Lian Li Lancool III – Rp 1.500.000</option>
+          </optgroup>
+      
+          <optgroup label="mATX">
+            <option value="850000" data-form="mATX" data-fitur="Compact, airflow cukup, cocok untuk GPU mid-range">Cooler Master Q300L – Rp 850.000</option>
+            <option value="900000" data-form="mATX" data-fitur="Simple, airflow terbatas, cocok untuk build hemat">Thermaltake Versa H18 – Rp 900.000</option>
+            <option value="950000" data-form="mATX" data-fitur="Minimalis, side panel tempered glass">Deepcool MATREXX 40 – Rp 950.000</option>
+          </optgroup>
+      
+          <optgroup label="Mini-ITX">
+            <option value="1800000" data-form="Mini-ITX" data-fitur="Ultra compact, airflow terbatas, butuh PSU SFX">Cooler Master NR200P – Rp 1.800.000</option>
+            <option value="1200000" data-form="Mini-ITX" data-fitur="Mini cube, cocok untuk build ringan">SilverStone SG13 – Rp 1.200.000</option>
+            <option value="2500000" data-form="Mini-ITX" data-fitur="Vertical build, PSU & cooler included">NZXT H1 V2 – Rp 2.500.000</option>
+          </optgroup>
         </select>
-        <select id="casing_matx" class="w-full p-3 mb-2 rounded-lg bg-slate-900 border border-slate-700 text-white">
-          <option value="">-- Pilih Casing mATX --</option>
-          <option value="850000">Cooler Master Q300L – Rp 850.000</option>
-          <option value="900000">Thermaltake Versa H18 – Rp 900.000</option>
-          <option value="950000">Deepcool MATREXX 40 – Rp 950.000</option>
-        </select>
-        <select id="casing_itx" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
-          <option value="">-- Pilih Casing Mini-ITX --</option>
-          <option value="1800000">Cooler Master NR200P – Rp 1.800.000</option>
-          <option value="1200000">SilverStone SG13 – Rp 1.200.000</option>
-          <option value="2500000">NZXT H1 V2 – Rp 2.500.000</option>
-        </select>
-        <p class="text-xs text-gray-400 mt-1">🛡️ Garansi fisik dan panel casing 1 tahun.</p>
+      
+        <p id="casingPreview" class="text-sm text-cyan-400 mt-2">📦 Preview casing akan muncul di sini...</p>
+        <p class="text-xs text-gray-400 mt-1">🛡️ Garansi casing: 1 tahun untuk fisik dan panel.</p>
       </div>
 
       <!-- CPU Cooler -->
@@ -411,6 +420,36 @@ function previewStorage() {
     preview.innerText = "📊 Preview kecepatan baca akan muncul di sini...";
   }
 }
+
+    function previewCasing() {
+  const select = document.getElementById("casing");
+  const selected = select.options[select.selectedIndex];
+  const form = selected.getAttribute("data-form");
+  const fitur = selected.getAttribute("data-fitur");
+
+  const preview = document.getElementById("casingPreview");
+  if (form && fitur) {
+    preview.innerText = `📦 Form Factor: ${form} – Fitur: ${fitur}`;
+  } else {
+    preview.innerText = "📦 Preview casing akan muncul di sini...";
+  }
+}
+
+function previewMobo() {
+  const select = document.getElementById("motherboard");
+  const selected = select.options[select.selectedIndex];
+  const ram = selected.getAttribute("data-ram");
+  const chipset = selected.getAttribute("data-chipset");
+  const fitur = selected.getAttribute("data-fitur");
+
+  const preview = document.getElementById("moboPreview");
+  if (ram && chipset && fitur) {
+    preview.innerText = `🧩 Chipset: ${chipset}, RAM: ${ram} – Fitur: ${fitur}`;
+  } else {
+    preview.innerText = "🧩 Preview motherboard akan muncul di sini...";
+  }
+}
+
     
   </script>
 </body>
