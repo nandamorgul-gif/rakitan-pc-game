@@ -516,7 +516,21 @@ function previewCooler() {
     preview.innerText = "❄️ Preview cooler akan muncul di sini...";
   }
 }
-    
+  function previewCPU() {
+  const select = document.getElementById("cpu");
+  const selected = select.options[select.selectedIndex];
+  const brand = selected.getAttribute("data-brand");
+  const core = selected.getAttribute("data-core");
+  const clock = selected.getAttribute("data-clock");
+  const tdp = selected.getAttribute("data-tdp");
+
+  const preview = document.getElementById("cpuPreview");
+  if (brand && core && clock && tdp) {
+    preview.innerText = `🧠 ${brand} – ${core}, Clock: ${clock}, TDP: ${tdp}`;
+  } else {
+    preview.innerText = "🧠 Preview CPU akan muncul di sini...";
+  }
+}  
   </script>
 </body>
 </html>
