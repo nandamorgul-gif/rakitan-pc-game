@@ -6,7 +6,6 @@
   <title>Jasa Rakitan PC Game</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body class="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white">
 
@@ -26,45 +25,34 @@
   <!-- Konfigurator -->
   <section id="configurator" class="max-w-4xl mx-auto px-4 py-16">
     <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Konfigurator PC Interaktif</h2>
-    <form class="space-y-6 bg-slate-800 p-6 rounded-2xl shadow-lg" data-aos="zoom-in">
+    <form class="space-y-6 bg-slate-800 p-6 rounded-2xl shadow-lg" data-aos="zoom-in" onsubmit="return false">
+
+      <!-- Paket Rakitan -->
+      <div>
+        <label class="block font-semibold mb-2">Pilih Paket Rakitan</label>
+        <select id="paket" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white" onchange="pilihPaket()">
+          <option value="">-- Pilih Paket --</option>
+          <option value="middle">Middle Range</option>
+          <option value="high">High Range</option>
+        </select>
+      </div>
 
       <!-- CPU -->
       <div>
         <label for="cpu" class="block font-semibold mb-2">Pilih CPU</label>
         <select id="cpu" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
-          <!-- AMD CPUs -->
-          <optgroup label="AMD Ryzen">
+          <optgroup label="AMD">
             <option value="2500000-60">Ryzen 5 5600G – Rp 2.500.000</option>
             <option value="4200000-85">Ryzen 7 5800X – Rp 4.200.000</option>
             <option value="7500000-100">Ryzen 9 7900X – Rp 7.500.000</option>
-            <option value="9000000-110">Ryzen 9 7950X – Rp 9.000.000</option>
           </optgroup>
-          <!-- Intel CPUs -->
-          <optgroup label="Intel Core">
-            <option value="2800000-55">Intel i5-12400F – Rp 2.800.000</option>
-            <option value="4500000-80">Intel i7-12700K – Rp 4.500.000</option>
-            <option value="8200000-95">Intel i9-12900K – Rp 8.200.000</option>
-            <option value="10500000-115">Intel i9-13900K – Rp 10.500.000</option>
+          <optgroup label="Intel">
+            <option value="2300000-55">Intel Core i5-12400F – Rp 2.300.000</option>
+            <option value="4000000-80">Intel Core i7-12700K – Rp 4.000.000</option>
+            <option value="7000000-110">Intel Core i9-13900K – Rp 7.000.000</option>
           </optgroup>
         </select>
       </div>
-
-      <!-- Motherboard -->
-      <div>
-        <label for="motherboard" class="block font-semibold mb-2">Pilih Motherboard</label>
-        <select id="motherboard" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
-          <optgroup label="Motherboard AMD">
-          <option value="1200000-10">MSI B550 Gaming Plus – Rp 1.200.000</option>
-          <option value="5000000-30">ASUS ROG Crosshair X670E – Rp 5.000.000</option>
-          </optgroup>
-          
-          <optgroup label="Motherboard Intel">
-            <option value="2500000-15">Gigabyte Z690 Aorus Elite – Rp 2.500.000</option>
-            <option value="3000000-20">ASUS ROG Strix B660-F Gaming – Rp 3.000.000</option>
-          </optgroup>
-        </select>
-      </div>
-
 
       <!-- GPU -->
       <div>
@@ -74,7 +62,6 @@
             <option value="4000000-70">ASUS GTX 1660 Super – Rp 4.000.000</option>
             <option value="6500000-100">MSI RTX 3060 Ti – Rp 6.500.000</option>
             <option value="12000000-140">Gigabyte RTX 4070 Ti – Rp 12.000.000</option>
-            
           </optgroup>
           <optgroup label="AMD Radeon">
             <option value="3800000-65">ASUS Radeon RX 6600 XT – Rp 3.800.000</option>
@@ -83,7 +70,6 @@
           </optgroup>
         </select>
       </div>
-
 
       <!-- RAM -->
       <div>
@@ -102,7 +88,21 @@
           <option value="600000-0">512GB SSD – Rp 600.000</option>
           <option value="1200000-5">1TB SSD NVMe – Rp 1.200.000</option>
           <option value="2500000-10">2TB SSD NVMe Gen4 – Rp 2.500.000</option>
-          <option value="1500000-0">2TB HDD – Rp 1.500.000</option>
+        </select>
+      </div>
+
+      <!-- Motherboard -->
+      <div>
+        <label for="motherboard" class="block font-semibold mb-2">Pilih Motherboard</label>
+        <select id="motherboard" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+          <optgroup label="Motherboard AMD">
+            <option value="1200000-10">MSI B550 Gaming Plus – Rp 1.200.000</option>
+            <option value="5000000-30">ASUS ROG Crosshair X670E – Rp 5.000.000</option>
+          </optgroup>
+          <optgroup label="Motherboard Intel">
+            <option value="2500000-15">Gigabyte Z690 Aorus Elite – Rp 2.500.000</option>
+            <option value="3000000-20">ASUS ROG Strix B660-F Gaming – Rp 3.000.000</option>
+          </optgroup>
         </select>
       </div>
 
@@ -110,73 +110,49 @@
       <div>
         <label for="psu" class="block font-semibold mb-2">Pilih PSU</label>
         <select id="psu" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
-          <option value="700000-0">Corsair 550W 80+ Bronze – Rp 700.000</option>
-          <option value="1200000-0">Seasonic 750W 80+ Gold – Rp 1.200.000</option>
-          <option value="2000000-0">Corsair RM1000x 1000W 80+ Gold – Rp 2.000.000</option>
-        </select>
-      </div>
-      
-<!-- Paket Rakitan -->
-      <div class="mb-6">
-        <label class="block font-semibold mb-2">Pilih Paket Rakitan</label>
-        <select id="paket" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white" onchange="pilihPaket()">
-          <option value="">-- Pilih Paket --</option>
-          <option value="middle">Middle Range</option>
-          <option value="high">High Range</option>
+          <option value="700000-0">Corsair 550W – Rp 700.000</option>
+          <option value="1000000-0">Seasonic 650W – Rp 1.000.000</option>
+          <option value="1500000-0">EVGA 850W – Rp 1.500.000</option>
         </select>
       </div>
 
-
-      <!-- Layanan Tambahan -->
-      <div class="pt-4 border-t border-slate-700">
-        <p class="font-semibold mb-2">Layanan Tambahan</p>
-        <label class="inline-flex items-center mr-4">
-          <input type="checkbox" id="rakit" class="form-checkbox h-5 w-5 text-cyan-500" />
-          <span class="ml-2">Jasa Rakit PC (+Rp 250.000)</span>
-        </label>
-        <label class="inline-flex items-center mr-4">
-          <input type="checkbox" id="install" class="form-checkbox h-5 w-5 text-cyan-500" />
-          <span class="ml-2">Install Windows & Software (+Rp 150.000)</span>
-        </label>
-        <label class="inline-flex items-center">
-          <input type="checkbox" id="game" class="form-checkbox h-5 w-5 text-cyan-500" />
-          <span class="ml-2">Install Game Awal (+Rp 100.000)</span>
-        </label>
+      <!-- Jasa Tambahan -->
+      <div>
+        <label class="block font-semibold mb-2">Jasa Tambahan</label>
+        <div class="space-y-2">
+          <label><input type="checkbox" class="layanan" value="500000" /> Jasa Rakit – Rp 500.000</label><br/>
+          <label><input type="checkbox" class="layanan" value="300000" /> Jasa Install Windows – Rp 300.000</label><br/>
+          <label><input type="checkbox" class="layanan" value="200000" /> Install Software Lain – Rp 200.000</label>
+        </div>
       </div>
 
       <!-- Metode Pembayaran -->
       <div>
-        <label for="metode" class="block font-semibold mb-2">Metode Pembayaran</label>
-        <select id="metode" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+        <label class="block font-semibold mb-2">Metode Pembayaran</label>
+        <select id="metode" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white" onchange="hitungPC()">
           <option value="Cash">Cash</option>
           <option value="QRIS">QRIS</option>
-          <option value="Transfer Bank">Transfer Bank</option>
         </select>
       </div>
 
-      <!-- Estimasi Harga & FPS -->
-      <div class="bg-slate-900 p-4 rounded-lg text-white">
-        <p class="font-bold text-xl">Estimasi Harga: <span id="totalHarga" class="text-white">Rp 0</span></p>
-        <p class="text-gray-300">FPS Rata-rata:</p>
-        <ul class="ml-4 text-sm">
-          <li>🎮 1080p: <span id="fps1080p">0</span> FPS</li>
-          <li>🎮 1440p: <span id="fps1440p">0</span> FPS</li>
-          <li>🎮 4K: <span id="fps4k">0</span> FPS</li>
-        </ul>
+      <!-- Hasil -->
+      <div class="bg-slate-900 p-4 rounded-lg">
+        <p class="font-bold text-xl text-white">Estimasi Harga: <span id="totalHarga">Rp 0</span></p>
+        <p class="text-gray-300">Performa Gaming (FPS 1080p rata-rata): <span id="estimasiFPS">0 FPS</span></p>
       </div>
 
-      <!-- Tombol -->
-      <div class="flex flex-col md:flex-row gap-4">
+      <!-- Buttons -->
+      <div class="flex gap-4">
         <button type="button" onclick="hitungPC()" 
           class="bg-cyan-500 text-black px-6 py-3 rounded-2xl font-semibold hover:scale-105 transition w-full">
           Hitung Sekarang
         </button>
         <a id="waButton" target="_blank"
           class="bg-green-500 text-black px-6 py-3 rounded-2xl font-semibold hover:scale-105 transition w-full text-center">
-          Kirim WA
+          Kirim WA (Cash/QRIS)
         </a>
-        <button type="button" onclick="downloadPDF()"
-          class="bg-white text-black px-6 py-3 rounded-2xl font-semibold hover:scale-105 transition w-full">
+        <button type="button" onclick="downloadPDF()" 
+          class="bg-blue-600 text-white px-6 py-3 rounded-2xl font-semibold hover:scale-105 transition w-full">
           Download PDF
         </button>
       </div>
@@ -185,166 +161,143 @@
 
   <!-- Footer -->
   <footer class="border-t border-slate-800 py-6 text-center text-gray-400 text-sm">
-    © 2025 Morgul Gaming.id – Semua Hak Dilindungi
+    © 2025 RakitanPC.id – Semua Hak Dilindungi
   </footer>
 
-  <!-- AOS & jsPDF -->
+  <!-- AOS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init({ duration: 800, once: true });</script>
 
+  <!-- jsPDF untuk PDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
   <script>
+    function pilihPaket() {
+      const paket = document.getElementById('paket').value;
+
+      if (paket === 'middle') {
+        document.getElementById('cpu').value = "4200000-85"; // Ryzen 7 5800X
+        document.getElementById('gpu').value = "6500000-100"; // RTX 3060 Ti
+        document.getElementById('ram').value = "1600000-10"; // 32GB
+        document.getElementById('storage').value = "1200000-5"; // 1TB SSD NVMe
+        document.getElementById('motherboard').value = "1200000-10"; // MSI B550 Gaming Plus
+        document.getElementById('psu').value = "1000000-0"; // Seasonic 650W
+      } else if (paket === 'high') {
+        document.getElementById('cpu').value = "7500000-100"; // Ryzen 9 7900X
+        document.getElementById('gpu').value = "12000000-140"; // RTX 4070 Ti
+        document.getElementById('ram').value = "3000000-20"; // 64GB
+        document.getElementById('storage').value = "2500000-10"; // 2TB SSD NVMe Gen4
+        document.getElementById('motherboard').value = "5000000-30"; // ASUS ROG Crosshair X670E
+        document.getElementById('psu').value = "1500000-0"; // EVGA 850W
+      } else {
+        // Kosong atau reset? Bisa implementasi kalau mau
+      }
+
+      hitungPC();
+    }
+
     function hitungPC() {
-      // Ambil data nilai, format: harga-fps
+      // Ambil data komponen
       let cpu = document.getElementById("cpu").value.split("-");
       let gpu = document.getElementById("gpu").value.split("-");
       let ram = document.getElementById("ram").value.split("-");
       let storage = document.getElementById("storage").value.split("-");
       let motherboard = document.getElementById("motherboard").value.split("-");
       let psu = document.getElementById("psu").value.split("-");
-      let metode = document.getElementById("metode").value;
 
+      // Harga dan FPS dari komponen
       let totalHarga = parseInt(cpu[0]) + parseInt(gpu[0]) + parseInt(ram[0]) + parseInt(storage[0]) + parseInt(motherboard[0]) + parseInt(psu[0]);
+
       let estimasiFPS = parseInt(cpu[1]) + parseInt(gpu[1]) + parseInt(ram[1]) + parseInt(storage[1]) + parseInt(motherboard[1]) + parseInt(psu[1]);
 
-      // Tambahan layanan
-      let tambahan = 0;
-      let layananTambahanList = [];
-      if (document.getElementById("rakit").checked) {
-        tambahan += 150000;
-        layananTambahanList.push("Jasa Rakit PC");
-      }
-      if (document.getElementById("install").checked) {
-        tambahan += 100000;
-        layananTambahanList.push("Install Windows & Driver");
-      }
-      if (document.getElementById("game").checked) {
-        tambahan += 50000;
-        layananTambahanList.push("Install Game Awal");
-      }
+      // Tambah layanan tambahan
+      let layananTambahanCheckboxes = document.querySelectorAll(".layanan:checked");
+      let layananTambahanHarga = 0;
+      layananTambahanCheckboxes.forEach(cb => {
+        layananTambahanHarga += parseInt(cb.value);
+      });
 
-      totalHarga += tambahan;
+      totalHarga += layananTambahanHarga;
 
-      // Hitung FPS resolusi
-      let fps1080p = estimasiFPS;
-      let fps1440p = Math.round(estimasiFPS * 0.75);
-      let fps4k = Math.round(estimasiFPS * 0.5);
+      // Update tampilan harga dengan format rupiah
+      document.getElementById("totalHarga").innerText = formatRupiah(totalHarga);
+      document.getElementById("estimasiFPS").innerText = estimasiFPS + " FPS";
 
-      // Update tampilan
-      document.getElementById("totalHarga").innerText = "Rp " + totalHarga.toLocaleString("id-ID");
-      document.getElementById("fps1080p").innerText = fps1080p;
-      document.getElementById("fps1440p").innerText = fps1440p;
-      document.getElementById("fps4k").innerText = fps4k;
+      // Update WA link
+      updateWALink(totalHarga, estimasiFPS, layananTambahanHarga);
+    }
 
-      function pilihPaket() {
-  const paket = document.getElementById('paket').value;
+    function formatRupiah(number) {
+      return "Rp " + number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
 
-  if (paket === 'middle') {
-    document.getElementById('cpu').value = "4200000-85"; // Ryzen 7 5800X
-    document.getElementById('gpu').value = "6500000-100"; // RTX 3060 Ti
-    document.getElementById('ram').value = "1600000-10"; // 32GB
-    document.getElementById('storage').value = "1200000-5"; // 1TB SSD NVMe
-    document.getElementById('motherboard').value = "1200000-10"; // MSI B550 Gaming Plus
-    document.getElementById('psu').value = "1000000-0"; // PSU 650W
-  } else if (paket === 'high') {
-    document.getElementById('cpu').value = "7500000-100"; // Ryzen 9 7900X
-    document.getElementById('gpu').value = "12000000-140"; // RTX 4070 Ti
-    document.getElementById('ram').value = "3000000-20"; // 64GB
-    document.getElementById('storage').value = "2500000-10"; // 2TB SSD NVMe Gen4
-    document.getElementById('motherboard').value = "5000000-30"; // ASUS ROG Crosshair X670E
-    document.getElementById('psu').value = "1500000-0"; // PSU 850W
-  } else {
-    // Jika kosong atau pilih "-- Pilih Paket --"
-    // Reset ke opsi pertama tiap select (opsional)
-  }
-
-  hitungPC(); // update harga dan FPS otomatis
-}
-      
-      // Pesan WA
-      let pesan = `Halo Admin, saya ingin memesan PC Gaming dengan spesifikasi:
+    function updateWALink(totalHarga, estimasiFPS, layananTambahanHarga) {
+      const metode = document.getElementById("metode").value;
+      let layananText = [];
+      document.querySelectorAll(".layanan:checked").forEach(cb => {
+        layananText.push(cb.parentNode.innerText.trim());
+      });
+      let pesan = 
+`Halo, saya mau pesan rakitan PC dengan rincian:
 - CPU: ${document.getElementById("cpu").selectedOptions[0].text}
 - GPU: ${document.getElementById("gpu").selectedOptions[0].text}
 - RAM: ${document.getElementById("ram").selectedOptions[0].text}
 - Storage: ${document.getElementById("storage").selectedOptions[0].text}
 - Motherboard: ${document.getElementById("motherboard").selectedOptions[0].text}
 - PSU: ${document.getElementById("psu").selectedOptions[0].text}
-- Metode Pembayaran: ${metode}
+- Jasa tambahan: ${layananText.length > 0 ? layananText.join(", ") : "Tidak ada"}
+- Estimasi Harga: ${formatRupiah(totalHarga)}
+- Performa Gaming: ${estimasiFPS} FPS
+- Metode Pembayaran: ${metode}`;
 
-Estimasi Harga: Rp ${totalHarga.toLocaleString("id-ID")}
-
-Performa Gaming:
-- 1080p: ${fps1080p} FPS
-- 1440p: ${fps1440p} FPS
-- 4K: ${fps4k} FPS`;
-
-      if (layananTambahanList.length > 0) {
-        pesan += `
-
-Layanan Tambahan:
-- ${layananTambahanList.join("\n- ")}`;
-      }
-
-      // Encode pesan untuk URL WA
-      let encodedPesan = encodeURIComponent(pesan);
-      let waUrl = `https://wa.me/6281234567890?text=${encodedPesan}`; // Ganti nomor dengan nomor WA tujuan Anda
-      document.getElementById("waButton").href = waUrl;
+      let encoded = encodeURIComponent(pesan);
+      // Ganti nomor WA kamu di bawah ini:
+      let nomorWA = "6281234567890";
+      let waURL = `https://wa.me/${nomorWA}?text=${encoded}`;
+      document.getElementById("waButton").href = waURL;
     }
 
     function downloadPDF() {
       const { jsPDF } = window.jspdf;
       let doc = new jsPDF();
 
-      let cpuText = document.getElementById("cpu").selectedOptions[0].text;
-      let gpuText = document.getElementById("gpu").selectedOptions[0].text;
-      let ramText = document.getElementById("ram").selectedOptions[0].text;
-      let storageText = document.getElementById("storage").selectedOptions[0].text;
-      let motherboardText = document.getElementById("motherboard").selectedOptions[0].text;
-      let psuText = document.getElementById("psu").selectedOptions[0].text;
-      let metodeText = document.getElementById("metode").value;
-      let totalHargaText = document.getElementById("totalHarga").innerText;
-      let fps1080pText = document.getElementById("fps1080p").innerText;
-      let fps1440pText = document.getElementById("fps1440p").innerText;
-      let fps4kText = document.getElementById("fps4k").innerText;
+      let cpu = document.getElementById("cpu").selectedOptions[0].text;
+      let gpu = document.getElementById("gpu").selectedOptions[0].text;
+      let ram = document.getElementById("ram").selectedOptions[0].text;
+      let storage = document.getElementById("storage").selectedOptions[0].text;
+      let motherboard = document.getElementById("motherboard").selectedOptions[0].text;
+      let psu = document.getElementById("psu").selectedOptions[0].text;
 
-      let layananTambahanText = [];
-      if (document.getElementById("rakit").checked) layananTambahanText.push("Jasa Rakit PC");
-      if (document.getElementById("install").checked) layananTambahanText.push("Install Windows & Driver");
-      if (document.getElementById("game").checked) layananTambahanText.push("Install Game Awal");
+      let layananText = [];
+      document.querySelectorAll(".layanan:checked").forEach(cb => {
+        layananText.push(cb.parentNode.innerText.trim());
+      });
 
-      doc.setFontSize(18);
-      doc.text("Rakit PC Gaming Impianmu", 14, 20);
+      let hargaText = document.getElementById("totalHarga").innerText;
+      let fpsText = document.getElementById("estimasiFPS").innerText;
+      let metode = document.getElementById("metode").value;
 
-      doc.setFontSize(12);
-      doc.text("Spesifikasi PC:", 14, 30);
-      doc.text(`- CPU: ${cpuText}`, 14, 38);
-      doc.text(`- GPU: ${gpuText}`, 14, 46);
-      doc.text(`- RAM: ${ramText}`, 14, 54);
-      doc.text(`- Storage: ${storageText}`, 14, 62);
-      doc.text(`- Motherboard: ${motherboardText}`, 14, 70);
-      doc.text(`- PSU: ${psuText}`, 14, 78);
+      let content = `Rincian Rakitan PC:
+      
+CPU: ${cpu}
+GPU: ${gpu}
+RAM: ${ram}
+Storage: ${storage}
+Motherboard: ${motherboard}
+PSU: ${psu}
 
-      if (layananTambahanText.length > 0) {
-        doc.text("Layanan Tambahan:", 14, 88);
-        layananTambahanText.forEach((item, i) => {
-          doc.text(`- ${item}`, 20, 96 + i * 8);
-        });
-      }
+Jasa Tambahan: ${layananText.length > 0 ? layananText.join(", ") : "Tidak ada"}
 
-      let offsetY = 96 + layananTambahanText.length * 8 + 10;
+Estimasi Harga: ${hargaText}
+Performa Gaming: ${fpsText}
+Metode Pembayaran: ${metode}`;
 
-      doc.text(`Metode Pembayaran: ${metodeText}`, 14, offsetY);
-      doc.text(`Estimasi Harga: ${totalHargaText}`, 14, offsetY + 8);
-
-      doc.text("Performa Gaming (FPS):", 14, offsetY + 20);
-      doc.text(`- 1080p: ${fps1080pText} FPS`, 20, offsetY + 28);
-      doc.text(`- 1440p: ${fps1440pText} FPS`, 20, offsetY + 36);
-      doc.text(`- 4K: ${fps4kText} FPS`, 20, offsetY + 44);
-
-      doc.save("RakitPC-Gaming.pdf");
+      doc.text(content, 10, 10);
+      doc.save("Rincian-Rakitan-PC.pdf");
     }
 
-    // Hitung otomatis saat load pertama
-    window.onload = hitungPC;
+    // Inisialisasi
+    pilihPaket();
   </script>
 </body>
 </html>
