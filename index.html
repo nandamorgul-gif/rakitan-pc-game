@@ -156,49 +156,55 @@
 					<p id="cpuPreview" class="text-sm text-cyan-400 mt-2">🧠 Preview CPU akan muncul di sini...</p>
 				</div>
 
-				<!-- Motherboard -->
+				<!-- Filter Brand -->
+				<div class="mb-4">
+					<label for="moboBrand" class="block font-semibold mb-2 text-white">Filter Brand</label>
+					<select id="moboBrand" onchange="filterMobo()" class="w-full p-3 rounded-lg bg-slate-800 border border-slate-700 text-white">
+						<option value="all">-- Semua Brand --</option>
+						<option value="ASUS">ASUS</option>
+						<option value="MSI">MSI</option>
+						<option value="Gigabyte">Gigabyte</option>
+						<option value="ASRock">ASRock</option>
+					</select>
+				</div>
+
+				<!-- Filter Socket -->
+				<div class="mb-4">
+					<label for="moboSocket" class="block font-semibold mb-2 text-white">Filter Socket</label>
+					<select id="moboSocket" onchange="filterMobo()" class="w-full p-3 rounded-lg bg-slate-800 border border-slate-700 text-white">
+						<option value="all">-- Semua Socket --</option>
+						<option value="AM4">AM4</option>
+						<option value="AM5">AM5</option>
+						<option value="LGA1200">LGA1200</option>
+						<option value="LGA1700">LGA1700</option>
+					</select>
+				</div>
+
+				<!-- Filter Form Factor -->
+				<div class="mb-4">
+					<label for="moboForm" class="block font-semibold mb-2 text-white">Filter Form Factor</label>
+					<select id="moboForm" onchange="filterMobo()" class="w-full p-3 rounded-lg bg-slate-800 border border-slate-700 text-white">
+						<option value="all">-- Semua Ukuran --</option>
+						<option value="ATX">ATX</option>
+						<option value="mATX">mATX</option>
+						<option value="Mini-ITX">Mini-ITX</option>
+					</select>
+				</div>
+
+				<!-- Dropdown Motherboard -->
 				<div class="mb-6">
 					<label for="motherboard" class="block font-semibold mb-2 text-white">Pilih Motherboard</label>
 					<select id="motherboard" onchange="previewMobo()" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
 						<option value="">-- Pilih Motherboard --</option>
 
-						<!-- ATX DDR4 -->
-						<optgroup label="ATX – DDR4">
-							<option value="1800000" data-socket="AM4" data-ram="DDR4" data-form="ATX" data-chipset="B550" data-fitur="Overclocking, PCIe Gen4, RGB">ASUS ROG Strix B550-F – Rp 1.800.000</option>
-							<option value="2000000" data-socket="LGA1200" data-ram="DDR4" data-form="ATX" data-chipset="Z490" data-fitur="Intel Gen 10/11, WiFi 6">MSI Z490 Gaming Edge WiFi – Rp 2.000.000</option>
-						</optgroup>
-
-						<!-- ATX – DDR5 -->
-						<optgroup label="ATX – DDR5">
-							<option value="2500000" data-socket="LGA1700" data-ram="DDR5" data-form="ATX" data-chipset="Z690" data-fitur="PCIe Gen5, WiFi 6E, RGB">MSI Z690 Pro DDR5 – Rp 2.500.000</option>
-							<option value="3200000" data-socket="AM5" data-ram="DDR5" data-form="ATX" data-chipset="X670E" data-fitur="Ryzen 7000/9000, USB4, WiFi 7">ASRock X670E Steel Legend – Rp 3.200.000</option>
-						</optgroup>
-
-						<!-- mATX – DDR4 -->
-						<optgroup label="mATX – DDR4">
-							<option value="1350000" data-socket="AM4" data-ram="DDR4" data-form="mATX" data-chipset="B450" data-fitur="4 slot RAM, Ryzen 3000/5000">MSI B450M Mortar Max – Rp 1.350.000</option>
-							<option value="1500000" data-socket="AM4" data-ram="DDR4" data-form="mATX" data-chipset="B550" data-fitur="PCIe Gen4, RGB header">ASRock B550M Steel Legend – Rp 1.500.000</option>
-						</optgroup>
-
-						<!-- mATX – DDR5 -->
-						<optgroup label="mATX – DDR5">
-							<option value="2200000" data-socket="LGA1700" data-ram="DDR5" data-form="mATX" data-chipset="B760" data-fitur="Intel 12/13/14th Gen, PCIe Gen5">Gigabyte B760M AORUS Elite – Rp 2.200.000</option>
-							<option value="2400000" data-socket="AM5" data-ram="DDR5" data-form="mATX" data-chipset="B650" data-fitur="Ryzen 7000, USB-C, WiFi">MSI MAG B650M Mortar WiFi – Rp 2.400.000</option>
-						</optgroup>
-
-						<!-- Mini-ITX – DDR4 -->
-						<optgroup label="Mini-ITX – DDR4">
-							<option value="1800000" data-socket="AM4" data-ram="DDR4" data-form="Mini-ITX" data-chipset="B450" data-fitur="Compact, dual M.2, WiFi">ASRock B450 Gaming-ITX/AC – Rp 1.800.000</option>
-						</optgroup>
-
-						<!-- Mini-ITX – DDR5 -->
-						<optgroup label="Mini-ITX – DDR5">
-							<option value="3200000" data-socket="LGA1700" data-ram="DDR5" data-form="Mini-ITX" data-chipset="Z790" data-fitur="Thunderbolt, RGB, WiFi 6E">ASUS ROG Strix Z790-I – Rp 3.200.000</option>
-							<option value="2800000" data-socket="AM5" data-ram="DDR5" data-form="Mini-ITX" data-chipset="B650" data-fitur="Ryzen 7000, USB4, WiFi 6">MSI MPG B650I Edge WiFi – Rp 2.800.000</option>
-						</optgroup>
+						<!-- Contoh Data -->
+						<option value="1800000" data-brand="ASUS" data-socket="AM4" data-ram="DDR4" data-form="ATX" data-chipset="B550" data-fitur="PCIe Gen4, RGB, OC support">ASUS ROG Strix B550-F Gaming – Rp 1.800.000</option>
+						<option value="1350000" data-brand="MSI" data-socket="AM4" data-ram="DDR4" data-form="mATX" data-chipset="B450" data-fitur="4 slot RAM, Ryzen 3000/5000">MSI B450M Mortar Max – Rp 1.350.000</option>
+						<option value="2200000" data-brand="Gigabyte" data-socket="LGA1700" data-ram="DDR5" data-form="mATX" data-chipset="B760" data-fitur="Intel 12/13/14th Gen, PCIe Gen5">Gigabyte B760M AORUS Elite – Rp 2.200.000</option>
+						<option value="3200000" data-brand="ASUS" data-socket="LGA1700" data-ram="DDR5" data-form="Mini-ITX" data-chipset="Z790" data-fitur="Thunderbolt, WiFi 6E, RGB">ASUS ROG Strix Z790-I – Rp 3.200.000</option>
+						<option value="2800000" data-brand="MSI" data-socket="AM5" data-ram="DDR5" data-form="Mini-ITX" data-chipset="B650" data-fitur="USB4, Ryzen 7000, WiFi 6">MSI MPG B650I Edge WiFi – Rp 2.800.000</option>
 					</select>
 					<p id="moboPreview" class="text-sm text-cyan-400 mt-2">🧩 Preview motherboard akan muncul di sini...</p>
-					<p class="text-xs text-gray-400 mt-1">🛡️ Garansi motherboard: 3 tahun resmi distributor.</p>
 				</div>
 
 				<!-- GPU -->
@@ -440,321 +446,356 @@
 
 		<!-- Script Kalkulasi -->
 		<script>
-			    function hitungPC() {
-			      const getVal = (id) => {
-			        const val = document.getElementById(id)?.value;
-			        return val ? val.split("-").map(Number) : [parseInt(val) || 0, 0];
-			      };
+						    function hitungPC() {
+						      const getVal = (id) => {
+						        const val = document.getElementById(id)?.value;
+						        return val ? val.split("-").map(Number) : [parseInt(val) || 0, 0];
+						      };
 
-			      const cpu = getVal("cpu");
-			      const gpu = getVal("gpu");
-			      const ram = getVal("ram");
-			      const storage = getVal("storage");
-			      const cooler = getVal("cooler");
+						      const cpu = getVal("cpu");
+						      const gpu = getVal("gpu");
+						      const ram = getVal("ram");
+						      const storage = getVal("storage");
+						      const cooler = getVal("cooler");
 
-			      const mobo = parseInt(document.getElementById("mobo_ddr4")?.value || document.getElementById("mobo_ddr5")?.value || 0);
-			      const casing = parseInt(document.getElementById("casing_atx")?.value || document.getElementById("casing_matx")?.value || document.getElementById("casing_itx")?.value || 0);
-			      const psu = parseInt(document.getElementById("psu_atx")?.value || document.getElementById("psu_sfx")?.value || 0);
+						      const mobo = parseInt(document.getElementById("mobo_ddr4")?.value || document.getElementById("mobo_ddr5")?.value || 0);
+						      const casing = parseInt(document.getElementById("casing_atx")?.value || document.getElementById("casing_matx")?.value || document.getElementById("casing_itx")?.value || 0);
+						      const psu = parseInt(document.getElementById("psu_atx")?.value || document.getElementById("psu_sfx")?.value || 0);
 
-			      const jasaRakit = document.getElementById("jasaRakit").checked ? parseInt(document.getElementById("jasaRakit").value) : 0;
-			      const jasaInstall = document.getElementById("jasaInstall").checked ? parseInt(document.getElementById("jasaInstall").value) : 0;
-			      const jasaGame = document.getElementById("jasaGame").checked ? parseInt(document.getElementById("jasaGame").value) : 0;
+						      const jasaRakit = document.getElementById("jasaRakit").checked ? parseInt(document.getElementById("jasaRakit").value) : 0;
+						      const jasaInstall = document.getElementById("jasaInstall").checked ? parseInt(document.getElementById("jasaInstall").value) : 0;
+						      const jasaGame = document.getElementById("jasaGame").checked ? parseInt(document.getElementById("jasaGame").value) : 0;
 
-			      const hargaTotal = cpu[0] + gpu[0] + ram[0] + storage[0] + cooler[0] + mobo + casing + psu + jasaRakit + jasaInstall + jasaGame;
-			      const baseFPS = cpu[1] + gpu[1] + ram[1] + storage[1];
+						      const hargaTotal = cpu[0] + gpu[0] + ram[0] + storage[0] + cooler[0] + mobo + casing + psu + jasaRakit + jasaInstall + jasaGame;
+						      const baseFPS = cpu[1] + gpu[1] + ram[1] + storage[1];
 
-			      document.getElementById("totalHarga").innerText = "Rp " + hargaTotal.toLocaleString("id-ID");
-			      document.getElementById("fps1080").innerText = baseFPS;
-			      document.getElementById("fps1440").innerText = Math.round(baseFPS * 0.75);
-			      document.getElementById("fps4k").innerText = Math.round(baseFPS * 0.5);
+						      document.getElementById("totalHarga").innerText = "Rp " + hargaTotal.toLocaleString("id-ID");
+						      document.getElementById("fps1080").innerText = baseFPS;
+						      document.getElementById("fps1440").innerText = Math.round(baseFPS * 0.75);
+						      document.getElementById("fps4k").innerText = Math.round(baseFPS * 0.5);
 
-			      const pesan = `Halo Admin, saya ingin memesan PC Gaming dengan spesifikasi:
-			- CPU: ${document.getElementById("cpu").selectedOptions[0]?.text || "-"}
-			- GPU: ${document.getElementById("gpu").selectedOptions[0]?.text || "-"}
-			- RAM: ${document.getElementById("ram").selectedOptions[0]?.text || "-"}
-			- Storage: ${document.getElementById("storage").selectedOptions[0]?.text || "-"}
-			- Cooler: ${document.getElementById("cooler").selectedOptions[0]?.text || "-"}
-			- Motherboard: ${document.getElementById("mobo_ddr4").selectedOptions[0]?.text || document.getElementById("mobo_ddr5").selectedOptions[0]?.text || "-"}
-			- PSU: ${document.getElementById("psu_atx").selectedOptions[0]?.text || document.getElementById("psu_sfx").selectedOptions[0]?.text || "-"}
-			- Casing: ${document.getElementById("casing_atx").selectedOptions[0]?.text || document.getElementById("casing_matx").selectedOptions[0]?.text || document.getElementById("casing_itx").selectedOptions[0]?.text || "-"}
-			- Jasa: ${jasaRakit ? "Rakit PC, " : ""}${jasaInstall ? "Install Windows, " : ""}${jasaGame ? "Install Game" : ""}
+						      const pesan = `Halo Admin, saya ingin memesan PC Gaming dengan spesifikasi:
+						- CPU: ${document.getElementById("cpu").selectedOptions[0]?.text || "-"}
+						- GPU: ${document.getElementById("gpu").selectedOptions[0]?.text || "-"}
+						- RAM: ${document.getElementById("ram").selectedOptions[0]?.text || "-"}
+						- Storage: ${document.getElementById("storage").selectedOptions[0]?.text || "-"}
+						- Cooler: ${document.getElementById("cooler").selectedOptions[0]?.text || "-"}
+						- Motherboard: ${document.getElementById("mobo_ddr4").selectedOptions[0]?.text || document.getElementById("mobo_ddr5").selectedOptions[0]?.text || "-"}
+						- PSU: ${document.getElementById("psu_atx").selectedOptions[0]?.text || document.getElementById("psu_sfx").selectedOptions[0]?.text || "-"}
+						- Casing: ${document.getElementById("casing_atx").selectedOptions[0]?.text || document.getElementById("casing_matx").selectedOptions[0]?.text || document.getElementById("casing_itx").selectedOptions[0]?.text || "-"}
+						- Jasa: ${jasaRakit ? "Rakit PC, " : ""}${jasaInstall ? "Install Windows, " : ""}${jasaGame ? "Install Game" : ""}
 
-			Estimasi Harga: Rp ${hargaTotal.toLocaleString("id-ID")}
-			FPS 1080p: ${baseFPS}, 1440p: ${Math.round(baseFPS * 0.75)}, 4K: ${Math.round(baseFPS * 0.5)}
+						Estimasi Harga: Rp ${hargaTotal.toLocaleString("id-ID")}
+						FPS 1080p: ${baseFPS}, 1440p: ${Math.round(baseFPS * 0.75)}, 4K: ${Math.round(baseFPS * 0.5)}
 
-			Terima kasih!`;
+						Terima kasih!`;
 
-			      document.getElementById("waButton").href = "https://wa.me/6288291967659?text=" + encodeURIComponent(pesan);
-			    }
+						      document.getElementById("waButton").href = "https://wa.me/6288291967659?text=" + encodeURIComponent(pesan);
+						    }
 
-			    function aturPSU() {
-			      const casingITX = document.getElementById("casing_itx").value;
-			      const psuATX = document.getElementById("psu_atx");
-			      const psuSFX = document.getElementById("psu_sfx");
+						    function aturPSU() {
+						      const casingITX = document.getElementById("casing_itx").value;
+						      const psuATX = document.getElementById("psu_atx");
+						      const psuSFX = document.getElementById("psu_sfx");
 
-			      if (casingITX) {
-			        psuATX.disabled = true;
-			        psuSFX.disabled = false;
-			        psuATX.classList.add("opacity-50");
-			        psuSFX.classList.remove("opacity-50");
-			      } else {
-			        psuATX.disabled = false;
-			        psuSFX.disabled = true;
-			        psuSFX.classList.add("opacity-50");
-			        psuATX.classList.remove("opacity-50");
-			      }
-			    }
+						      if (casingITX) {
+						        psuATX.disabled = true;
+						        psuSFX.disabled = false;
+						        psuATX.classList.add("opacity-50");
+						        psuSFX.classList.remove("opacity-50");
+						      } else {
+						        psuATX.disabled = false;
+						        psuSFX.disabled = true;
+						        psuSFX.classList.add("opacity-50");
+						        psuATX.classList.remove("opacity-50");
+						      }
+						    }
 
-			    document.getElementById("casing_itx").addEventListener("change", aturPSU);
-			function paketLow() {
-			  document.getElementById("cpu").value = "2500000-60";
-			  document.getElementById("gpu").value = "4000000-70";
-			  document.getElementById("ram").value = "800000-0";
-			  document.getElementById("storage").value = "600000-0";
-			  document.getElementById("mobo_ddr4").value = "1350000";
-			  document.getElementById("psu_atx").value = "750000";
-			  document.getElementById("casing_matx").value = "850000";
-			  document.getElementById("cooler").value = "450000";
-			  document.getElementById("jasaRakit").checked = true;
-			  document.getElementById("jasaInstall").checked = true;
-			  document.getElementById("jasaGame").checked = true;
-			  hitungPC();
-			}
+						    document.getElementById("casing_itx").addEventListener("change", aturPSU);
+						function paketLow() {
+						  document.getElementById("cpu").value = "2500000-60";
+						  document.getElementById("gpu").value = "4000000-70";
+						  document.getElementById("ram").value = "800000-0";
+						  document.getElementById("storage").value = "600000-0";
+						  document.getElementById("mobo_ddr4").value = "1350000";
+						  document.getElementById("psu_atx").value = "750000";
+						  document.getElementById("casing_matx").value = "850000";
+						  document.getElementById("cooler").value = "450000";
+						  document.getElementById("jasaRakit").checked = true;
+						  document.getElementById("jasaInstall").checked = true;
+						  document.getElementById("jasaGame").checked = true;
+						  hitungPC();
+						}
 
-			function paketMid() {
-			  document.getElementById("cpu").value = "2700000-65";
-			  document.getElementById("gpu").value = "6500000-100";
-			  document.getElementById("ram").value = "1600000-10";
-			  document.getElementById("storage").value = "1200000-5";
-			  document.getElementById("mobo_ddr5").value = "2200000";
-			  document.getElementById("psu_atx").value = "1500000";
-			  document.getElementById("casing_atx").value = "1300000";
-			  document.getElementById("cooler").value = "850000";
-			  document.getElementById("jasaRakit").checked = true;
-			  document.getElementById("jasaInstall").checked = true;
-			  document.getElementById("jasaGame").checked = true;
-			  hitungPC();
-			}
+						function paketMid() {
+						  document.getElementById("cpu").value = "2700000-65";
+						  document.getElementById("gpu").value = "6500000-100";
+						  document.getElementById("ram").value = "1600000-10";
+						  document.getElementById("storage").value = "1200000-5";
+						  document.getElementById("mobo_ddr5").value = "2200000";
+						  document.getElementById("psu_atx").value = "1500000";
+						  document.getElementById("casing_atx").value = "1300000";
+						  document.getElementById("cooler").value = "850000";
+						  document.getElementById("jasaRakit").checked = true;
+						  document.getElementById("jasaInstall").checked = true;
+						  document.getElementById("jasaGame").checked = true;
+						  hitungPC();
+						}
 
-			function paketHigh() {
-			  document.getElementById("cpu").value = "7500000-100";
-			  document.getElementById("gpu").value = "12000000-140";
-			  document.getElementById("ram").value = "3500000-20";
-			  document.getElementById("storage").value = "2500000-10";
-			  document.getElementById("mobo_ddr5").value = "3200000";
-			  document.getElementById("psu_sfx").value = "2800000";
-			  document.getElementById("casing_itx").value = "1800000";
-			  document.getElementById("cooler").value = "1800000";
-			  document.getElementById("jasaRakit").checked = true;
-			  document.getElementById("jasaInstall").checked = true;
-			  document.getElementById("jasaGame").checked = true;
-			  hitungPC();
-			}
-			function previewStorage() {
-			  const select = document.getElementById("storage");
-			  const selected = select.options[select.selectedIndex];
-			  const type = selected.getAttribute("data-type");
-			  const speed = selected.getAttribute("data-read");
+						function paketHigh() {
+						  document.getElementById("cpu").value = "7500000-100";
+						  document.getElementById("gpu").value = "12000000-140";
+						  document.getElementById("ram").value = "3500000-20";
+						  document.getElementById("storage").value = "2500000-10";
+						  document.getElementById("mobo_ddr5").value = "3200000";
+						  document.getElementById("psu_sfx").value = "2800000";
+						  document.getElementById("casing_itx").value = "1800000";
+						  document.getElementById("cooler").value = "1800000";
+						  document.getElementById("jasaRakit").checked = true;
+						  document.getElementById("jasaInstall").checked = true;
+						  document.getElementById("jasaGame").checked = true;
+						  hitungPC();
+						}
+						function previewStorage() {
+						  const select = document.getElementById("storage");
+						  const selected = select.options[select.selectedIndex];
+						  const type = selected.getAttribute("data-type");
+						  const speed = selected.getAttribute("data-read");
 
-			  const preview = document.getElementById("storagePreview");
+						  const preview = document.getElementById("storagePreview");
 
-			  if (type === "SSD" && speed) {
-			    preview.innerText = `💾 SSD NVMe – Kecepatan Baca: ${speed}`;
-			  } else if (type === "HDD") {
-			    preview.innerText = `🧱 HDD SATA – Kecepatan Baca: ±150 MB/s (estimasi)`;
-			  } else {
-			    preview.innerText = "📊 Preview kecepatan baca akan muncul di sini...";
-			  }
-			}
+						  if (type === "SSD" && speed) {
+						    preview.innerText = `💾 SSD NVMe – Kecepatan Baca: ${speed}`;
+						  } else if (type === "HDD") {
+						    preview.innerText = `🧱 HDD SATA – Kecepatan Baca: ±150 MB/s (estimasi)`;
+						  } else {
+						    preview.innerText = "📊 Preview kecepatan baca akan muncul di sini...";
+						  }
+						}
 
-			    function previewCasing() {
-			  const select = document.getElementById("casing");
-			  const selected = select.options[select.selectedIndex];
-			  const form = selected.getAttribute("data-form");
-			  const fitur = selected.getAttribute("data-fitur");
+						    function previewCasing() {
+						  const select = document.getElementById("casing");
+						  const selected = select.options[select.selectedIndex];
+						  const form = selected.getAttribute("data-form");
+						  const fitur = selected.getAttribute("data-fitur");
 
-			  const preview = document.getElementById("casingPreview");
-			  if (form && fitur) {
-			    preview.innerText = `📦 Form Factor: ${form} – Fitur: ${fitur}`;
-			  } else {
-			    preview.innerText = "📦 Preview casing akan muncul di sini...";
-			  }
-			}
+						  const preview = document.getElementById("casingPreview");
+						  if (form && fitur) {
+						    preview.innerText = `📦 Form Factor: ${form} – Fitur: ${fitur}`;
+						  } else {
+						    preview.innerText = "📦 Preview casing akan muncul di sini...";
+						  }
+						}
 
-			function previewMobo() {
-			  const select = document.getElementById("motherboard");
-			  const selected = select.options[select.selectedIndex];
-			  const ram = selected.getAttribute("data-ram");
-			  const chipset = selected.getAttribute("data-chipset");
-			  const fitur = selected.getAttribute("data-fitur");
+						function previewMobo() {
+						  const select = document.getElementById("motherboard");
+						  const selected = select.options[select.selectedIndex];
+						  const ram = selected.getAttribute("data-ram");
+						  const chipset = selected.getAttribute("data-chipset");
+						  const fitur = selected.getAttribute("data-fitur");
 
-			  const preview = document.getElementById("moboPreview");
-			  if (ram && chipset && fitur) {
-			    preview.innerText = `🧩 Chipset: ${chipset}, RAM: ${ram} – Fitur: ${fitur}`;
-			  } else {
-			    preview.innerText = "🧩 Preview motherboard akan muncul di sini...";
-			  }
-			}
-			function previewGPU() {
-			  const select = document.getElementById("gpu");
-			  const selected = select.options[select.selectedIndex];
-			  const fps = selected.getAttribute("data-fps");
-			  const vram = selected.getAttribute("data-vram");
+						  const preview = document.getElementById("moboPreview");
+						  if (ram && chipset && fitur) {
+						    preview.innerText = `🧩 Chipset: ${chipset}, RAM: ${ram} – Fitur: ${fitur}`;
+						  } else {
+						    preview.innerText = "🧩 Preview motherboard akan muncul di sini...";
+						  }
+						}
+						function previewGPU() {
+						  const select = document.getElementById("gpu");
+						  const selected = select.options[select.selectedIndex];
+						  const fps = selected.getAttribute("data-fps");
+						  const vram = selected.getAttribute("data-vram");
 
-			  const preview = document.getElementById("gpuPreview");
-			  if (fps && vram) {
-			    preview.innerText = `🎮 Estimasi FPS: ${fps} – VRAM: ${vram}`;
-			  } else {
-			    preview.innerText = "🎮 Preview GPU akan muncul di sini...";
-			  }
-			}
+						  const preview = document.getElementById("gpuPreview");
+						  if (fps && vram) {
+						    preview.innerText = `🎮 Estimasi FPS: ${fps} – VRAM: ${vram}`;
+						  } else {
+						    preview.innerText = "🎮 Preview GPU akan muncul di sini...";
+						  }
+						}
 
-			function previewCooler() {
-			  const select = document.getElementById("cooler");
-			  const selected = select.options[select.selectedIndex];
-			  const type = selected.getAttribute("data-type");
-			  const height = selected.getAttribute("data-height");
-			  const rad = selected.getAttribute("data-rad");
+						function previewCooler() {
+						  const select = document.getElementById("cooler");
+						  const selected = select.options[select.selectedIndex];
+						  const type = selected.getAttribute("data-type");
+						  const height = selected.getAttribute("data-height");
+						  const rad = selected.getAttribute("data-rad");
 
-			  const preview = document.getElementById("coolerPreview");
-			  if (type === "Air" && height) {
-			    preview.innerText = `❄️ Air Cooler – Tinggi: ${height}`;
-			  } else if (type === "Low Profile" && height) {
-			    preview.innerText = `❄️ Low Profile – Tinggi: ${height} (Mini-ITX friendly)`;
-			  } else if (type === "AIO" && rad) {
-			    preview.innerText = `💧 AIO Liquid Cooler – Radiator: ${rad}`;
-			  } else {
-			    preview.innerText = "❄️ Preview cooler akan muncul di sini...";
-			  }
-			}
-			  function previewCPU() {
-			  const select = document.getElementById("cpu");
-			  const selected = select.options[select.selectedIndex];
-			  const brand = selected.getAttribute("data-brand");
-			  const core = selected.getAttribute("data-core");
-			  const clock = selected.getAttribute("data-clock");
-			  const tdp = selected.getAttribute("data-tdp");
+						  const preview = document.getElementById("coolerPreview");
+						  if (type === "Air" && height) {
+						    preview.innerText = `❄️ Air Cooler – Tinggi: ${height}`;
+						  } else if (type === "Low Profile" && height) {
+						    preview.innerText = `❄️ Low Profile – Tinggi: ${height} (Mini-ITX friendly)`;
+						  } else if (type === "AIO" && rad) {
+						    preview.innerText = `💧 AIO Liquid Cooler – Radiator: ${rad}`;
+						  } else {
+						    preview.innerText = "❄️ Preview cooler akan muncul di sini...";
+						  }
+						}
+						  function previewCPU() {
+						  const select = document.getElementById("cpu");
+						  const selected = select.options[select.selectedIndex];
+						  const brand = selected.getAttribute("data-brand");
+						  const core = selected.getAttribute("data-core");
+						  const clock = selected.getAttribute("data-clock");
+						  const tdp = selected.getAttribute("data-tdp");
 
-			  const preview = document.getElementById("cpuPreview");
-			  if (brand && core && clock && tdp) {
-			    preview.innerText = `🧠 ${brand} – ${core}, Clock: ${clock}, TDP: ${tdp}`;
-			  } else {
-			    preview.innerText = "🧠 Preview CPU akan muncul di sini...";
-			  }
-			}
-			function paketLow() {
-			  document.getElementById("cpu").value = "2500000-60";
-			  document.getElementById("gpu").value = "4000000-70";
-			  document.getElementById("ram").value = "800000-0";
-			  document.getElementById("storage").value = "720000-2";
-			  document.getElementById("motherboard").value = "1350000";
-			  document.getElementById("psu_atx").value = "750000";
-			  document.getElementById("casing").value = "850000";
-			  document.getElementById("cooler").value = "450000";
-			  document.getElementById("jasaRakit").checked = true;
-			  document.getElementById("jasaInstall").checked = true;
-			  document.getElementById("jasaGame").checked = true;
-			  hitungPC();
-			}
+						  const preview = document.getElementById("cpuPreview");
+						  if (brand && core && clock && tdp) {
+						    preview.innerText = `🧠 ${brand} – ${core}, Clock: ${clock}, TDP: ${tdp}`;
+						  } else {
+						    preview.innerText = "🧠 Preview CPU akan muncul di sini...";
+						  }
+						}
+						function paketLow() {
+						  document.getElementById("cpu").value = "2500000-60";
+						  document.getElementById("gpu").value = "4000000-70";
+						  document.getElementById("ram").value = "800000-0";
+						  document.getElementById("storage").value = "720000-2";
+						  document.getElementById("motherboard").value = "1350000";
+						  document.getElementById("psu_atx").value = "750000";
+						  document.getElementById("casing").value = "850000";
+						  document.getElementById("cooler").value = "450000";
+						  document.getElementById("jasaRakit").checked = true;
+						  document.getElementById("jasaInstall").checked = true;
+						  document.getElementById("jasaGame").checked = true;
+						  hitungPC();
+						}
 
-			function paketMid() {
-			  document.getElementById("cpu").value = "2700000-65";
-			  document.getElementById("gpu").value = "6500000-100";
-			  document.getElementById("ram").value = "1600000-10";
-			  document.getElementById("storage").value = "1200000-5";
-			  document.getElementById("motherboard").value = "2200000";
-			  document.getElementById("psu_atx").value = "1500000";
-			  document.getElementById("casing").value = "1300000";
-			  document.getElementById("cooler").value = "850000";
-			  document.getElementById("jasaRakit").checked = true;
-			  document.getElementById("jasaInstall").checked = true;
-			  document.getElementById("jasaGame").checked = true;
-			  hitungPC();
-			}
+						function paketMid() {
+						  document.getElementById("cpu").value = "2700000-65";
+						  document.getElementById("gpu").value = "6500000-100";
+						  document.getElementById("ram").value = "1600000-10";
+						  document.getElementById("storage").value = "1200000-5";
+						  document.getElementById("motherboard").value = "2200000";
+						  document.getElementById("psu_atx").value = "1500000";
+						  document.getElementById("casing").value = "1300000";
+						  document.getElementById("cooler").value = "850000";
+						  document.getElementById("jasaRakit").checked = true;
+						  document.getElementById("jasaInstall").checked = true;
+						  document.getElementById("jasaGame").checked = true;
+						  hitungPC();
+						}
 
-			function paketHigh() {
-			  document.getElementById("cpu").value = "7500000-100";
-			  document.getElementById("gpu").value = "12000000-140";
-			  document.getElementById("ram").value = "3500000-20";
-			  document.getElementById("storage").value = "3200000-15";
-			  document.getElementById("motherboard").value = "3200000";
-			  document.getElementById("psu_sfx").value = "2800000";
-			  document.getElementById("casing").value = "1800000";
-			  document.getElementById("cooler").value = "1800000";
-			  document.getElementById("jasaRakit").checked = true;
-			  document.getElementById("jasaInstall").checked = true;
-			  document.getElementById("jasaGame").checked = true;
-			  hitungPC();
-			}
-			function previewGPU() {
-			  const select = document.getElementById("gpu");
-			  const selected = select.options[select.selectedIndex];
-			  const brand = selected.getAttribute("data-brand");
-			  const vram = selected.getAttribute("data-vram");
-			  const fps = selected.getAttribute("data-fps");
+						function paketHigh() {
+						  document.getElementById("cpu").value = "7500000-100";
+						  document.getElementById("gpu").value = "12000000-140";
+						  document.getElementById("ram").value = "3500000-20";
+						  document.getElementById("storage").value = "3200000-15";
+						  document.getElementById("motherboard").value = "3200000";
+						  document.getElementById("psu_sfx").value = "2800000";
+						  document.getElementById("casing").value = "1800000";
+						  document.getElementById("cooler").value = "1800000";
+						  document.getElementById("jasaRakit").checked = true;
+						  document.getElementById("jasaInstall").checked = true;
+						  document.getElementById("jasaGame").checked = true;
+						  hitungPC();
+						}
+						function previewGPU() {
+						  const select = document.getElementById("gpu");
+						  const selected = select.options[select.selectedIndex];
+						  const brand = selected.getAttribute("data-brand");
+						  const vram = selected.getAttribute("data-vram");
+						  const fps = selected.getAttribute("data-fps");
 
-			  const preview = document.getElementById("gpuPreview");
-			  if (brand && vram && fps) {
-			    preview.innerText = `🎮 ${brand} – VRAM: ${vram}, Estimasi FPS: ${fps}`;
-			  } else {
-			    preview.innerText = "🎮 Preview GPU akan muncul di sini...";
-			  }
-			}
-			function paketMiniITX() {
-			  document.getElementById("cpu").value = "4800000-90"; // i7-12700K
-			  document.getElementById("gpu").value = "8500000-140"; // RTX 4070
-			  document.getElementById("ram").value = "2200000-15"; // 32GB DDR5
-			  document.getElementById("storage").value = "3200000-15"; // Samsung 990 PRO
-			  document.getElementById("motherboard").value = "3200000"; // Z790-I
-			  document.getElementById("psu_sfx").value = "1700000"; // Corsair SF600
-			  document.getElementById("casing").value = "1800000"; // NR200P
-			  document.getElementById("cooler").value = "600000"; // NH-L9i
-			  document.getElementById("jasaRakit").checked = true;
-			  document.getElementById("jasaInstall").checked = true;
-			  document.getElementById("jasaGame").checked = true;
-			  hitungPC();
-			}
-			function previewCPU() {
-			  const select = document.getElementById("cpu");
-			  const selected = select.options[select.selectedIndex];
-			  const brand = selected.getAttribute("data-brand");
-			  const core = selected.getAttribute("data-core");
-			  const clock = selected.getAttribute("data-clock");
-			  const tdp = selected.getAttribute("data-tdp");
+						  const preview = document.getElementById("gpuPreview");
+						  if (brand && vram && fps) {
+						    preview.innerText = `🎮 ${brand} – VRAM: ${vram}, Estimasi FPS: ${fps}`;
+						  } else {
+						    preview.innerText = "🎮 Preview GPU akan muncul di sini...";
+						  }
+						}
+						function paketMiniITX() {
+						  document.getElementById("cpu").value = "4800000-90"; // i7-12700K
+						  document.getElementById("gpu").value = "8500000-140"; // RTX 4070
+						  document.getElementById("ram").value = "2200000-15"; // 32GB DDR5
+						  document.getElementById("storage").value = "3200000-15"; // Samsung 990 PRO
+						  document.getElementById("motherboard").value = "3200000"; // Z790-I
+						  document.getElementById("psu_sfx").value = "1700000"; // Corsair SF600
+						  document.getElementById("casing").value = "1800000"; // NR200P
+						  document.getElementById("cooler").value = "600000"; // NH-L9i
+						  document.getElementById("jasaRakit").checked = true;
+						  document.getElementById("jasaInstall").checked = true;
+						  document.getElementById("jasaGame").checked = true;
+						  hitungPC();
+						}
+						function previewCPU() {
+						  const select = document.getElementById("cpu");
+						  const selected = select.options[select.selectedIndex];
+						  const brand = selected.getAttribute("data-brand");
+						  const core = selected.getAttribute("data-core");
+						  const clock = selected.getAttribute("data-clock");
+						  const tdp = selected.getAttribute("data-tdp");
 
-			  const preview = document.getElementById("cpuPreview");
-			  if (brand && core && clock && tdp) {
-			    preview.innerText = `🧠 ${brand} – ${core}, Clock: ${clock}, TDP: ${tdp}`;
-			  } else {
-			    preview.innerText = "🧠 Preview CPU akan muncul di sini...";
-			  }
-			}
-			function filterCPU() {
-			  const filter = document.getElementById("cpuFilter").value;
-			  const cpuSelect = document.getElementById("cpu");
-			  for (let i = 0; i < cpuSelect.options.length; i++) {
-			    const opt = cpuSelect.options[i];
+						  const preview = document.getElementById("cpuPreview");
+						  if (brand && core && clock && tdp) {
+						    preview.innerText = `🧠 ${brand} – ${core}, Clock: ${clock}, TDP: ${tdp}`;
+						  } else {
+						    preview.innerText = "🧠 Preview CPU akan muncul di sini...";
+						  }
+						}
+						function filterCPU() {
+						  const filter = document.getElementById("cpuFilter").value;
+						  const cpuSelect = document.getElementById("cpu");
+						  for (let i = 0; i < cpuSelect.options.length; i++) {
+						    const opt = cpuSelect.options[i];
+						    const socket = opt.getAttribute("data-socket");
+						    opt.style.display = (filter === "all" || socket === filter || !socket) ? "block" : "none";
+						  }
+						}
+
+						function previewCPU() {
+						  const select = document.getElementById("cpu");
+						  const selected = select.options[select.selectedIndex];
+						  const brand = selected.getAttribute("data-brand");
+						  const core = selected.getAttribute("data-core");
+						  const clock = selected.getAttribute("data-clock");
+						  const tdp = selected.getAttribute("data-tdp");
+						  const fps = selected.getAttribute("data-fps");
+
+						  const preview = document.getElementById("cpuPreview");
+						  if (brand && core && clock && tdp && fps) {
+						    preview.innerText = `🧠 ${brand} – ${core}, Clock: ${clock}, TDP: ${tdp}, Estimasi FPS: ${fps}`;
+						  } else {
+						    preview.innerText = "🧠 Preview CPU akan muncul di sini...";
+						  }
+						}
+						function previewMobo() {
+						  const select = document.getElementById("motherboard");
+						  const selected = select.options[select.selectedIndex];
+						  const ram = selected.getAttribute("data-ram");
+						  const chipset = selected.getAttribute("data-chipset");
+						  const form = selected.getAttribute("data-form");
+						  const fitur = selected.getAttribute("data-fitur");
+
+						  const preview = document.getElementById("moboPreview");
+						  if (ram && chipset && form && fitur) {
+						    preview.innerText = `🧩 ${form} – Chipset: ${chipset}, RAM: ${ram} – Fitur: ${fitur}`;
+						  } else {
+						    preview.innerText = "🧩 Preview motherboard akan muncul di sini...";
+						  }
+						}
+						function filterMobo() {
+			  const brandFilter = document.getElementById("moboBrand").value;
+			  const socketFilter = document.getElementById("moboSocket").value;
+			  const formFilter = document.getElementById("moboForm").value;
+			  const moboSelect = document.getElementById("motherboard");
+
+			  for (let i = 0; i < moboSelect.options.length; i++) {
+			    const opt = moboSelect.options[i];
+			    const brand = opt.getAttribute("data-brand");
 			    const socket = opt.getAttribute("data-socket");
-			    opt.style.display = (filter === "all" || socket === filter || !socket) ? "block" : "none";
+			    const form = opt.getAttribute("data-form");
+
+			    const matchBrand = brandFilter === "all" || brand === brandFilter;
+			    const matchSocket = socketFilter === "all" || socket === socketFilter;
+			    const matchForm = formFilter === "all" || form === formFilter;
+
+			    opt.style.display = (matchBrand && matchSocket && matchForm) ? "block" : "none";
 			  }
 			}
 
-			function previewCPU() {
-			  const select = document.getElementById("cpu");
-			  const selected = select.options[select.selectedIndex];
-			  const brand = selected.getAttribute("data-brand");
-			  const core = selected.getAttribute("data-core");
-			  const clock = selected.getAttribute("data-clock");
-			  const tdp = selected.getAttribute("data-tdp");
-			  const fps = selected.getAttribute("data-fps");
-
-			  const preview = document.getElementById("cpuPreview");
-			  if (brand && core && clock && tdp && fps) {
-			    preview.innerText = `🧠 ${brand} – ${core}, Clock: ${clock}, TDP: ${tdp}, Estimasi FPS: ${fps}`;
-			  } else {
-			    preview.innerText = "🧠 Preview CPU akan muncul di sini...";
-			  }
-			}
 			function previewMobo() {
 			  const select = document.getElementById("motherboard");
 			  const selected = select.options[select.selectedIndex];
