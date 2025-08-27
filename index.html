@@ -66,22 +66,23 @@
       </div>
 
 
-<!-- GPU -->
-<div>
-  <label for="gpu" class="block font-semibold mb-2">Pilih GPU</label>
-  <select id="gpu" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
-    <optgroup label="NVIDIA">
-      <option value="4000000-70">ASUS GTX 1660 Super – Rp 4.000.000</option>
-      <option value="6500000-100">MSI RTX 3060 Ti – Rp 6.500.000</option>
-      <option value="12000000-140">Gigabyte RTX 4070 Ti – Rp 12.000.000</option>
-    </optgroup>
-    <optgroup label="AMD Radeon">
-      <option value="3800000-65">ASUS Radeon RX 6600 XT – Rp 3.800.000</option>
-      <option value="6000000-95">Sapphire Radeon RX 6700 XT – Rp 6.000.000</option>
-      <option value="11000000-130">MSI Radeon RX 7900 XT – Rp 11.000.000</option>
-    </optgroup>
-  </select>
-</div>
+      <!-- GPU -->
+      <div>
+        <label for="gpu" class="block font-semibold mb-2">Pilih GPU</label>
+        <select id="gpu" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+          <optgroup label="NVIDIA">
+            <option value="4000000-70">ASUS GTX 1660 Super – Rp 4.000.000</option>
+            <option value="6500000-100">MSI RTX 3060 Ti – Rp 6.500.000</option>
+            <option value="12000000-140">Gigabyte RTX 4070 Ti – Rp 12.000.000</option>
+            
+          </optgroup>
+          <optgroup label="AMD Radeon">
+            <option value="3800000-65">ASUS Radeon RX 6600 XT – Rp 3.800.000</option>
+            <option value="6000000-95">Sapphire Radeon RX 6700 XT – Rp 6.000.000</option>
+            <option value="11000000-130">MSI Radeon RX 7900 XT – Rp 11.000.000</option>
+          </optgroup>
+        </select>
+      </div>
 
 
       <!-- RAM -->
@@ -114,6 +115,17 @@
           <option value="2000000-0">Corsair RM1000x 1000W 80+ Gold – Rp 2.000.000</option>
         </select>
       </div>
+      
+<!-- Paket Rakitan -->
+      <div class="mb-6">
+        <label class="block font-semibold mb-2">Pilih Paket Rakitan</label>
+        <select id="paket" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white" onchange="pilihPaket()">
+          <option value="">-- Pilih Paket --</option>
+          <option value="middle">Middle Range</option>
+          <option value="high">High Range</option>
+        </select>
+      </div>
+
 
       <!-- Layanan Tambahan -->
       <div class="pt-4 border-t border-slate-700">
@@ -223,6 +235,31 @@
       document.getElementById("fps1440p").innerText = fps1440p;
       document.getElementById("fps4k").innerText = fps4k;
 
+      function pilihPaket() {
+  const paket = document.getElementById('paket').value;
+
+  if (paket === 'middle') {
+    document.getElementById('cpu').value = "4200000-85"; // Ryzen 7 5800X
+    document.getElementById('gpu').value = "6500000-100"; // RTX 3060 Ti
+    document.getElementById('ram').value = "1600000-10"; // 32GB
+    document.getElementById('storage').value = "1200000-5"; // 1TB SSD NVMe
+    document.getElementById('motherboard').value = "1200000-10"; // MSI B550 Gaming Plus
+    document.getElementById('psu').value = "1000000-0"; // PSU 650W
+  } else if (paket === 'high') {
+    document.getElementById('cpu').value = "7500000-100"; // Ryzen 9 7900X
+    document.getElementById('gpu').value = "12000000-140"; // RTX 4070 Ti
+    document.getElementById('ram').value = "3000000-20"; // 64GB
+    document.getElementById('storage').value = "2500000-10"; // 2TB SSD NVMe Gen4
+    document.getElementById('motherboard').value = "5000000-30"; // ASUS ROG Crosshair X670E
+    document.getElementById('psu').value = "1500000-0"; // PSU 850W
+  } else {
+    // Jika kosong atau pilih "-- Pilih Paket --"
+    // Reset ke opsi pertama tiap select (opsional)
+  }
+
+  hitungPC(); // update harga dan FPS otomatis
+}
+      
       // Pesan WA
       let pesan = `Halo Admin, saya ingin memesan PC Gaming dengan spesifikasi:
 - CPU: ${document.getElementById("cpu").selectedOptions[0].text}
