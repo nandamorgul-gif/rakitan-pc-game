@@ -71,16 +71,26 @@
         </select>
       </div>
 
-      <!-- Motherboard -->
+      <!-- Motherboard DDR4 -->
       <div>
-        <label class="block font-semibold mb-2">Pilih Motherboard</label>
-        <select id="mobo" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+        <label class="block font-semibold mb-2">Pilih Motherboard DDR4</label>
+        <select id="mobo_ddr4" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
           <option value="1800000">ATX – ASUS ROG Strix B550-F – Rp 1.800.000</option>
-          <option value="1400000">mATX – Gigabyte B550M DS3H – Rp 1.400.000</option>
-          <option value="2000000">Mini-ITX – MSI MPG B760I Edge – Rp 2.000.000</option>
+          <option value="1350000">mATX – MSI B450M Mortar Max – Rp 1.350.000</option>
+          <option value="1500000">mATX – ASRock B550M Steel Legend – Rp 1.500.000</option>
+          <option value="2000000">Mini-ITX – ASUS ROG Strix B550-I – Rp 2.000.000</option>
         </select>
       </div>
-
+      <!-- Motherboard DDR5 -->
+      <div>
+        <label class="block font-semibold mb-2">Pilih Motherboard DDR5</label>
+        <select id="mobo_ddr5" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+          <option value="2500000">ATX – MSI Z690 Pro DDR5 – Rp 2.500.000</option>
+          <option value="2200000">mATX – Gigabyte B760M AORUS Elite – Rp 2.200.000</option>
+          <option value="3200000">Mini-ITX – ASUS ROG Strix Z790-I – Rp 3.200.000</option>
+        </select>
+      </div>
+      
       <!-- PSU -->
       <div>
         <label class="block font-semibold mb-2">Pilih PSU</label>
@@ -160,7 +170,10 @@
       const gpu = getVal("gpu");
       const ram = getVal("ram");
       const storage = getVal("storage");
-      const mobo = parseInt(document.getElementById("mobo").value);
+      const ramType = document.getElementById("ram").selectedOptions[0].parentNode.label;
+      const mobo = ramType === "DDR4"
+        ? parseInt(document.getElementById("mobo_ddr4").value)
+        : parseInt(document.getElementById("mobo_ddr5").value);
       const psu = parseInt(document.getElementById("psu").value);
       const casing = parseInt(document.getElementById("casing").value);
 
