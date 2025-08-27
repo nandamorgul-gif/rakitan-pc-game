@@ -89,15 +89,30 @@
       </div>
 
       <!-- GPU -->
-      <div>
-        <label class="block font-semibold mb-2">Pilih GPU</label>
-        <select id="gpu" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+      <div class="mb-6">
+        <label for="gpu" class="block font-semibold mb-2 text-white">Pilih GPU</label>
+        <select id="gpu" onchange="previewGPU()" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
           <option value="">-- Pilih GPU --</option>
-          <option value="4000000-70">GTX 1660 Super – Rp 4.000.000</option>
-          <option value="6500000-100">RTX 3060 Ti – Rp 6.500.000</option>
-          <option value="12000000-140">RTX 4070 Ti – Rp 12.000.000</option>
+      
+          <optgroup label="Entry Level">
+            <option value="4000000-70" data-fps="70" data-vram="6GB GDDR6">NVIDIA GTX 1660 Super – Rp 4.000.000</option>
+            <option value="5200000-80" data-fps="80" data-vram="8GB GDDR6">AMD Radeon RX 6600 – Rp 5.200.000</option>
+          </optgroup>
+      
+          <optgroup label="Mid Range">
+            <option value="6500000-100" data-fps="100" data-vram="8GB GDDR6X">NVIDIA RTX 3060 Ti – Rp 6.500.000</option>
+            <option value="7800000-110" data-fps="110" data-vram="12GB GDDR6">AMD Radeon RX 6700 XT – Rp 7.800.000</option>
+          </optgroup>
+      
+          <optgroup label="High End">
+            <option value="12000000-140" data-fps="140" data-vram="12GB GDDR6X">NVIDIA RTX 4070 Ti – Rp 12.000.000</option>
+            <option value="14500000-160" data-fps="160" data-vram="16GB GDDR6">AMD Radeon RX 7900 XT – Rp 14.500.000</option>
+            <option value="18500000-180" data-fps="180" data-vram="24GB GDDR6X">NVIDIA RTX 4090 – Rp 18.500.000</option>
+          </optgroup>
         </select>
-        <p class="text-xs text-gray-400 mt-1">🛡️ Garansi 2–3 tahun tergantung merk dan seri GPU.</p>
+      
+        <p id="gpuPreview" class="text-sm text-cyan-400 mt-2">🎮 Preview GPU akan muncul di sini...</p>
+        <p class="text-xs text-gray-400 mt-1">🛡️ Garansi GPU: 2–3 tahun tergantung merk dan distributor.</p>
       </div>
 
       <!-- RAM -->
@@ -235,22 +250,31 @@
       </div>
 
       <!-- CPU Cooler -->
-      <div>
-        <label class="block font-semibold mb-2">Pilih CPU Cooler</label>
-        <select id="cooler" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
-          <option value="">-- Pilih CPU Cooler --</option>
-          <optgroup label="ATX / mATX">
-            <option value="450000">ID-Cooling SE-224-XT – Rp 450.000</option>
-            <option value="850000">Cooler Master Hyper 212 Black – Rp 850.000</option>
-            <option value="1500000">Noctua NH-D15 – Rp 1.500.000</option>
+      <div class="mb-6">
+        <label for="cooler" class="block font-semibold mb-2 text-white">Pilih CPU Cooler</label>
+        <select id="cooler" onchange="previewCooler()" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+          <option value="">-- Pilih Cooler --</option>
+      
+          <optgroup label="Air Cooler – ATX/mATX">
+            <option value="450000" data-type="Air" data-height="155mm">ID-Cooling SE-224-XT – Rp 450.000</option>
+            <option value="850000" data-type="Air" data-height="159mm">Cooler Master Hyper 212 Black – Rp 850.000</option>
+            <option value="1500000" data-type="Air" data-height="165mm">Noctua NH-D15 – Rp 1.500.000</option>
           </optgroup>
-          <optgroup label="Mini-ITX">
-            <option value="600000">Noctua NH-L9i – Rp 600.000</option>
-            <option value="950000">Be Quiet! Shadow Rock LP – Rp 950.000</option>
-            <option value="1800000">NZXT Kraken X53 240mm AIO – Rp 1.800.000</option>
+      
+          <optgroup label="Low Profile – Mini-ITX">
+            <option value="600000" data-type="Low Profile" data-height="37mm">Noctua NH-L9i – Rp 600.000</option>
+            <option value="950000" data-type="Low Profile" data-height="75mm">Be Quiet! Shadow Rock LP – Rp 950.000</option>
+          </optgroup>
+      
+          <optgroup label="AIO Liquid Cooler">
+            <option value="1800000" data-type="AIO" data-rad="240mm">NZXT Kraken X53 240mm – Rp 1.800.000</option>
+            <option value="2200000" data-type="AIO" data-rad="280mm">Corsair H115i RGB Platinum – Rp 2.200.000</option>
+            <option value="2700000" data-type="AIO" data-rad="360mm">Lian Li Galahad 360 RGB – Rp 2.700.000</option>
           </optgroup>
         </select>
-        <p class="text-xs text-gray-400 mt-1">🛡️ Garansi 1–3 tahun tergantung tipe dan merk cooler.</p>
+      
+        <p id="coolerPreview" class="text-sm text-cyan-400 mt-2">❄️ Preview cooler akan muncul di sini...</p>
+        <p class="text-xs text-gray-400 mt-1">🛡️ Garansi cooler: 1–3 tahun tergantung tipe dan merk.</p>
       </div>
       
       <!-- Jasa Tambahan -->
@@ -449,7 +473,38 @@ function previewMobo() {
     preview.innerText = "🧩 Preview motherboard akan muncul di sini...";
   }
 }
+function previewGPU() {
+  const select = document.getElementById("gpu");
+  const selected = select.options[select.selectedIndex];
+  const fps = selected.getAttribute("data-fps");
+  const vram = selected.getAttribute("data-vram");
 
+  const preview = document.getElementById("gpuPreview");
+  if (fps && vram) {
+    preview.innerText = `🎮 Estimasi FPS: ${fps} – VRAM: ${vram}`;
+  } else {
+    preview.innerText = "🎮 Preview GPU akan muncul di sini...";
+  }
+}
+
+function previewCooler() {
+  const select = document.getElementById("cooler");
+  const selected = select.options[select.selectedIndex];
+  const type = selected.getAttribute("data-type");
+  const height = selected.getAttribute("data-height");
+  const rad = selected.getAttribute("data-rad");
+
+  const preview = document.getElementById("coolerPreview");
+  if (type === "Air" && height) {
+    preview.innerText = `❄️ Air Cooler – Tinggi: ${height}`;
+  } else if (type === "Low Profile" && height) {
+    preview.innerText = `❄️ Low Profile – Tinggi: ${height} (Mini-ITX friendly)`;
+  } else if (type === "AIO" && rad) {
+    preview.innerText = `💧 AIO Liquid Cooler – Radiator: ${rad}`;
+  } else {
+    preview.innerText = "❄️ Preview cooler akan muncul di sini...";
+  }
+}
     
   </script>
 </body>
