@@ -127,34 +127,37 @@
   <section id="configurator" class="max-w-4xl mx-auto px-4 py-8">
     <form class="space-y-6 bg-slate-800 p-6 rounded-2xl shadow-lg">
 
-    <!-- CPU -->
-    <div class="mb-6">
-      <label for="cpu" class="block font-semibold mb-2 text-white">Pilih CPU</label>
-      <select id="cpu" onchange="previewCPU()" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
-        <option value="">-- Pilih CPU --</option>
-    
-        <optgroup label="AMD Ryzen">
-          <option value="1500000-40" data-brand="AMD" data-core="4C/8T" data-clock="3.9GHz" data-tdp="65W">Ryzen 3 4100 – Rp 1.500.000</option>
-          <option value="2500000-60" data-brand="AMD" data-core="6C/12T" data-clock="4.4GHz" data-tdp="65W">Ryzen 5 5600G – Rp 2.500.000</option>
-          <option value="4200000-85" data-brand="AMD" data-core="8C/16T" data-clock="4.7GHz" data-tdp="105W">Ryzen 7 5800X – Rp 4.200.000</option>
-          <option value="7500000-100" data-brand="AMD" data-core="12C/24T" data-clock="5.0GHz" data-tdp="170W">Ryzen 9 7900X – Rp 7.500.000</option>
-          <option value="9500000-120" data-brand="AMD" data-core="16C/32T" data-clock="5.7GHz" data-tdp="170W">Ryzen 9 7950X – Rp 9.500.000</option>
-        </optgroup>
-    
-        <optgroup label="Intel Core">
-          <option value="1300000-45" data-brand="Intel" data-core="4C/8T" data-clock="4.1GHz" data-tdp="60W">Core i3-12100F – Rp 1.300.000</option>
-          <option value="2700000-65" data-brand="Intel" data-core="6C/12T" data-clock="4.4GHz" data-tdp="65W">Core i5-12400F – Rp 2.700.000</option>
-          <option value="4800000-90" data-brand="Intel" data-core="12C/20T" data-clock="5.0GHz" data-tdp="125W">Core i7-12700K – Rp 4.800.000</option>
-          <option value="8500000-110" data-brand="Intel" data-core="24C/32T" data-clock="5.8GHz" data-tdp="125W">Core i9-13900K – Rp 8.500.000</option>
-          <option value="10500000-130" data-brand="Intel" data-core="24C/32T" data-clock="6.0GHz" data-tdp="150W">Core i9-14900K – Rp 10.500.000</option>
-        </optgroup>
-      </select>
-    
-      <p id="cpuPreview" class="text-sm text-cyan-400 mt-2">🧠 Preview CPU akan muncul di sini...</p>
-      <p class="text-xs text-gray-400 mt-1">
-        🛡️ Garansi CPU: 3 tahun resmi distributor. Semua CPU mendukung pendingin aftermarket dan overclocking (seri K/X).
-      </p>
-    </div>
+<!-- CPU -->
+<div class="mb-6">
+  <label for="cpu" class="block font-semibold mb-2 text-white">Pilih CPU</label>
+  <select id="cpu" onchange="previewCPU()" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+    <option value="">-- Pilih CPU --</option>
+
+    <!-- Intel Gen 10–14 -->
+    <optgroup label="Intel Core Gen 10–14">
+      <option value="1300000-45" data-brand="Intel" data-core="6C/12T" data-clock="4.1GHz" data-tdp="65W">Core i5-10400F – Rp 1.300.000</option>
+      <option value="2700000-65" data-brand="Intel" data-core="6C/12T" data-clock="4.4GHz" data-tdp="65W">Core i5-12400F – Rp 2.700.000</option>
+      <option value="4800000-90" data-brand="Intel" data-core="12C/20T" data-clock="5.0GHz" data-tdp="125W">Core i7-12700K – Rp 4.800.000</option>
+      <option value="8500000-110" data-brand="Intel" data-core="24C/32T" data-clock="5.8GHz" data-tdp="125W">Core i9-13900K – Rp 8.500.000</option>
+      <option value="10500000-130" data-brand="Intel" data-core="24C/32T" data-clock="6.0GHz" data-tdp="150W">Core i9-14900K – Rp 10.500.000</option>
+      <option value="5890000-120" data-brand="Intel" data-core="16P+8E" data-clock="5.7GHz" data-tdp="125W">Core Ultra 9 285K – Rp 5.890.000</option>
+    </optgroup>
+
+    <!-- AMD Ryzen 3000–9000 -->
+    <optgroup label="AMD Ryzen 3000–9000 Series">
+      <option value="1500000-40" data-brand="AMD" data-core="4C/8T" data-clock="3.9GHz" data-tdp="65W">Ryzen 3 4100 – Rp 1.500.000</option>
+      <option value="2500000-60" data-brand="AMD" data-core="6C/12T" data-clock="4.4GHz" data-tdp="65W">Ryzen 5 5600G – Rp 2.500.000</option>
+      <option value="4200000-85" data-brand="AMD" data-core="8C/16T" data-clock="4.7GHz" data-tdp="105W">Ryzen 7 5800X – Rp 4.200.000</option>
+      <option value="7500000-100" data-brand="AMD" data-core="12C/24T" data-clock="5.0GHz" data-tdp="170W">Ryzen 9 7900X – Rp 7.500.000</option>
+      <option value="9500000-120" data-brand="AMD" data-core="16C/32T" data-clock="5.7GHz" data-tdp="170W">Ryzen 9 7950X – Rp 9.500.000</option>
+      <option value="11500000-140" data-brand="AMD" data-core="16C/32T" data-clock="5.7GHz" data-tdp="170W">Ryzen 9 9950X – Rp 11.500.000</option>
+    </optgroup>
+  </select>
+  <p id="cpuPreview" class="text-sm text-cyan-400 mt-2">🧠 Preview CPU akan muncul di sini...</p>
+  <p class="text-xs text-gray-400 mt-1">
+    🛡️ Garansi CPU: 3 tahun resmi distributor. Semua CPU mendukung pendingin aftermarket dan overclocking (seri K/X).
+  </p>
+</div>
 
 
 <!-- GPU -->
@@ -692,6 +695,21 @@ function paketMiniITX() {
   document.getElementById("jasaInstall").checked = true;
   document.getElementById("jasaGame").checked = true;
   hitungPC();
+}
+function previewCPU() {
+  const select = document.getElementById("cpu");
+  const selected = select.options[select.selectedIndex];
+  const brand = selected.getAttribute("data-brand");
+  const core = selected.getAttribute("data-core");
+  const clock = selected.getAttribute("data-clock");
+  const tdp = selected.getAttribute("data-tdp");
+
+  const preview = document.getElementById("cpuPreview");
+  if (brand && core && clock && tdp) {
+    preview.innerText = `🧠 ${brand} – ${core}, Clock: ${clock}, TDP: ${tdp}`;
+  } else {
+    preview.innerText = "🧠 Preview CPU akan muncul di sini...";
+  }
 }
   </script>
 </body>
