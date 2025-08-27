@@ -99,32 +99,32 @@
     </div>
 
 
-      <!-- GPU -->
-      <div class="mb-6">
-        <label for="gpu" class="block font-semibold mb-2 text-white">Pilih GPU</label>
-        <select id="gpu" onchange="previewGPU()" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
-          <option value="">-- Pilih GPU --</option>
-      
-          <optgroup label="Entry Level">
-            <option value="4000000-70" data-fps="70" data-vram="6GB GDDR6">NVIDIA GTX 1660 Super – Rp 4.000.000</option>
-            <option value="5200000-80" data-fps="80" data-vram="8GB GDDR6">AMD Radeon RX 6600 – Rp 5.200.000</option>
-          </optgroup>
-      
-          <optgroup label="Mid Range">
-            <option value="6500000-100" data-fps="100" data-vram="8GB GDDR6X">NVIDIA RTX 3060 Ti – Rp 6.500.000</option>
-            <option value="7800000-110" data-fps="110" data-vram="12GB GDDR6">AMD Radeon RX 6700 XT – Rp 7.800.000</option>
-          </optgroup>
-      
-          <optgroup label="High End">
-            <option value="12000000-140" data-fps="140" data-vram="12GB GDDR6X">NVIDIA RTX 4070 Ti – Rp 12.000.000</option>
-            <option value="14500000-160" data-fps="160" data-vram="16GB GDDR6">AMD Radeon RX 7900 XT – Rp 14.500.000</option>
-            <option value="18500000-180" data-fps="180" data-vram="24GB GDDR6X">NVIDIA RTX 4090 – Rp 18.500.000</option>
-          </optgroup>
-        </select>
-      
-        <p id="gpuPreview" class="text-sm text-cyan-400 mt-2">🎮 Preview GPU akan muncul di sini...</p>
-        <p class="text-xs text-gray-400 mt-1">🛡️ Garansi GPU: 2–3 tahun tergantung merk dan distributor.</p>
-      </div>
+<!-- GPU -->
+<div class="mb-6">
+  <label for="gpu" class="block font-semibold mb-2 text-white">Pilih GPU</label>
+  <select id="gpu" onchange="previewGPU()" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+    <option value="">-- Pilih GPU --</option>
+
+    <optgroup label="Entry Level">
+      <option value="4000000-70" data-vram="6GB GDDR6" data-brand="NVIDIA" data-fps="70">GTX 1660 Super – Rp 4.000.000</option>
+      <option value="5200000-80" data-vram="8GB GDDR6" data-brand="AMD" data-fps="80">Radeon RX 6600 – Rp 5.200.000</option>
+    </optgroup>
+
+    <optgroup label="Mid Range">
+      <option value="6500000-100" data-vram="8GB GDDR6X" data-brand="NVIDIA" data-fps="100">RTX 3060 Ti – Rp 6.500.000</option>
+      <option value="7800000-110" data-vram="12GB GDDR6" data-brand="AMD" data-fps="110">Radeon RX 6700 XT – Rp 7.800.000</option>
+    </optgroup>
+
+    <optgroup label="High End">
+      <option value="12000000-140" data-vram="12GB GDDR6X" data-brand="NVIDIA" data-fps="140">RTX 4070 Ti – Rp 12.000.000</option>
+      <option value="14500000-160" data-vram="16GB GDDR6" data-brand="AMD" data-fps="160">Radeon RX 7900 XT – Rp 14.500.000</option>
+      <option value="18500000-180" data-vram="24GB GDDR6X" data-brand="NVIDIA" data-fps="180">RTX 4090 – Rp 18.500.000</option>
+    </optgroup>
+  </select>
+
+  <p id="gpuPreview" class="text-sm text-cyan-400 mt-2">🎮 Preview GPU akan muncul di sini...</p>
+  <p class="text-xs text-gray-400 mt-1">🛡️ Garansi GPU: 2–3 tahun tergantung merk dan distributor.</p>
+</div>
 
       <!-- RAM -->
       <div class="mb-6">
