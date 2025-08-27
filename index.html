@@ -160,6 +160,25 @@
   <p id="cpuPreview" class="text-sm text-cyan-400 mt-2">🧠 Preview CPU akan muncul di sini...</p>
 </div>
 
+    <!-- Motherboard -->
+    <div class="mb-6">
+      <label for="motherboard" class="block font-semibold mb-2 text-white">Pilih Motherboard</label>
+      <select id="motherboard" onchange="previewMobo()" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+        <option value="">-- Pilih Motherboard --</option>
+        <optgroup label="DDR4">
+        <option value="1350000" data-ram="DDR4" data-chipset="B450" data-fitur="mATX, Ryzen 3000/5000, 4 slot RAM">MSI B450M Mortar Max – Rp 1.350.000</option>
+        <option value="1500000" data-ram="DDR4" data-chipset="B550" data-fitur="mATX, PCIe Gen4, RGB header">ASRock B550M Steel Legend – Rp 1.500.000</option>
+        <option value="1800000" data-ram="DDR4" data-chipset="B550" data-fitur="ATX, overclocking support, WiFi onboard">ASUS ROG Strix B550-F – Rp 1.800.000</option>
+        </optgroup>
+      <optgroup label="DDR5">
+        <option value="2200000" data-ram="DDR5" data-chipset="B760" data-fitur="mATX, Intel 12/13th Gen, PCIe Gen5">Gigabyte B760M AORUS Elite – Rp 2.200.000</option>
+        <option value="2500000" data-ram="DDR5" data-chipset="Z690" data-fitur="ATX, high-end build, WiFi 6E">MSI Z690 Pro DDR5 – Rp 2.500.000</option>
+        <option value="3200000" data-ram="DDR5" data-chipset="Z790" data-fitur="Mini-ITX, Thunderbolt, RGB, WiFi 6E">ASUS ROG Strix Z790-I – Rp 3.200.000</option>
+        </optgroup>
+       </select>
+      <p id="moboPreview" class="text-sm text-cyan-400 mt-2">🧩 Preview motherboard akan muncul di sini...</p>
+    <p class="text-xs text-gray-400 mt-1">🛡️ Garansi motherboard: 3 tahun resmi distributor.</p>
+  </div>
 
 <!-- GPU -->
 <div class="mb-6">
@@ -277,30 +296,7 @@
           <br>• Semua SSD M.2 2280 NVMe cocok untuk gaming, editing, dan boot cepat
         </p>
       </div>
-      
-      <!-- Motherboard -->
-      <div class="mb-6">
-        <label for="motherboard" class="block font-semibold mb-2 text-white">Pilih Motherboard</label>
-        <select id="motherboard" onchange="previewMobo()" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
-          <option value="">-- Pilih Motherboard --</option>
-      
-          <optgroup label="DDR4">
-            <option value="1350000" data-ram="DDR4" data-chipset="B450" data-fitur="mATX, Ryzen 3000/5000, 4 slot RAM">MSI B450M Mortar Max – Rp 1.350.000</option>
-            <option value="1500000" data-ram="DDR4" data-chipset="B550" data-fitur="mATX, PCIe Gen4, RGB header">ASRock B550M Steel Legend – Rp 1.500.000</option>
-            <option value="1800000" data-ram="DDR4" data-chipset="B550" data-fitur="ATX, overclocking support, WiFi onboard">ASUS ROG Strix B550-F – Rp 1.800.000</option>
-          </optgroup>
-      
-          <optgroup label="DDR5">
-            <option value="2200000" data-ram="DDR5" data-chipset="B760" data-fitur="mATX, Intel 12/13th Gen, PCIe Gen5">Gigabyte B760M AORUS Elite – Rp 2.200.000</option>
-            <option value="2500000" data-ram="DDR5" data-chipset="Z690" data-fitur="ATX, high-end build, WiFi 6E">MSI Z690 Pro DDR5 – Rp 2.500.000</option>
-            <option value="3200000" data-ram="DDR5" data-chipset="Z790" data-fitur="Mini-ITX, Thunderbolt, RGB, WiFi 6E">ASUS ROG Strix Z790-I – Rp 3.200.000</option>
-          </optgroup>
-        </select>
-      
-        <p id="moboPreview" class="text-sm text-cyan-400 mt-2">🧩 Preview motherboard akan muncul di sini...</p>
-        <p class="text-xs text-gray-400 mt-1">🛡️ Garansi motherboard: 3 tahun resmi distributor.</p>
-      </div>
-
+    
       <!-- PSU -->
       <div class="mb-6">
         <label for="psu_atx" class="block font-semibold mb-2 text-white">Pilih PSU</label>
