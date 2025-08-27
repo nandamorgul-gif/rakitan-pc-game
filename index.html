@@ -160,25 +160,50 @@
   <p id="cpuPreview" class="text-sm text-cyan-400 mt-2">🧠 Preview CPU akan muncul di sini...</p>
 </div>
 
-    <!-- Motherboard -->
-    <div class="mb-6">
-      <label for="motherboard" class="block font-semibold mb-2 text-white">Pilih Motherboard</label>
-      <select id="motherboard" onchange="previewMobo()" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
-        <option value="">-- Pilih Motherboard --</option>
-        <optgroup label="DDR4">
-        <option value="1350000" data-ram="DDR4" data-chipset="B450" data-fitur="mATX, Ryzen 3000/5000, 4 slot RAM">MSI B450M Mortar Max – Rp 1.350.000</option>
-        <option value="1500000" data-ram="DDR4" data-chipset="B550" data-fitur="mATX, PCIe Gen4, RGB header">ASRock B550M Steel Legend – Rp 1.500.000</option>
-        <option value="1800000" data-ram="DDR4" data-chipset="B550" data-fitur="ATX, overclocking support, WiFi onboard">ASUS ROG Strix B550-F – Rp 1.800.000</option>
-        </optgroup>
-      <optgroup label="DDR5">
-        <option value="2200000" data-ram="DDR5" data-chipset="B760" data-fitur="mATX, Intel 12/13th Gen, PCIe Gen5">Gigabyte B760M AORUS Elite – Rp 2.200.000</option>
-        <option value="2500000" data-ram="DDR5" data-chipset="Z690" data-fitur="ATX, high-end build, WiFi 6E">MSI Z690 Pro DDR5 – Rp 2.500.000</option>
-        <option value="3200000" data-ram="DDR5" data-chipset="Z790" data-fitur="Mini-ITX, Thunderbolt, RGB, WiFi 6E">ASUS ROG Strix Z790-I – Rp 3.200.000</option>
-        </optgroup>
-       </select>
-      <p id="moboPreview" class="text-sm text-cyan-400 mt-2">🧩 Preview motherboard akan muncul di sini...</p>
-    <p class="text-xs text-gray-400 mt-1">🛡️ Garansi motherboard: 3 tahun resmi distributor.</p>
-  </div>
+<!-- Motherboard -->
+<div class="mb-6">
+  <label for="motherboard" class="block font-semibold mb-2 text-white">Pilih Motherboard</label>
+  <select id="motherboard" onchange="previewMobo()" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+    <option value="">-- Pilih Motherboard --</option>
+
+    <!-- ATX DDR4 -->
+    <optgroup label="ATX – DDR4">
+      <option value="1800000" data-socket="AM4" data-ram="DDR4" data-form="ATX" data-chipset="B550" data-fitur="Overclocking, PCIe Gen4, RGB">ASUS ROG Strix B550-F – Rp 1.800.000</option>
+      <option value="2000000" data-socket="LGA1200" data-ram="DDR4" data-form="ATX" data-chipset="Z490" data-fitur="Intel Gen 10/11, WiFi 6">MSI Z490 Gaming Edge WiFi – Rp 2.000.000</option>
+    </optgroup>
+
+    <!-- ATX – DDR5 -->
+    <optgroup label="ATX – DDR5">
+      <option value="2500000" data-socket="LGA1700" data-ram="DDR5" data-form="ATX" data-chipset="Z690" data-fitur="PCIe Gen5, WiFi 6E, RGB">MSI Z690 Pro DDR5 – Rp 2.500.000</option>
+      <option value="3200000" data-socket="AM5" data-ram="DDR5" data-form="ATX" data-chipset="X670E" data-fitur="Ryzen 7000/9000, USB4, WiFi 7">ASRock X670E Steel Legend – Rp 3.200.000</option>
+    </optgroup>
+
+    <!-- mATX – DDR4 -->
+    <optgroup label="mATX – DDR4">
+      <option value="1350000" data-socket="AM4" data-ram="DDR4" data-form="mATX" data-chipset="B450" data-fitur="4 slot RAM, Ryzen 3000/5000">MSI B450M Mortar Max – Rp 1.350.000</option>
+      <option value="1500000" data-socket="AM4" data-ram="DDR4" data-form="mATX" data-chipset="B550" data-fitur="PCIe Gen4, RGB header">ASRock B550M Steel Legend – Rp 1.500.000</option>
+    </optgroup>
+
+    <!-- mATX – DDR5 -->
+    <optgroup label="mATX – DDR5">
+      <option value="2200000" data-socket="LGA1700" data-ram="DDR5" data-form="mATX" data-chipset="B760" data-fitur="Intel 12/13/14th Gen, PCIe Gen5">Gigabyte B760M AORUS Elite – Rp 2.200.000</option>
+      <option value="2400000" data-socket="AM5" data-ram="DDR5" data-form="mATX" data-chipset="B650" data-fitur="Ryzen 7000, USB-C, WiFi">MSI MAG B650M Mortar WiFi – Rp 2.400.000</option>
+    </optgroup>
+
+    <!-- Mini-ITX – DDR4 -->
+    <optgroup label="Mini-ITX – DDR4">
+      <option value="1800000" data-socket="AM4" data-ram="DDR4" data-form="Mini-ITX" data-chipset="B450" data-fitur="Compact, dual M.2, WiFi">ASRock B450 Gaming-ITX/AC – Rp 1.800.000</option>
+    </optgroup>
+
+    <!-- Mini-ITX – DDR5 -->
+    <optgroup label="Mini-ITX – DDR5">
+      <option value="3200000" data-socket="LGA1700" data-ram="DDR5" data-form="Mini-ITX" data-chipset="Z790" data-fitur="Thunderbolt, RGB, WiFi 6E">ASUS ROG Strix Z790-I – Rp 3.200.000</option>
+      <option value="2800000" data-socket="AM5" data-ram="DDR5" data-form="Mini-ITX" data-chipset="B650" data-fitur="Ryzen 7000, USB4, WiFi 6">MSI MPG B650I Edge WiFi – Rp 2.800.000</option>
+    </optgroup>
+  </select>
+  <p id="moboPreview" class="text-sm text-cyan-400 mt-2">🧩 Preview motherboard akan muncul di sini...</p>
+  <p class="text-xs text-gray-400 mt-1">🛡️ Garansi motherboard: 3 tahun resmi distributor.</p>
+</div>
 
 <!-- GPU -->
 <div class="mb-6">
@@ -732,6 +757,21 @@ function previewCPU() {
     preview.innerText = `🧠 ${brand} – ${core}, Clock: ${clock}, TDP: ${tdp}, Estimasi FPS: ${fps}`;
   } else {
     preview.innerText = "🧠 Preview CPU akan muncul di sini...";
+  }
+}
+function previewMobo() {
+  const select = document.getElementById("motherboard");
+  const selected = select.options[select.selectedIndex];
+  const ram = selected.getAttribute("data-ram");
+  const chipset = selected.getAttribute("data-chipset");
+  const form = selected.getAttribute("data-form");
+  const fitur = selected.getAttribute("data-fitur");
+
+  const preview = document.getElementById("moboPreview");
+  if (ram && chipset && form && fitur) {
+    preview.innerText = `🧩 ${form} – Chipset: ${chipset}, RAM: ${ram} – Fitur: ${fitur}`;
+  } else {
+    preview.innerText = "🧩 Preview motherboard akan muncul di sini...";
   }
 }
   </script>
