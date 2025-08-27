@@ -98,28 +98,29 @@
         </select>
       </div>
 
-      <!-- PSU -->
+      <!-- PSU ATX -->
       <div>
-        <label class="block font-semibold mb-2">Pilih PSU</label>
-        <select id="psu" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
-          <option value="">-- Pilih PSU --</option>
-          <option value="1200000">ATX – Corsair RM750x – Rp 1.200.000</option>
-          <option value="1300000">ATX – Seasonic Focus GX – Rp 1.300.000</option>
-          <option value="1500000">Mini-ITX – SilverStone SX700 – Rp 1.500.000</option>
+        <label class="block font-semibold mb-2">Pilih PSU ATX</label>
+        <select id="psu_atx" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+          <option value="">-- Pilih PSU ATX --</option>
+          <option value="750000">Corsair CV550 – 80+ Bronze – Rp 750.000</option>
+          <option value="850000">Cooler Master MWE 650 Bronze V2 – Rp 850.000</option>
+          <option value="1300000">Seasonic Focus GX-750 – 80+ Gold – Rp 1.300.000</option>
+          <option value="1500000">Corsair RM850x – 80+ Gold – Rp 1.500.000</option>
+          <option value="2800000">ASUS ROG Thor 850W – 80+ Platinum – Rp 2.800.000</option>
         </select>
       </div>
 
-      <!-- Casing -->
+      <!-- PSU SFX -->
       <div>
-        <label class="block font-semibold mb-2">Pilih Casing</label>
-        <select id="casing" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
-          <option value="">-- Pilih Casing --</option>
-          <option value="1200000">NZXT H510 – Rp 1.200.000</option>
-          <option value="1300000">Corsair 4000D – Rp 1.300.000</option>
-          <option value="850000">Cooler Master Q300L – Rp 850.000</option>
-          <option value="950000">Deepcool MATREXX 40 – Rp 950.000</option>
+        <label class="block font-semibold mt-6 mb-2">Pilih PSU Mini-ITX (SFX)</label>
+        <select id="psu_sfx" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+          <option value="">-- Pilih PSU SFX --</option>
+          <option value="1600000">SilverStone SX500-LG – 80+ Gold – Rp 1.600.000</option>
+          <option value="1700000">Corsair SF600 – 80+ Gold – Rp 1.700.000</option>
           <option value="1800000">Cooler Master NR200P – Rp 1.800.000</option>
           <option value="1200000">SilverStone SG13 – Rp 1.200.000</option>
+          <option value="2500000">NZXT H1 V2 – Rp 2.500.000</option>
         </select>
       </div>
 
@@ -147,7 +148,7 @@
           Hitung Sekarang
         </button>
         <a id="waButton" href="https://wa.me/6288291967659" target="_blank" class="bg-green-500 text-black px-6 py-3 rounded-2xl font-semibold hover:scale-105 transition w-full text-center">
-    Hubungi via WhatsApp
+          Hubungi via WhatsApp
         </a>
       </div>
     </form>
@@ -156,8 +157,8 @@
   <!-- Sosial Media -->
   <section class="py-10 bg-slate-900 text-center space-x-4">
     <a href="https://wa.me/6288291967659" target="_blank" class="inline-block bg-green-500 text-black px-4 py-2 rounded-full hover:scale-105 transition">WhatsApp</a>
-    <a href="https://instagram.com/nandamorgul" target="_blank" class="inline-block bg-pink-500 text-white px-4 py-2 rounded-full hover:scale-105 transition">Instagram</a>
-    <a href="https://t.me/nandamorgul" target="_blank" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-full hover:scale-105 transition">Telegram</a>
+    <a href="https://instagram.com/rakitanpc.id" target="_blank" class="inline-block bg-pink-500 text-white px-4 py-2 rounded-full hover:scale-105 transition">Instagram</a>
+    <a href="https://t.me/rakitanpc" target="_blank" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-full hover:scale-105 transition">Telegram</a>
   </section>
 
   <!-- Footer -->
@@ -165,7 +166,7 @@
     © 2025 RakitanPC.id – Semua Hak Dilindungi
   </footer>
 
-  <!-- Script Kalkulasi -->
+  <!-- Script Kalkulasi & Interaktivitas -->
   <script>
     function hitungPC() {
       const getVal = (id) => {
@@ -183,8 +184,14 @@
         ? parseInt(document.getElementById("mobo_ddr4").value) || 0
         : parseInt(document.getElementById("mobo_ddr5").value) || 0;
 
-      const psu = parseInt(document.getElementById("psu").value) || 0;
-      const casing = parseInt(document.getElementById("casing").value) || 0;
+      const casingATX = parseInt(document.getElementById("formFactor")?.value) || 0;
+      const casingMATX = parseInt(document.getElementById("casing_matx")?.value) || 0;
+      const casingITX = parseInt(document.getElementById("casing_itx")?.value) || 0;
+      const casing = casingATX + casingMATX + casingITX;
+
+      const psuATX = parseInt(document.getElementById("psu_atx")?.value) || 0;
+      const psuSFX = parseInt(document.getElementById("psu_sfx")?.value) || 0;
+      const psu = psuATX + psuSFX;
 
       const jasaRakit = document.getElementById("jasaRakit").checked ? parseInt(document.getElementById("jasaRakit").value) : 0;
       const jasaInstall = document.getElementById("jasaInstall").checked ? parseInt(document.getElementById("jasaInstall").value) : 0;
@@ -208,9 +215,8 @@
 - RAM: ${document.getElementById("ram").selectedOptions[0]?.text || "-"}
 - Storage: ${document.getElementById("storage").selectedOptions[0]?.text || "-"}
 - Motherboard: ${ramType === "DDR4" ? document.getElementById("mobo_ddr4").selectedOptions[0]?.text : document.getElementById("mobo_ddr5").selectedOptions[0]?.text || "-"}
-- PSU: ${document.getElementById("psu").selectedOptions[0]?.text || "-"}
-- Casing: ${document.getElementById("casing").selectedOptions[0]?.text || "-"}
-- Jasa: ${jasaRakit ? "Rakit PC, " : ""}${jasaInstall ? "Install Windows, " : ""}${jasaGame ? "Install Game" : ""}
+- PSU: ${psuATX ? document.getElementById("psu_atx").selectedOptions[0]?.text : document.getElementById("psu_sfx").selectedOptions[0]?.text || "-"}
+- Casing: ${casingATX ? document.getElementById("formFactor").selectedOptions[0]?.text : casingMATX ? document.getElementById("casing_matx").selectedOptions[0]?.text : document.getElementById("casing_itx").selectedOptions[0]?.text || "-"}
 
 Estimasi Harga: Rp ${hargaTotal.toLocaleString("id-ID")}
 FPS 1080p: ${fps1080}, 1440p: ${fps1440}, 4K: ${fps4k}
@@ -219,6 +225,28 @@ Terima kasih!`;
 
       document.getElementById("waButton").href = "https://wa.me/6288291967659?text=" + encodeURIComponent(pesan);
     }
+
+    function aturPSU() {
+      const casingITX = document.getElementById("casing_itx").value;
+      const psuATX = document.getElementById("psu_atx");
+      const psuSFX = document.getElementById("psu_sfx");
+
+      if (casingITX) {
+        psuATX.disabled = true;
+        psuSFX.disabled = false;
+        psuATX.classList.add("opacity-50");
+        psuSFX.classList.remove("opacity-50");
+      } else {
+        psuATX.disabled = false;
+        psuSFX.disabled = true;
+        psuSFX.classList.add("opacity-50");
+        psuATX.classList
+        psuATX.classList.remove("opacity-50");
+      }
+    }
+
+    // Aktifkan interaktivitas PSU saat casing Mini-ITX dipilih
+    document.getElementById("casing_itx").addEventListener("change", aturPSU);
   </script>
 </body>
 </html>
