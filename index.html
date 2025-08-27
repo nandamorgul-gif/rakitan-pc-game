@@ -66,16 +66,23 @@
       </div>
 
 
-      <!-- GPU -->
-      <div>
-        <label for="gpu" class="block font-semibold mb-2">Pilih GPU</label>
-        <select id="gpu" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
-          <option value="4000000-70">GTX 1660 Super – Rp 4.000.000</option>
-          <option value="6500000-100">RTX 3060 Ti – Rp 6.500.000</option>
-          <option value="12000000-140">RTX 4070 Ti – Rp 12.000.000</option>
-          <option value="20000000-160">RTX 4090 – Rp 20.000.000</option>
-        </select>
-      </div>
+<!-- GPU -->
+<div>
+  <label for="gpu" class="block font-semibold mb-2">Pilih GPU</label>
+  <select id="gpu" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+    <optgroup label="NVIDIA">
+      <option value="4000000-70">ASUS GTX 1660 Super – Rp 4.000.000</option>
+      <option value="6500000-100">MSI RTX 3060 Ti – Rp 6.500.000</option>
+      <option value="12000000-140">Gigabyte RTX 4070 Ti – Rp 12.000.000</option>
+    </optgroup>
+    <optgroup label="AMD Radeon">
+      <option value="3800000-65">ASUS Radeon RX 6600 XT – Rp 3.800.000</option>
+      <option value="6000000-95">Sapphire Radeon RX 6700 XT – Rp 6.000.000</option>
+      <option value="11000000-130">MSI Radeon RX 7900 XT – Rp 11.000.000</option>
+    </optgroup>
+  </select>
+</div>
+
 
       <!-- RAM -->
       <div>
