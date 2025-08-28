@@ -123,83 +123,102 @@
 		<!-- Konfigurator -->
 		<section id="configurator" class="max-w-4xl mx-auto px-4 py-8">
 			<form class="space-y-6 bg-slate-800 p-6 rounded-2xl shadow-lg">
-				<!-- Filter Socket -->
-				<div class="mb-4">
-					<label for="cpuFilter" class="block font-semibold mb-2 text-white">Filter CPU Berdasarkan Socket</label>
-					<select id="cpuFilter" onchange="filterCPU()" class="w-full p-3 rounded-lg bg-slate-800 border border-slate-700 text-white">
-						<option value="all">-- Tampilkan Semua --</option>
-						<option value="AM4">AMD Socket AM4</option>
-						<option value="AM5">AMD Socket AM5</option>
-						<option value="LGA1200">Intel LGA1200</option>
-						<option value="LGA1700">Intel LGA1700</option>
-					</select>
-				</div>
+<!-- Pilih CPU -->
+<div class="mb-6">
+  <label for="cpu" class="block font-semibold mb-2 text-white">
+    Pilih CPU
+  </label>
+  <select id="cpu" onchange="filterMobo()" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+    <option value="">-- Pilih CPU --</option>
 
-				<!-- CPU Dropdown -->
-				<div class="mb-6">
-					<label for="cpu" class="block font-semibold mb-2 text-white">Pilih CPU</label>
-					<select id="cpu" onchange="previewCPU()" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
-						<option value="">-- Pilih CPU --</option>
+    <!-- Intel DDR4 -->
+    <optgroup label="Intel – DDR4">
+      <option data-socket="LGA1200" data-ram="DDR4">Intel Core i5-10400F (LGA1200, DDR4)</option>
+      <option data-socket="LGA1200" data-ram="DDR4">Intel Core i7-10700K (LGA1200, DDR4)</option>
+      <option data-socket="LGA1700" data-ram="DDR4">Intel Core i5-12400F (LGA1700, DDR4)</option>
+    </optgroup>
 
-						<!-- Intel -->
-						<option value="1300000-45" data-socket="LGA1200" data-brand="Intel" data-core="6C/12T" data-clock="4.3GHz" data-tdp="65W" data-fps="70">Core i5-10400F – Rp 1.300.000</option>
-						<option value="2700000-65" data-socket="LGA1700" data-brand="Intel" data-core="6C/12T" data-clock="4.4GHz" data-tdp="65W" data-fps="90">Core i5-12400F – Rp 2.700.000</option>
-						<option value="4800000-90" data-socket="LGA1700" data-brand="Intel" data-core="12C/20T" data-clock="5.0GHz" data-tdp="125W" data-fps="120">Core i7-12700K – Rp 4.800.000</option>
-						<option value="10500000-130" data-socket="LGA1700" data-brand="Intel" data-core="24C/32T" data-clock="6.0GHz" data-tdp="150W" data-fps="150">Core i9-14900K – Rp 10.500.000</option>
+    <!-- Intel DDR5 -->
+    <optgroup label="Intel – DDR5">
+      <option data-socket="LGA1700" data-ram="DDR5">Intel Core i5-13600K (LGA1700, DDR5)</option>
+      <option data-socket="LGA1700" data-ram="DDR5">Intel Core i7-14700K (LGA1700, DDR5)</option>
+    </optgroup>
 
-						<!-- AMD -->
-						<option value="2500000-60" data-socket="AM4" data-brand="AMD" data-core="6C/12T" data-clock="4.4GHz" data-tdp="65W" data-fps="85">Ryzen 5 5600G – Rp 2.500.000</option>
-						<option value="4200000-85" data-socket="AM4" data-brand="AMD" data-core="8C/16T" data-clock="4.7GHz" data-tdp="105W" data-fps="110">Ryzen 7 5800X – Rp 4.200.000</option>
-						<option value="7500000-100" data-socket="AM5" data-brand="AMD" data-core="12C/24T" data-clock="5.0GHz" data-tdp="170W" data-fps="130">Ryzen 9 7900X – Rp 7.500.000</option>
-						<option value="11500000-140" data-socket="AM5" data-brand="AMD" data-core="16C/32T" data-clock="5.7GHz" data-tdp="170W" data-fps="160">Ryzen 9 9950X – Rp 11.500.000</option>
-					</select>
-					<p id="cpuPreview" class="text-sm text-cyan-400 mt-2">🧠 Preview CPU akan muncul di sini...</p>
-				</div>
+    <!-- AMD DDR4 -->
+    <optgroup label="AMD – DDR4">
+      <option data-socket="AM4" data-ram="DDR4">Ryzen 5 5600 (AM4, DDR4)</option>
+      <option data-socket="AM4" data-ram="DDR4">Ryzen 7 5800X (AM4, DDR4)</option>
+    </optgroup>
 
-				<!-- Motherboard -->
-				<div class="mb-6">
-					<label for="motherboard" class="block font-semibold mb-2 text-white">Pilih Motherboard</label>
-					<select id="motherboard" onchange="previewMobo()" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
-						<option value="">-- Pilih Motherboard --</option>
+    <!-- AMD DDR5 -->
+    <optgroup label="AMD – DDR5">
+      <option data-socket="AM5" data-ram="DDR5">Ryzen 5 7600 (AM5, DDR5)</option>
+      <option data-socket="AM5" data-ram="DDR5">Ryzen 9 7950X (AM5, DDR5)</option>
+    </optgroup>
+  </select>
+</div>
 
-						<!-- ATX DDR4 -->
-						<optgroup label="ATX – DDR4">
-							<option value="1800000" data-socket="AM4" data-ram="DDR4" data-form="ATX" data-chipset="B550" data-fitur="Overclocking, PCIe Gen4, RGB">ASUS ROG Strix B550-F – Rp 1.800.000</option>
-							<option value="2000000" data-socket="LGA1200" data-ram="DDR4" data-form="ATX" data-chipset="Z490" data-fitur="Intel Gen 10/11, WiFi 6">MSI Z490 Gaming Edge WiFi – Rp 2.000.000</option>
-						</optgroup>
+<!-- Pilih Motherboard -->
+<div class="mb-6">
+  <label for="motherboard" class="block font-semibold mb-2 text-white">
+    Pilih Motherboard
+  </label>
+  <select id="motherboard" onchange="previewMobo()" class="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 text-white">
+    <option value="">-- Pilih Motherboard --</option>
 
-						<!-- ATX – DDR5 -->
-						<optgroup label="ATX – DDR5">
-							<option value="2500000" data-socket="LGA1700" data-ram="DDR5" data-form="ATX" data-chipset="Z690" data-fitur="PCIe Gen5, WiFi 6E, RGB">MSI Z690 Pro DDR5 – Rp 2.500.000</option>
-							<option value="3200000" data-socket="AM5" data-ram="DDR5" data-form="ATX" data-chipset="X670E" data-fitur="Ryzen 7000/9000, USB4, WiFi 7">ASRock X670E Steel Legend – Rp 3.200.000</option>
-						</optgroup>
+    <!-- Intel DDR4 -->
+    <option value="1500000" data-socket="LGA1200" data-ram="DDR4" data-form="ATX" data-chipset="B460" data-fitur="Intel 10th Gen, M.2 NVMe, HDMI">
+      ASUS Prime B460-PLUS – Rp 1.500.000
+    </option>
+    <option value="2000000" data-socket="LGA1200" data-ram="DDR4" data-form="ATX" data-chipset="Z490" data-fitur="Overclocking, WiFi 6, RGB">
+      MSI Z490 Gaming Edge WiFi – Rp 2.000.000
+    </option>
+    <option value="1800000" data-socket="LGA1700" data-ram="DDR4" data-form="mATX" data-chipset="B660" data-fitur="Intel 12th Gen, PCIe 4.0, USB-C">
+      Gigabyte B660M DS3H DDR4 – Rp 1.800.000
+    </option>
 
-						<!-- mATX – DDR4 -->
-						<optgroup label="mATX – DDR4">
-							<option value="1350000" data-socket="AM4" data-ram="DDR4" data-form="mATX" data-chipset="B450" data-fitur="4 slot RAM, Ryzen 3000/5000">MSI B450M Mortar Max – Rp 1.350.000</option>
-							<option value="1500000" data-socket="AM4" data-ram="DDR4" data-form="mATX" data-chipset="B550" data-fitur="PCIe Gen4, RGB header">ASRock B550M Steel Legend – Rp 1.500.000</option>
-						</optgroup>
+    <!-- Intel DDR5 -->
+    <option value="2500000" data-socket="LGA1700" data-ram="DDR5" data-form="ATX" data-chipset="Z690" data-fitur="PCIe Gen5, WiFi 6E, Overclocking">
+      MSI Z690 Pro DDR5 – Rp 2.500.000
+    </option>
+    <option value="3200000" data-socket="LGA1700" data-ram="DDR5" data-form="ATX" data-chipset="Z790" data-fitur="USB4, Thunderbolt 4, OC">
+      ASUS ROG Strix Z790-F Gaming WiFi – Rp 3.200.000
+    </option>
+    <option value="2200000" data-socket="LGA1700" data-ram="DDR5" data-form="mATX" data-chipset="B760" data-fitur="Intel 12/13/14th Gen, PCIe Gen5">
+      Gigabyte B760M AORUS Elite DDR5 – Rp 2.200.000
+    </option>
 
-						<!-- mATX – DDR5 -->
-						<optgroup label="mATX – DDR5">
-							<option value="2200000" data-socket="LGA1700" data-ram="DDR5" data-form="mATX" data-chipset="B760" data-fitur="Intel 12/13/14th Gen, PCIe Gen5">Gigabyte B760M AORUS Elite – Rp 2.200.000</option>
-							<option value="2400000" data-socket="AM5" data-ram="DDR5" data-form="mATX" data-chipset="B650" data-fitur="Ryzen 7000, USB-C, WiFi">MSI MAG B650M Mortar WiFi – Rp 2.400.000</option>
-						</optgroup>
+    <!-- AMD DDR4 -->
+    <option value="1350000" data-socket="AM4" data-ram="DDR4" data-form="mATX" data-chipset="B450" data-fitur="Ryzen 2000/3000/5000, 4 slot RAM">
+      MSI B450M Mortar Max – Rp 1.350.000
+    </option>
+    <option value="1800000" data-socket="AM4" data-ram="DDR4" data-form="ATX" data-chipset="B550" data-fitur="PCIe Gen4, Ryzen 3000/5000, RGB">
+      ASUS ROG Strix B550-F Gaming – Rp 1.800.000
+    </option>
+    <option value="2400000" data-socket="AM4" data-ram="DDR4" data-form="ATX" data-chipset="X570" data-fitur="Overclocking, WiFi, PCIe Gen4">
+      Gigabyte X570 AORUS Elite – Rp 2.400.000
+    </option>
 
-						<!-- Mini-ITX – DDR4 -->
-						<optgroup label="Mini-ITX – DDR4">
-							<option value="1800000" data-socket="AM4" data-ram="DDR4" data-form="Mini-ITX" data-chipset="B450" data-fitur="Compact, dual M.2, WiFi">ASRock B450 Gaming-ITX/AC – Rp 1.800.000</option>
-						</optgroup>
+    <!-- AMD DDR5 -->
+    <option value="2400000" data-socket="AM5" data-ram="DDR5" data-form="mATX" data-chipset="B650" data-fitur="USB-C, WiFi, Ryzen 7000">
+      MSI MAG B650M Mortar WiFi – Rp 2.400.000
+    </option>
+    <option value="2800000" data-socket="AM5" data-ram="DDR5" data-form="Mini-ITX" data-chipset="B650" data-fitur="Compact, WiFi 6, USB4">
+      MSI MPG B650I Edge WiFi – Rp 2.800.000
+    </option>
+    <option value="3500000" data-socket="AM5" data-ram="DDR5" data-form="ATX" data-chipset="X670E" data-fitur="PCIe Gen5, USB4, WiFi 7, OC">
+      ASUS ROG Crosshair X670E Hero – Rp 3.500.000
+    </option>
+  </select>
 
-						<!-- Mini-ITX – DDR5 -->
-						<optgroup label="Mini-ITX – DDR5">
-							<option value="3200000" data-socket="LGA1700" data-ram="DDR5" data-form="Mini-ITX" data-chipset="Z790" data-fitur="Thunderbolt, RGB, WiFi 6E">ASUS ROG Strix Z790-I – Rp 3.200.000</option>
-							<option value="2800000" data-socket="AM5" data-ram="DDR5" data-form="Mini-ITX" data-chipset="B650" data-fitur="Ryzen 7000, USB4, WiFi 6">MSI MPG B650I Edge WiFi – Rp 2.800.000</option>
-						</optgroup>
-					</select>
-					<p id="moboPreview" class="text-sm text-cyan-400 mt-2">🧩 Preview motherboard akan muncul di sini...</p>
-					<p class="text-xs text-gray-400 mt-1">🛡️ Garansi motherboard: 3 tahun resmi distributor.</p>
-				</div>
+  <!-- Preview -->
+  <div id="moboPreview" class="mt-3 p-3 bg-slate-800 rounded-lg text-sm text-cyan-400">
+    🧩 Preview motherboard akan muncul di sini...
+  </div>
+  <p class="text-xs text-gray-400 mt-1">
+    🛡️ Garansi motherboard: 3 tahun resmi distributor.
+  </p>
+</div>
 
 				<!-- GPU -->
 				<div class="mb-6">
