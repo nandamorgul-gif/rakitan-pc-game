@@ -42,15 +42,15 @@
       --panel: #0f172a;
       --muted: #94a3b8;
       --text: #e2e8f0;
-      --brand: #0ea5e9; /* sky-500 */
-      --accent: #22c55e; /* green-500 */
-      --warning: #f59e0b; /* amber-500 */
-      --danger: #ef4444; /* red-500 */
+      --brand: #0ea5e9;
+      --accent: #22c55e;
+      --warning: #f59e0b;
+      --danger: #ef4444;
       --radius: 16px;
       --shadow: 0 10px 30px rgba(0,0,0,.25);
     }
     * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji"; scroll-behavior: smooth; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; scroll-behavior: smooth; }
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
     .container { width: min(1200px, 92%); margin: 0 auto; }
@@ -60,12 +60,12 @@
     .chip { display: inline-block; padding: .35rem .7rem; border-radius: 999px; background: rgba(14,165,233,.2); color: #7dd3fc; font-weight: 600; }
 
     /* Navbar */
-    .nav { position: sticky; top: 0; z-index: 50; backdrop-filter: saturate(140%) blur(10px); background: rgba(11,18,32,.7); border-bottom: 1px solid rgba(148,163,184,.1); }
+    .nav { position: sticky; top: 0; z-index: 50; backdrop-filter: saturate(140%) blur(10px); background: rgba(11,18,32,.75); border-bottom: 1px solid rgba(148,163,184,.08); }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: .8rem 0; }
     .brand { display: flex; align-items: center; gap: .6rem; font-weight: 800; letter-spacing: .5px; }
     .brand svg { width: 28px; height: 28px; }
     .nav ul { list-style: none; display: flex; gap: 1rem; padding: 0; margin: 0; }
-    .nav a { opacity: .85; }
+    .nav a { opacity: .9; }
     .nav a:hover { opacity: 1; }
 
     /* Hero */
@@ -75,9 +75,9 @@
     .hero p { color: var(--muted); font-size: 1.05rem; }
     .hero .cta { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 1.2rem; }
 
-    .glass { background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border: 1px solid rgba(148,163,184,.15); border-radius: calc(var(--radius) * 1.25); box-shadow: var(--shadow); overflow: hidden; }
+    .glass { background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border: 1px solid rgba(148,163,184,.12); border-radius: calc(var(--radius) * 1.25); box-shadow: var(--shadow); overflow: hidden; }
     .stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; padding: 1rem; }
-    .stat { text-align: center; padding: 1rem; background: rgba(2,6,23,.5); border-radius: var(--radius); }
+    .stat { text-align: center; padding: 1rem; background: rgba(2,6,23,.45); border-radius: var(--radius); }
     .stat b { font-size: 1.4rem; }
 
     /* Sections */
@@ -89,7 +89,7 @@
     .grid { display: grid; gap: 1.2rem; }
     .grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
     .grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
-    .card { background: var(--panel); border: 1px solid rgba(148,163,184,.15); border-radius: var(--radius); padding: 1.2rem; box-shadow: var(--shadow); }
+    .card { background: var(--panel); border: 1px solid rgba(148,163,184,.12); border-radius: var(--radius); padding: 1.2rem; box-shadow: var(--shadow); }
     .card h3 { margin: 0 0 .4rem; }
     .card p { color: var(--muted); }
 
@@ -102,7 +102,7 @@
     .features svg { width: 18px; height: 18px; flex: 0 0 auto; }
 
     /* Badges */
-    .badge { display: inline-block; background: rgba(34,197,94,.15); color: #86efac; padding: .3rem .6rem; border-radius: 999px; font-size: .85rem; font-weight: 700; }
+    .badge { display: inline-block; background: rgba(34,197,94,.12); color: #86efac; padding: .3rem .6rem; border-radius: 999px; font-size: .85rem; font-weight: 700; }
 
     /* Testimonials */
     .testimonial { display: grid; grid-template-columns: auto 1fr; gap: .8rem; align-items: center; }
@@ -111,22 +111,22 @@
     /* Steps */
     .steps { counter-reset: step; display: grid; gap: 1rem; }
     .step { display: grid; grid-template-columns: 44px 1fr; gap: 1rem; align-items: start; }
-    .step .num { width: 44px; height: 44px; border-radius: 12px; background: rgba(14,165,233,.2); display: grid; place-items: center; font-weight: 800; }
+    .step .num { width: 44px; height: 44px; border-radius: 12px; background: rgba(14,165,233,.12); display: grid; place-items: center; font-weight: 800; }
 
     /* FAQ */
-    details { background: var(--panel); border: 1px solid rgba(148,163,184,.15); border-radius: var(--radius); padding: 1rem 1.2rem; }
+    details { background: var(--panel); border: 1px solid rgba(148,163,184,.12); border-radius: var(--radius); padding: 1rem 1.2rem; }
     details + details { margin-top: .8rem; }
     summary { cursor: pointer; font-weight: 700; }
     summary::-webkit-details-marker { display: none; }
 
     /* Contact */
     form { display: grid; gap: .8rem; }
-    input, select, textarea { width: 100%; padding: .9rem 1rem; border-radius: 12px; background: #0b1020; border: 1px solid rgba(148,163,184,.2); color: var(--text); }
-    input:focus, select:focus, textarea:focus { outline: 2px solid rgba(14,165,233,.35); }
+    input, select, textarea { width: 100%; padding: .9rem 1rem; border-radius: 12px; background: #0b1020; border: 1px solid rgba(148,163,184,.12); color: var(--text); }
+    input:focus, select:focus, textarea:focus { outline: 2px solid rgba(14,165,233,.25); }
     label { font-weight: 700; font-size: .95rem; }
 
     /* Footer */
-    footer { border-top: 1px solid rgba(148,163,184,.15); padding: 2rem 0; color: var(--muted); }
+    footer { border-top: 1px solid rgba(148,163,184,.12); padding: 2rem 0; color: var(--muted); }
 
     /* Responsive */
     @media (max-width: 980px) {
@@ -134,6 +134,7 @@
       .grid.cols-3 { grid-template-columns: 1fr; }
       .grid.cols-2 { grid-template-columns: 1fr; }
       .stats { grid-template-columns: 1fr 1fr; }
+      .nav ul { display: none; }
     }
   </style>
 </head>
@@ -179,7 +180,220 @@
     </div>
   </header>
 
-  <!-- (Semua bagian Layanan, Paket, Proses, Testimoni, FAQ, Kontak tetap sama dengan versi sebelumnya, hanya nama brand dan nomor WA sudah diperbarui) -->
+  <!-- Layanan -->
+  <section id="layanan">
+    <div class="container">
+      <h2 class="section-title">Layanan Utama</h2>
+      <p class="section-sub">Semua paket kami sudah termasuk perakitan rapi, update BIOS bila perlu, instalasi OS, driver & pembaruan, serta stress test dasar.</p>
+      <div class="grid cols-3">
+        <article class="card">
+          <h3>Rakit PC Custom</h3>
+          <p>Bangun PC sesuai kebutuhan & budget. Bisa bawa part sendiri atau kami belikan.</p>
+        </article>
+        <article class="card">
+          <h3>Upgrade & Troubleshooting</h3>
+          <p>Naik level performa: tambah RAM/SSD, ganti GPU/CPU, perbaiki suhu & kebersihan.</p>
+        </article>
+        <article class="card">
+          <h3>Instalasi & Optimasi</h3>
+          <p>Instal Windows/Linux, aplikasi editing, optimasi game, dan konfigurasi RGB/BIOS.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Paket -->
+  <section id="paket">
+    <div class="container">
+      <h2 class="section-title">Paket Perakitan</h2>
+      <p class="section-sub">Harga jasa perakitan. Belanja part bisa via kami atau toko favorit Anda.</p>
+      <div class="grid cols-3">
+        <article class="card">
+          <span class="badge">Hemat</span>
+          <h3>Starter</h3>
+          <div class="price"><span class="amount">Rp 199.000</span><span class="per">/ rakit</span></div>
+          <ul class="features">
+            <li>✅ Perakitan rapi + cable management</li>
+            <li>✅ Instalasi OS & driver</li>
+            <li>✅ Stress test 30 menit</li>
+          </ul>
+          <a class="btn" href="https://wa.me/6288291967659?text=Saya%20pilih%20Paket%20Starter" target="_blank" rel="noopener">Pilih Paket</a>
+        </article>
+        <article class="card" style="outline: 2px solid var(--brand)">
+          <span class="badge" style="background: rgba(14,165,233,.12); color:#7dd3fc">Paling Laris</span>
+          <h3>Pro</h3>
+          <div class="price"><span class="amount">Rp 299.000</span><span class="per">/ rakit</span></div>
+          <ul class="features">
+            <li>✅ Semua di Starter</li>
+            <li>✅ Manajemen airflow & tuning BIOS</li>
+            <li>✅ Stress test 2 jam + laporan</li>
+          </ul>
+          <a class="btn" href="https://wa.me/6288291967659?text=Saya%20pilih%20Paket%20Pro" target="_blank" rel="noopener">Pilih Paket</a>
+        </article>
+        <article class="card">
+          <span class="badge" style="background: rgba(245,158,11,.12); color:#fde68a">Kreator</span>
+          <h3>Creator</h3>
+          <div class="price"><span class="amount">Rp 449.000</span><span class="per">/ rakit</span></div>
+          <ul class="features">
+            <li>✅ Semua di Pro</li>
+            <li>✅ Optimasi aplikasi editing</li>
+            <li>✅ Pendampingan setting 1x</li>
+          </ul>
+          <a class="btn" href="https://wa.me/6288291967659?text=Saya%20pilih%20Paket%20Creator" target="_blank" rel="noopener">Pilih Paket</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proses -->
+  <section id="proses">
+    <div class="container">
+      <h2 class="section-title">Proses Kerja</h2>
+      <p class="section-sub">Transparan, cepat, dan terukur.</p>
+      <div class="steps">
+        <div class="step card">
+          <div class="num">1</div>
+          <div>
+            <h3>Konsultasi Singkat</h3>
+            <p>Diskusikan kebutuhan (gaming, editing, kantor), budget, dan preferensi merek.</p>
+          </div>
+        </div>
+        <div class="step card">
+          <div class="num">2</div>
+          <div>
+            <h3>Rencana Part & Estimasi</h3>
+            <p>Kami kirim daftar part + estimasi performa & biaya. Anda bisa setuju atau revisi.</p>
+          </div>
+        </div>
+        <div class="step card">
+          <div class="num">3</div>
+          <div>
+            <h3>Perakitan & Pengujian</h3>
+            <p>Perakitan rapi, update BIOS, instalasi OS & driver, lalu stress test menyeluruh.</p>
+          </div>
+        </div>
+        <div class="step card">
+          <div class="num">4</div>
+          <div>
+            <h3>Serah Terima & Garansi</h3>
+            <p>Unit siap pakai. Garansi jasa 30 hari. Bantuan purna jual via WhatsApp.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimoni -->
+  <section id="testimoni">
+    <div class="container">
+      <h2 class="section-title">Apa Kata Klien</h2>
+      <p class="section-sub">Beberapa ulasan dari pelanggan kami.</p>
+      <div class="grid cols-3">
+        <article class="card testimonial">
+          <div class="avatar">A</div>
+          <div>
+            <h3>Andi — Jaksel</h3>
+            <p>"Build rapi banget, suhu adem. CS responsif, recommended!"</p>
+          </div>
+        </article>
+        <article class="card testimonial">
+          <div class="avatar">M</div>
+          <div>
+            <h3>Maya — Bandung</h3>
+            <p>"Editing 4K jadi lancar. Dapet saran part yang pas budget."</p>
+          </div>
+        </article>
+        <article class="card testimonial">
+          <div class="avatar">R</div>
+          <div>
+            <h3>Rizal — Surabaya</h3>
+            <p>"Proses cepat, ada laporan stress test juga. Mantap!"</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <h2 class="section-title">FAQ</h2>
+      <details>
+        <summary>Apakah bisa bawa part sendiri?</summary>
+        <p>Ya, tentu. Kami juga bisa cek kompatibilitas sebelum rakit.</p>
+      </details>
+      <details>
+        <summary>Berapa lama proses perakitan?</summary>
+        <p>Rata-rata 24–72 jam tergantung ketersediaan part & antrian.</p>
+      </details>
+      <details>
+        <summary>Bagaimana klaim garansi?</summary>
+        <p>Hubungi WhatsApp kami untuk jadwal pengecekan. Garansi jasa 30 hari.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Kontak -->
+  <section id="kontak">
+    <div class="container">
+      <h2 class="section-title">Hubungi Kami</h2>
+      <p class="section-sub">Isi formulir atau chat langsung via WhatsApp.</p>
+      <div class="grid cols-2" style="align-items:start;">
+        <form id="contactForm" class="card" novalidate>
+          <div>
+            <label for="nama">Nama</label>
+            <input id="nama" name="nama" placeholder="Nama lengkap" required />
+          </div>
+          <div>
+            <label for="wa">No. WhatsApp</label>
+            <input id="wa" name="wa" placeholder="08xxxxxxxxxx" required />
+          </div>
+          <div>
+            <label for="kebutuhan">Kebutuhan</label>
+            <select id="kebutuhan" name="kebutuhan" required>
+              <option value="">Pilih...</option>
+              <option>Gaming</option>
+              <option>Editing/Desain</option>
+              <option>Kantor / Umum</option>
+              <option>Server / Workstation</option>
+            </select>
+          </div>
+          <div>
+            <label for="budget">Perkiraan Budget</label>
+            <select id="budget" name="budget" required>
+              <option value="">Pilih...</option>
+              <option>&lt; Rp 7 juta</option>
+              <option>Rp 7–12 juta</option>
+              <option>Rp 12–20 juta</option>
+              <option>&gt; Rp 20 juta</option>
+            </select>
+          </div>
+          <div>
+            <label for="pesan">Detail Tambahan</label>
+            <textarea id="pesan" name="pesan" rows="4" placeholder="Contoh: game/aplikasi utama, preferensi casing, warna, dll"></textarea>
+          </div>
+          <button class="btn" type="submit">Kirim Permintaan</button>
+          <div id="formMsg" aria-live="polite" style="color:var(--muted); margin-top:.6rem;"></div>
+        </form>
+
+        <aside class="card" style="display:grid; gap: .8rem">
+          <div>
+            <h3>Alamat Toko</h3>
+            <p>Jl. Contoh No.123, Jakarta Pusat</p>
+          </div>
+          <div>
+            <h3>Kontak</h3>
+            <p>📞 0882-9196-7659<br/>✉️ halo@morgulgaming.com</p>
+          </div>
+          <div>
+            <h3>Jam Operasional</h3>
+            <p>Senin–Sabtu: 10.00–20.00 WIB<br/>Minggu: by appointment</p>
+          </div>
+          <a class="btn" href="https://wa.me/6288291967659" target="_blank" rel="noopener">Chat WhatsApp Sekarang</a>
+        </aside>
+      </div>
+    </div>
+  </section>
 
   <footer>
     <div class="container" style="display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; align-items:center">
@@ -195,8 +409,10 @@
   </footer>
 
   <script>
+    // Tahun di footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // Form handler — membuka WhatsApp dengan pesan terformat
     const form = document.getElementById('contactForm');
     const msg = document.getElementById('formMsg');
     form?.addEventListener('submit', function(e){
@@ -212,8 +428,9 @@
         return;
       }
 
+      // Format pesan untuk WA
       const teks = `Halo%20Morgul%20Gaming%0A%0ANama:%20${encodeURIComponent(nama)}%0ANo%20WA:%20${encodeURIComponent(wa)}%0AKebutuhan:%20${encodeURIComponent(kebutuhan)}%0ABudget:%20${encodeURIComponent(budget)}%0ADetail:%20${encodeURIComponent(pesan || '-')}`;
-      const tujuan = '6288291967659';
+      const tujuan = '6288291967659'; // nomor bisnis (format internasional tanpa +)
       const url = `https://wa.me/${tujuan}?text=${teks}`;
       window.open(url, '_blank');
       msg.textContent = 'Membuka WhatsApp… Jika tidak otomatis, klik tombol WhatsApp di samping.';
