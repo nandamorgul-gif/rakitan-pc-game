@@ -12,7 +12,7 @@
   <meta property="og:title" content="Morgul Gaming - Jasa Rakit PC Profesional" />
   <meta property="og:description" content="Rakit PC impianmu dengan teknisi berpengalaman. Konsultasi gratis & garansi." />
   <meta property="og:image" content="https://dummyimage.com/1200x630/0ea5e9/ffffff&text=Morgul+Gaming" />
-  <meta property="og:url" content="https://contoh-domain-anda.com" />
+  <meta property="og:url" content="https://morgulgaming.com" />
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230ea5e9'/%3E%3Cpath d='M25 30h50v40H25z' fill='white'/%3E%3Ccircle cx='70' cy='70' r='5' fill='%230ea5e9'/%3E%3C/svg%3E" />
 
@@ -21,8 +21,8 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Morgul Gaming",
-    "image": "https://contoh-domain-anda.com/cover.jpg",
-    "url": "https://contoh-domain-anda.com",
+    "image": "https://morgulgaming.com/cover.jpg",
+    "url": "https://morgulgaming.com",
     "telephone": "+62-882-9196-7659",
     "address": {
       "@type": "PostalAddress",
@@ -37,7 +37,104 @@
   </script>
 
   <style>
-    /* ... (CSS tetap sama) ... */
+    :root {
+      --bg: #0b1220;
+      --panel: #0f172a;
+      --muted: #94a3b8;
+      --text: #e2e8f0;
+      --brand: #0ea5e9; /* sky-500 */
+      --accent: #22c55e; /* green-500 */
+      --warning: #f59e0b; /* amber-500 */
+      --danger: #ef4444; /* red-500 */
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji"; scroll-behavior: smooth; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1200px, 92%); margin: 0 auto; }
+    .btn { display: inline-flex; align-items: center; gap: .6rem; padding: .9rem 1.2rem; border-radius: var(--radius); background: var(--brand); color: white; font-weight: 700; box-shadow: var(--shadow); border: 0; cursor: pointer; transition: transform .12s ease, filter .2s ease; }
+    .btn:hover { transform: translateY(-1px); filter: brightness(1.05); }
+    .btn.outline { background: transparent; border: 2px solid var(--brand); color: var(--text); box-shadow: none; }
+    .chip { display: inline-block; padding: .35rem .7rem; border-radius: 999px; background: rgba(14,165,233,.2); color: #7dd3fc; font-weight: 600; }
+
+    /* Navbar */
+    .nav { position: sticky; top: 0; z-index: 50; backdrop-filter: saturate(140%) blur(10px); background: rgba(11,18,32,.7); border-bottom: 1px solid rgba(148,163,184,.1); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: .8rem 0; }
+    .brand { display: flex; align-items: center; gap: .6rem; font-weight: 800; letter-spacing: .5px; }
+    .brand svg { width: 28px; height: 28px; }
+    .nav ul { list-style: none; display: flex; gap: 1rem; padding: 0; margin: 0; }
+    .nav a { opacity: .85; }
+    .nav a:hover { opacity: 1; }
+
+    /* Hero */
+    .hero { position: relative; padding: 4rem 0 3rem; }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; align-items: center; }
+    .hero h1 { font-size: clamp(1.8rem, 3.5vw, 3rem); line-height: 1.15; margin: .7rem 0 1rem; }
+    .hero p { color: var(--muted); font-size: 1.05rem; }
+    .hero .cta { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 1.2rem; }
+
+    .glass { background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border: 1px solid rgba(148,163,184,.15); border-radius: calc(var(--radius) * 1.25); box-shadow: var(--shadow); overflow: hidden; }
+    .stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; padding: 1rem; }
+    .stat { text-align: center; padding: 1rem; background: rgba(2,6,23,.5); border-radius: var(--radius); }
+    .stat b { font-size: 1.4rem; }
+
+    /* Sections */
+    section { padding: 3rem 0; }
+    .section-title { font-size: clamp(1.4rem, 2.4vw, 2rem); margin-bottom: .8rem; }
+    .section-sub { color: var(--muted); margin-bottom: 1.6rem; }
+
+    /* Cards */
+    .grid { display: grid; gap: 1.2rem; }
+    .grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .card { background: var(--panel); border: 1px solid rgba(148,163,184,.15); border-radius: var(--radius); padding: 1.2rem; box-shadow: var(--shadow); }
+    .card h3 { margin: 0 0 .4rem; }
+    .card p { color: var(--muted); }
+
+    /* Pricing */
+    .price { display: flex; align-items: baseline; gap: .5rem; margin: .6rem 0 1rem; }
+    .price .amount { font-size: 2rem; font-weight: 800; }
+    .price .per { color: var(--muted); }
+    .features { list-style: none; padding: 0; margin: 1rem 0; display: grid; gap: .5rem; }
+    .features li { display: flex; gap: .6rem; align-items: center; }
+    .features svg { width: 18px; height: 18px; flex: 0 0 auto; }
+
+    /* Badges */
+    .badge { display: inline-block; background: rgba(34,197,94,.15); color: #86efac; padding: .3rem .6rem; border-radius: 999px; font-size: .85rem; font-weight: 700; }
+
+    /* Testimonials */
+    .testimonial { display: grid; grid-template-columns: auto 1fr; gap: .8rem; align-items: center; }
+    .avatar { width: 44px; height: 44px; border-radius: 50%; background: #1f2937; display: grid; place-items: center; font-weight: 800; }
+
+    /* Steps */
+    .steps { counter-reset: step; display: grid; gap: 1rem; }
+    .step { display: grid; grid-template-columns: 44px 1fr; gap: 1rem; align-items: start; }
+    .step .num { width: 44px; height: 44px; border-radius: 12px; background: rgba(14,165,233,.2); display: grid; place-items: center; font-weight: 800; }
+
+    /* FAQ */
+    details { background: var(--panel); border: 1px solid rgba(148,163,184,.15); border-radius: var(--radius); padding: 1rem 1.2rem; }
+    details + details { margin-top: .8rem; }
+    summary { cursor: pointer; font-weight: 700; }
+    summary::-webkit-details-marker { display: none; }
+
+    /* Contact */
+    form { display: grid; gap: .8rem; }
+    input, select, textarea { width: 100%; padding: .9rem 1rem; border-radius: 12px; background: #0b1020; border: 1px solid rgba(148,163,184,.2); color: var(--text); }
+    input:focus, select:focus, textarea:focus { outline: 2px solid rgba(14,165,233,.35); }
+    label { font-weight: 700; font-size: .95rem; }
+
+    /* Footer */
+    footer { border-top: 1px solid rgba(148,163,184,.15); padding: 2rem 0; color: var(--muted); }
+
+    /* Responsive */
+    @media (max-width: 980px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .grid.cols-3 { grid-template-columns: 1fr; }
+      .grid.cols-2 { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: 1fr 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -82,7 +179,7 @@
     </div>
   </header>
 
-  <!-- ... (bagian lain tetap sama, hanya update nama brand & nomor WA) ... -->
+  <!-- (Semua bagian Layanan, Paket, Proses, Testimoni, FAQ, Kontak tetap sama dengan versi sebelumnya, hanya nama brand dan nomor WA sudah diperbarui) -->
 
   <footer>
     <div class="container" style="display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; align-items:center">
