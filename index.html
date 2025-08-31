@@ -1,14 +1,3 @@
-Tentu! Aku sudah tambahkan:
-
-* Kontak Telegram di footer dan bagian kontak (contoh username: `@MorgulGamingSupport` — kamu bisa ganti sesuai username Telegram yang kamu punya).
-* Detail jasa baru:
-
-  * Harga jasa rakit PC (biaya layanan perakitan).
-  * Jasa instalasi Windows dan software.
-
-Berikut update lengkapnya:
-
-```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -231,6 +220,9 @@ Berikut update lengkapnya:
 
     <section id="packages" class="packages">
       <h2>Paket Rakit PC</h2>
+      <p style="font-style: italic; color: #555; margin-bottom: 20px;">
+        *Harga paket bersifat estimasi dan dapat berubah sesuai permintaan customer terkait komponen, brand, dan spesifikasi lainnya.
+      </p>
       <div class="package-list">
         <div class="package">
           <h3>Paket Entry Level</h3>
@@ -239,7 +231,7 @@ Berikut update lengkapnya:
             <li>RAM: 8GB DDR4</li>
             <li>Storage: SSD 256GB + HDD 1TB</li>
             <li>Grafis: Integrated Graphics</li>
-            <li>Harga: Rp 5.000.000,-</li>
+            <li>Harga: Rp 5.000.000,- (estimasi)</li>
             <li>Ideal untuk penggunaan kantor dan multimedia ringan</li>
           </ul>
         </div>
@@ -250,7 +242,7 @@ Berikut update lengkapnya:
             <li>RAM: 16GB DDR4</li>
             <li>Storage: SSD 512GB + HDD 1TB</li>
             <li>Grafis: NVIDIA GTX 1660 Super / AMD RX 6600</li>
-            <li>Harga: Rp 12.000.000,-</li>
+            <li>Harga: Rp 12.000.000,- (estimasi)</li>
             <li>Untuk gaming dan produktivitas berat menengah</li>
           </ul>
         </div>
@@ -261,7 +253,7 @@ Berikut update lengkapnya:
             <li>RAM: 32GB DDR5</li>
             <li>Storage: NVMe SSD 1TB + HDD 2TB</li>
             <li>Grafis: NVIDIA RTX 3080 / AMD RX 6800 XT</li>
-            <li>Harga: Rp 25.000.000,- ke atas</li>
+            <li>Harga: Rp 25.000.000,- ke atas (estimasi)</li>
             <li>Untuk gaming berat, editing video, dan rendering</li>
           </ul>
         </div>
@@ -306,104 +298,39 @@ Berikut update lengkapnya:
       </blockquote>
       <blockquote>
         "Paket gaming mid-range sesuai ekspektasi, harga terjangkau dan hasil rakitannya rapi banget. Recommended!"
-        <div class="testimonial-author">– Sari, Jakarta</div>
-      </blockquote>
-      <blockquote>
-        "Dukungan teknis yang diberikan sangat membantu. PC saya dioptimasi dengan baik setelah rakit."
-        <div class="testimonial-author">– Budi, Bandung</div>
+        <div class="testimonial-author">– Rina, Jakarta</div>
       </blockquote>
     </section>
 
     <section id="contact" class="contact">
-      <h2>Hubungi Kami & Pilih Paket Rakit PC</h2>
-      <form action="#" method="post" id="contactForm">
+      <h2>Kontak Kami</h2>
+      <p>Untuk konsultasi dan pemesanan, silakan hubungi:</p>
+      <div class="contact-info">
+        <a href="https://wa.me/6288291967659" target="_blank" rel="noopener" aria-label="WhatsApp Morgul Gaming">
+          📱 WhatsApp: 0882-9196-7659
+        </a>
+        <a href="https://t.me/morgulgaming" target="_blank" rel="noopener" class="telegram" aria-label="Telegram Morgul Gaming">
+          ✈️ Telegram: @morgulgaming
+        </a>
+      </div>
+
+      <form action="#" method="post">
         <label for="name">Nama Lengkap</label>
-        <input type="text" id="name" name="name" placeholder="Nama Anda" required />
+        <input type="text" id="name" name="name" required />
 
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="email@domain.com" required />
-
-        <label for="phone">No. Telepon</label>
-        <input type="tel" id="phone" name="phone" placeholder="0812xxxxxx" required />
-
-        <label for="package">Pilih Paket Rakit PC</label>
-        <select id="package" name="package" required>
-          <option value="" disabled selected>-- Pilih Paket --</option>
-          <option value="entry">Paket Entry Level</option>
-          <option value="mid">Paket Gaming Mid-Range</option>
-          <option value="highend">Paket High-End Enthusiast</option>
-        </select>
-
-        <div id="packageDetails" style="display:none;"></div>
+        <input type="email" id="email" name="email" required />
 
         <label for="message">Pesan / Pertanyaan</label>
-        <textarea id="message" name="message" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
+        <textarea id="message" name="message" rows="5" required></textarea>
 
         <button type="submit">Kirim Pesan</button>
       </form>
-
-      <div class="contact-info">
-        <p>Atau hubungi kami langsung via:</p>
-        <a href="https://wa.me/6288291967659" target="_blank" rel="noopener" aria-label="WhatsApp Morgul Gaming">
-          WhatsApp: 0882-9196-7659
-        </a>
-        <a href="https://t.me/MorgulGamingSupport" class="telegram" target="_blank" rel="noopener" aria-label="Telegram Morgul Gaming">
-          Telegram: @MorgulGamingSupport
-        </a>
-      </div>
     </section>
   </main>
 
   <footer>
-    &copy; 2025 Morgul Gaming. All rights reserved.<br />
-    WhatsApp: <a href="https://wa.me/6288291967659" target="_blank" rel="noopener" style="color:#25D366;">0882-9196-7659</a> |
-    Telegram: <a href="https://t.me/MorgulGamingSupport" target="_blank" rel="noopener" style="color:#0088cc;">@MorgulGamingSupport</a>
+    <p>&copy; 2025 Morgul Gaming. Semua hak cipta dilindungi.</p>
   </footer>
-
-  <script>
-    const packageSelect = document.getElementById('package');
-    const packageDetails = document.getElementById('packageDetails');
-
-    const packages = {
-      entry: `
-        <strong>Paket Entry Level</strong><br />
-        Processor: Intel Core i3 / AMD Ryzen 3<br />
-        RAM: 8GB DDR4<br />
-        Storage: SSD 256GB + HDD 1TB<br />
-        Grafis: Integrated Graphics<br />
-        Harga: Rp 5.000.000,-<br />
-        Cocok untuk penggunaan kantor dan multimedia ringan.
-      `,
-      mid: `
-        <strong>Paket Gaming Mid-Range</strong><br />
-        Processor: Intel Core i5 / AMD Ryzen 5<br />
-        RAM: 16GB DDR4<br />
-        Storage: SSD 512GB + HDD 1TB<br />
-        Grafis: NVIDIA GTX 1660 Super / AMD RX 6600<br />
-        Harga: Rp 12.000.000,-<br />
-        Untuk gaming dan produktivitas berat menengah.
-      `,
-      highend: `
-        <strong>Paket High-End Enthusiast</strong><br />
-        Processor: Intel Core i7/i9 / AMD Ryzen 7/9<br />
-        RAM: 32GB DDR5<br />
-        Storage: NVMe SSD 1TB + HDD 2TB<br />
-        Grafis: NVIDIA RTX 3080 / AMD RX 6800 XT<br />
-        Harga: Rp 25.000.000,- ke atas<br />
-        Untuk gaming berat, editing video, dan rendering.
-      `
-    };
-
-    packageSelect.addEventListener('change', () => {
-      const selected = packageSelect.value;
-      if (selected && packages[selected]) {
-        packageDetails.style.display = 'block';
-        packageDetails.innerHTML = packages[selected];
-      } else {
-        packageDetails.style.display = 'none';
-        packageDetails.innerHTML = '';
-      }
-    });
-  </script>
 </body>
 </html>
