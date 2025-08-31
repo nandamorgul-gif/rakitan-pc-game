@@ -1,3 +1,14 @@
+Tentu! Aku sudah tambahkan:
+
+* Kontak Telegram di footer dan bagian kontak (contoh username: `@MorgulGamingSupport` — kamu bisa ganti sesuai username Telegram yang kamu punya).
+* Detail jasa baru:
+
+  * Harga jasa rakit PC (biaya layanan perakitan).
+  * Jasa instalasi Windows dan software.
+
+Berikut update lengkapnya:
+
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -45,7 +56,7 @@
       padding-bottom: 10px;
       margin-bottom: 25px;
     }
-    .service, .packages, .testimonials, .contact {
+    .service, .packages, .pricing, .testimonials, .contact {
       margin-bottom: 50px;
     }
     .service p {
@@ -77,6 +88,27 @@
     .package ul {
       list-style-type: disc;
       padding-left: 20px;
+    }
+    .pricing table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 3px 8px rgb(0 0 0 / 0.1);
+    }
+    .pricing th, .pricing td {
+      padding: 15px 20px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    .pricing th {
+      background-color: #2980b9;
+      color: white;
+      font-weight: 700;
+    }
+    .pricing tr:hover {
+      background-color: #f1faff;
     }
     .testimonials blockquote {
       background: #eaf3f8;
@@ -145,21 +177,29 @@
       padding: 20px 40px;
       margin-top: 40px;
     }
-    .whatsapp {
+    .contact-info {
       margin-top: 10px;
       font-weight: 700;
     }
-    .whatsapp a {
-      color: #25D366;
+    .contact-info a {
+      color: #25D366; /* WhatsApp green */
       text-decoration: none;
       font-size: 18px;
+      margin-right: 20px;
     }
-    .whatsapp a:hover {
+    .contact-info a.telegram {
+      color: #0088cc; /* Telegram blue */
+    }
+    .contact-info a:hover {
       text-decoration: underline;
     }
     @media (max-width: 768px) {
       .package-list {
         flex-direction: column;
+      }
+      .contact-info a {
+        display: inline-block;
+        margin-bottom: 10px;
       }
     }
   </style>
@@ -170,6 +210,7 @@
     <nav>
       <a href="#service">Layanan</a>
       <a href="#packages">Paket</a>
+      <a href="#pricing">Harga Jasa</a>
       <a href="#testimonials">Testimoni</a>
       <a href="#contact">Kontak</a>
     </nav>
@@ -227,6 +268,36 @@
       </div>
     </section>
 
+    <section id="pricing" class="pricing">
+      <h2>Harga Jasa</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Jenis Jasa</th>
+            <th>Harga</th>
+            <th>Deskripsi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Jasa Rakit PC</td>
+            <td>Rp 300.000,-</td>
+            <td>Biaya layanan perakitan hardware lengkap dengan pengujian awal</td>
+          </tr>
+          <tr>
+            <td>Jasa Instalasi Windows</td>
+            <td>Rp 150.000,-</td>
+            <td>Instalasi sistem operasi Windows beserta driver dan update</td>
+          </tr>
+          <tr>
+            <td>Jasa Instalasi Software</td>
+            <td>Rp 100.000,-</td>
+            <td>Instalasi software penting seperti antivirus, browser, dan aplikasi pendukung</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
     <section id="testimonials" class="testimonials">
       <h2>Testimoni Pelanggan</h2>
       <blockquote>
@@ -270,15 +341,23 @@
 
         <button type="submit">Kirim Pesan</button>
       </form>
-      <div class="whatsapp">
-        <p>Atau hubungi kami langsung via WhatsApp: <a href="https://wa.me/6288291967659" target="_blank" rel="noopener">0882-9196-7659</a></p>
+
+      <div class="contact-info">
+        <p>Atau hubungi kami langsung via:</p>
+        <a href="https://wa.me/6288291967659" target="_blank" rel="noopener" aria-label="WhatsApp Morgul Gaming">
+          WhatsApp: 0882-9196-7659
+        </a>
+        <a href="https://t.me/MorgulGamingSupport" class="telegram" target="_blank" rel="noopener" aria-label="Telegram Morgul Gaming">
+          Telegram: @MorgulGamingSupport
+        </a>
       </div>
     </section>
   </main>
 
   <footer>
     &copy; 2025 Morgul Gaming. All rights reserved.<br />
-    WhatsApp: <a href="https://wa.me/6288291967659" target="_blank" rel="noopener" style="color:#25D366;">0882-9196-7659</a>
+    WhatsApp: <a href="https://wa.me/6288291967659" target="_blank" rel="noopener" style="color:#25D366;">0882-9196-7659</a> |
+    Telegram: <a href="https://t.me/MorgulGamingSupport" target="_blank" rel="noopener" style="color:#0088cc;">@MorgulGamingSupport</a>
   </footer>
 
   <script>
