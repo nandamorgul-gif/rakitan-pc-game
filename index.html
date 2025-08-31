@@ -274,17 +274,22 @@
           <tr>
             <td>Jasa Rakit PC</td>
             <td>Rp 300.000,-</td>
-            <td>Biaya layanan perakitan hardware lengkap dengan pengujian awal</td>
+            <td>Perakitan dan pengujian komputer lengkap</td>
           </tr>
           <tr>
-            <td>Jasa Instalasi Windows</td>
+            <td>Installasi Sistem Operasi</td>
             <td>Rp 150.000,-</td>
-            <td>Instalasi sistem operasi Windows beserta driver dan update</td>
+            <td>Instalasi Windows/Linux + driver & update</td>
           </tr>
           <tr>
-            <td>Jasa Instalasi Software</td>
+            <td>Upgrade Komponen</td>
             <td>Rp 100.000,-</td>
-            <td>Instalasi software penting seperti antivirus, browser, dan aplikasi pendukung</td>
+            <td>Pemasangan komponen tambahan/upgraded</td>
+          </tr>
+          <tr>
+            <td>Servis dan Troubleshooting</td>
+            <td>Rp 200.000,-</td>
+            <td>Diagnosa dan perbaikan hardware/software</td>
           </tr>
         </tbody>
       </table>
@@ -293,108 +298,110 @@
     <section id="testimonials" class="testimonials">
       <h2>Testimoni Pelanggan</h2>
       <blockquote>
-        "PC yang saya pesan rakitan dari sini berjalan sangat lancar dan performanya memuaskan! Pelayanan ramah dan profesional."
-        <div class="testimonial-author">– Andi, Surabaya</div>
+        "Saya sangat puas dengan rakitan PC dari Morgul Gaming, performanya stabil dan sesuai ekspektasi. Layanan sangat ramah dan cepat."
+        <div class="testimonial-author">- Andi, Surabaya</div>
       </blockquote>
       <blockquote>
-        "Paket gaming mid-range sesuai ekspektasi, harga terjangkau dan hasil rakitannya rapi banget. Recommended!"
-        <div class="testimonial-author">– Sari, Jakarta</div>
+        "Paket gaming mid-range-nya sangat worth it! Sudah coba banyak game berat lancar semua. Recommended!"
+        <div class="testimonial-author">- Rina, Jakarta</div>
       </blockquote>
       <blockquote>
-        "Dukungan teknis yang diberikan sangat membantu. PC saya dioptimasi dengan baik setelah rakit."
-        <div class="testimonial-author">– Budi, Bandung</div>
+        "Proses konsultasi mudah dan stafnya profesional. Sangat membantu saya memilih komponen terbaik sesuai budget."
+        <div class="testimonial-author">- Budi, Bandung</div>
       </blockquote>
     </section>
 
     <section id="contact" class="contact">
-      <h2>Hubungi Kami & Pilih Paket Rakit PC</h2>
-      <form action="#" method="post" id="contactForm">
-        <label for="name">Nama Lengkap</label>
+      <h2>Kontak Kami</h2>
+      <form id="contactForm">
+        <label for="name">Nama Lengkap:</label>
         <input type="text" id="name" name="name" placeholder="Nama Anda" required />
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="email@domain.com" required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Email Anda" required />
 
-        <label for="phone">No. Telepon</label>
-        <input type="tel" id="phone" name="phone" placeholder="0812xxxxxx" required />
+        <label for="phone">No. Telepon / WhatsApp:</label>
+        <input type="tel" id="phone" name="phone" placeholder="08xxxxxxxxxx" required />
 
-        <label for="package">Pilih Paket Rakit PC</label>
+        <label for="package">Paket Rakit PC:</label>
         <select id="package" name="package" required>
           <option value="" disabled selected>-- Pilih Paket --</option>
-          <option value="entry">Paket Entry Level</option>
-          <option value="mid">Paket Gaming Mid-Range</option>
-          <option value="highend">Paket High-End Enthusiast</option>
+          <option value="entry">Entry Level</option>
+          <option value="mid">Gaming Mid-Range</option>
+          <option value="highend">High-End Enthusiast</option>
         </select>
 
         <div id="packageDetails" style="display:none;"></div>
 
-        <label for="message">Pesan / Pertanyaan</label>
-        <textarea id="message" name="message" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
+        <label for="message">Pesan / Pertanyaan:</label>
+        <textarea id="message" name="message" rows="4" placeholder="Tuliskan pesan atau pertanyaan Anda di sini..." required></textarea>
 
         <button type="submit">Kirim Pesan</button>
       </form>
-
-      <div class="contact-info">
-        <p>Atau hubungi kami langsung via:</p>
-        <a href="https://wa.me/6288291967659" target="_blank" rel="noopener" aria-label="WhatsApp Morgul Gaming">
-          WhatsApp: 0882-9196-7659
-        </a>
-        <a href="https://t.me/MorgulGamingSupport" class="telegram" target="_blank" rel="noopener" aria-label="Telegram Morgul Gaming">
-          Telegram: @MorgulGamingSupport
-        </a>
-      </div>
     </section>
   </main>
 
   <footer>
-    &copy; 2025 Morgul Gaming. All rights reserved.<br />
-    WhatsApp: <a href="https://wa.me/6288291967659" target="_blank" rel="noopener" style="color:#25D366;">0882-9196-7659</a> |
-    Telegram: <a href="https://t.me/MorgulGamingSupport" target="_blank" rel="noopener" style="color:#0088cc;">@MorgulGamingSupport</a>
+    <p>Morgul Gaming &copy; 2025. All Rights Reserved.</p>
+    <div class="contact-info">
+      <a href="https://wa.me/6288291967659" target="_blank" rel="noopener noreferrer">WhatsApp: +62 882-9196-7659</a>
+      <a href="https://t.me/morgul_gaming" class="telegram" target="_blank" rel="noopener noreferrer">Telegram: @morgul_gaming</a>
+    </div>
   </footer>
 
   <script>
+    const contactForm = document.getElementById('contactForm');
     const packageSelect = document.getElementById('package');
     const packageDetails = document.getElementById('packageDetails');
 
     const packages = {
-      entry: `
-        <strong>Paket Entry Level</strong><br />
-        Processor: Intel Core i3 / AMD Ryzen 3<br />
-        RAM: 8GB DDR4<br />
-        Storage: SSD 256GB + HDD 1TB<br />
-        Grafis: Integrated Graphics<br />
-        Harga: Rp 5.000.000,-<br />
-        Cocok untuk penggunaan kantor dan multimedia ringan.
-      `,
-      mid: `
-        <strong>Paket Gaming Mid-Range</strong><br />
-        Processor: Intel Core i5 / AMD Ryzen 5<br />
-        RAM: 16GB DDR4<br />
-        Storage: SSD 512GB + HDD 1TB<br />
-        Grafis: NVIDIA GTX 1660 Super / AMD RX 6600<br />
-        Harga: Rp 12.000.000,-<br />
-        Untuk gaming dan produktivitas berat menengah.
-      `,
-      highend: `
-        <strong>Paket High-End Enthusiast</strong><br />
-        Processor: Intel Core i7/i9 / AMD Ryzen 7/9<br />
-        RAM: 32GB DDR5<br />
-        Storage: NVMe SSD 1TB + HDD 2TB<br />
-        Grafis: NVIDIA RTX 3080 / AMD RX 6800 XT<br />
-        Harga: Rp 25.000.000,- ke atas<br />
-        Untuk gaming berat, editing video, dan rendering.
-      `
+      entry: `Paket Entry Level: Processor Intel Core i3 / AMD Ryzen 3, RAM 8GB DDR4, Storage SSD 256GB + HDD 1TB, Grafis Integrated Graphics, Harga Rp 5.000.000,-`,
+      mid: `Paket Gaming Mid-Range: Processor Intel Core i5 / AMD Ryzen 5, RAM 16GB DDR4, Storage SSD 512GB + HDD 1TB, Grafis NVIDIA GTX 1660 Super / AMD RX 6600, Harga Rp 12.000.000,-`,
+      highend: `Paket High-End Enthusiast: Processor Intel Core i7/i9 / AMD Ryzen 7/9, RAM 32GB DDR5, Storage NVMe SSD 1TB + HDD 2TB, Grafis NVIDIA RTX 3080 / AMD RX 6800 XT, Harga Rp 25.000.000,- ke atas`
     };
 
     packageSelect.addEventListener('change', () => {
       const selected = packageSelect.value;
       if (selected && packages[selected]) {
         packageDetails.style.display = 'block';
-        packageDetails.innerHTML = packages[selected];
+        packageDetails.textContent = packages[selected];
       } else {
         packageDetails.style.display = 'none';
-        packageDetails.innerHTML = '';
+        packageDetails.textContent = '';
       }
+    });
+
+    contactForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // cegah form submit default
+
+      // Ambil data form
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const pkg = packageSelect.value;
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !phone || !pkg || !message) {
+        alert('Mohon lengkapi semua kolom yang tersedia.');
+        return;
+      }
+
+      // Buat pesan yang akan dikirim ke WhatsApp
+      let textMessage = 
+        `Halo Morgul Gaming,%0A` +
+        `Saya ingin konsultasi dan pemesanan dengan data berikut:%0A` +
+        `Nama: ${name}%0A` +
+        `Email: ${email}%0A` +
+        `No. Telepon: ${phone}%0A` +
+        `Paket Rakit PC: ${pkg.toUpperCase()} - ${packages[pkg]}%0A` +
+        `Pesan: ${message}`;
+
+      // URL WhatsApp API (nomor harus tanpa 0/ +, pakai kode negara langsung)
+      const waNumber = '6288291967659';
+      const waURL = `https://wa.me/${waNumber}?text=${textMessage}`;
+
+      // Buka WhatsApp di tab baru
+      window.open(waURL, '_blank');
     });
   </script>
 </body>
