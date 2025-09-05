@@ -1,408 +1,537 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Morgul Gaming - Jasa Rakit PC Profesional</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background-color: #2c3e50;
-      color: white;
-      padding: 20px 40px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-weight: 700;
-      letter-spacing: 2px;
-    }
-    nav {
-      margin-top: 10px;
-    }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .container {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    h2 {
-      color: #2c3e50;
-      border-bottom: 2px solid #2980b9;
-      padding-bottom: 10px;
-      margin-bottom: 25px;
-    }
-    .service, .packages, .pricing, .testimonials, .contact {
-      margin-bottom: 50px;
-    }
-    .service p {
-      font-size: 18px;
-      line-height: 1.6;
-    }
-    .package-list {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-    .package {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 3px 8px rgb(0 0 0 / 0.1);
-      padding: 20px;
-      flex: 1 1 300px;
-      transition: transform 0.3s ease;
-    }
-    .package:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 15px rgb(0 0 0 / 0.15);
-    }
-    .package h3 {
-      margin-top: 0;
-      color: #2980b9;
-    }
-    .package ul {
-      list-style-type: disc;
-      padding-left: 20px;
-    }
-    .pricing table {
-      width: 100%;
-      border-collapse: collapse;
-      background: white;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 3px 8px rgb(0 0 0 / 0.1);
-    }
-    .pricing th, .pricing td {
-      padding: 15px 20px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-    }
-    .pricing th {
-      background-color: #2980b9;
-      color: white;
-      font-weight: 700;
-    }
-    .pricing tr:hover {
-      background-color: #f1faff;
-    }
-    .testimonials blockquote {
-      background: #eaf3f8;
-      border-left: 6px solid #2980b9;
-      margin: 20px 0;
-      padding: 15px 20px;
-      font-style: italic;
-      color: #555;
-      border-radius: 4px;
-    }
-    .testimonial-author {
-      text-align: right;
-      font-weight: 700;
-      margin-top: 5px;
-      color: #2c3e50;
-    }
-    form {
-      background: white;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 3px 8px rgb(0 0 0 / 0.1);
-      max-width: 600px;
-      margin: auto;
-    }
-    form label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 600;
-    }
-    form input, form textarea, form select {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 20px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 16px;
-      font-family: inherit;
-    }
-    form button {
-      background-color: #2980b9;
-      border: none;
-      color: white;
-      padding: 12px 25px;
-      font-size: 16px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: 700;
-      transition: background-color 0.3s ease;
-    }
-    form button:hover {
-      background-color: #1c5980;
-    }
-    #packageDetails {
-      background: #f0f8ff;
-      border: 1px solid #2980b9;
-      border-radius: 6px;
-      padding: 15px;
-      margin-bottom: 20px;
-      color: #1a3a72;
-      font-weight: 600;
-    }
-    footer {
-      background-color: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 20px 40px;
-      margin-top: 40px;
-    }
-    .contact-info {
-      margin-top: 10px;
-      font-weight: 700;
-    }
-    .contact-info a {
-      color: #25D366; /* WhatsApp green */
-      text-decoration: none;
-      font-size: 18px;
-      margin-right: 20px;
-    }
-    .contact-info a.telegram {
-      color: #0088cc; /* Telegram blue */
-    }
-    .contact-info a:hover {
-      text-decoration: underline;
-    }
-    @media (max-width: 768px) {
-      .package-list {
-        flex-direction: column;
-      }
-      .contact-info a {
-        display: inline-block;
-        margin-bottom: 10px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Morgul Gaming - Jasa Rakit PC Profesional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --primary-color: #5A69E0;
+            --secondary-color: #3B4CCA;
+            --dark-color: #1a202c;
+            --light-color: #f7fafc;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-weight: 700;
+            font-size: 2.5rem;
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #d1d8f7;
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--dark-color);
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section {
+            background-color: white;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+        }
+        
+        /* Layanan Section */
+        .service {
+            text-align: center;
+        }
+        .service p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: auto;
+            color: #555;
+        }
+
+        /* Why Choose Us Section */
+        .why-us {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        .why-us-item {
+            background-color: #eaf3f8;
+            padding: 25px;
+            border-radius: 10px;
+            flex: 1 1 250px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        .why-us-item:hover {
+            transform: translateY(-8px);
+        }
+        .why-us-item h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        /* Paket Section */
+        .package-list {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .package {
+            background: #fff;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            flex: 1 1 300px;
+            transition: all 0.3s ease;
+        }
+        .package:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+        .package h3 {
+            color: var(--dark-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .package ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .package li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        .package li strong {
+            color: var(--dark-color);
+        }
+        .package-price {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 25px;
+        }
+
+        /* Pricing Table */
+        .pricing table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+        .pricing th, .pricing td {
+            padding: 18px 25px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        .pricing th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .pricing tr:nth-child(even) {
+            background-color: #f7faff;
+        }
+        .pricing tr:hover {
+            background-color: #eaf3f8;
+        }
+
+        /* Testimonials */
+        .testimonial-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .testimonial {
+            background: #f0f8ff;
+            border-left: 5px solid var(--secondary-color);
+            padding: 25px;
+            border-radius: 8px;
+            font-style: italic;
+            color: #444;
+            flex: 1 1 300px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        .testimonial .author {
+            text-align: right;
+            font-weight: 600;
+            margin-top: 15px;
+            color: var(--dark-color);
+        }
+
+        /* Contact Form */
+        .contact form {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 25px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #444;
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        .btn-submit {
+            background-color: var(--primary-color);
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+        .btn-submit:hover {
+            background-color: var(--secondary-color);
+        }
+        .package-details {
+            background: #eaf3f8;
+            border-left: 5px solid var(--primary-color);
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #222;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+        .social-media a {
+            color: white;
+            font-size: 1.2rem;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .social-media a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .section {
+                padding: 30px 20px;
+            }
+            .package-list {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Morgul Gaming - Jasa Rakit PC Profesional</h1>
-    <nav>
-      <a href="#service">Layanan</a>
-      <a href="#packages">Paket</a>
-      <a href="#pricing">Harga Jasa</a>
-      <a href="#testimonials">Testimoni</a>
-      <a href="#contact">Kontak</a>
-    </nav>
-  </header>
+    <header>
+        <h1>Morgul Gaming</h1>
+        <p style="font-size: 1.2rem; font-weight: 400; margin-top: 10px;">Jasa Rakit PC Gaming & Profesional</p>
+        <nav>
+            <a href="#services">Layanan</a>
+            <a href="#packages">Paket</a>
+            <a href="#pricing">Harga Jasa</a>
+            <a href="#testimonials">Testimoni</a>
+            <a href="#contact">Kontak</a>
+        </nav>
+    </header>
 
-  <main class="container">
-    <section id="service" class="service">
-      <h2>Layanan Kami</h2>
-      <p>
-        Kami menyediakan jasa rakit PC berkualitas untuk kebutuhan gaming, desain grafis, programming, dan kebutuhan kantor.
-        Dengan pengalaman bertahun-tahun, kami memastikan setiap PC yang dirakit berjalan optimal dan sesuai kebutuhan Anda.
-      </p>
-      <p>
-        Layanan kami meliputi konsultasi komponen, perakitan, instalasi sistem operasi, dan optimasi performa.
-        Anda juga akan mendapatkan garansi rakitan dan dukungan teknis setelah pembelian.
-      </p>
-    </section>
+    <main class="container">
+        <section id="services" class="section service">
+            <h2>Layanan Kami</h2>
+            <p>
+                Kami adalah mitra terpercaya Anda untuk membangun PC impian. Kami menawarkan jasa rakit PC khusus untuk kebutuhan gaming, desain grafis, editing video, dan produktivitas profesional. Setiap PC yang kami rakit dijamin optimal, stabil, dan sesuai dengan kebutuhan serta anggaran Anda.
+            </p>
+        </section>
+        
+        <section class="section why-us">
+            <h2>Kenapa Memilih Kami?</h2>
+            <div class="why-us-item">
+                <h3>Konsultasi Personal</h3>
+                <p>Kami bantu pilihkan komponen terbaik yang pas dengan budget dan kebutuhan Anda. Tidak ada lagi kebingungan memilih.</p>
+            </div>
+            <div class="why-us-item">
+                <h3>Rakit Profesional</h3>
+                <p>Setiap rakitan dikerjakan dengan rapi, manajemen kabel terbaik, dan pengujian performa menyeluruh sebelum serah terima.</p>
+            </div>
+            <div class="why-us-item">
+                <h3>Dukungan Purna Jual</h3>
+                <p>Dapatkan garansi rakitan dan dukungan teknis cepat setelah pembelian. Kami selalu siap membantu Anda.</p>
+            </div>
+        </section>
 
-    <section id="packages" class="packages">
-      <h2>Paket Rakit PC</h2>
-      <p style="font-style: italic; color: #555; margin-bottom: 20px;">
-        *Harga paket bersifat estimasi dan dapat berubah sesuai permintaan customer terkait komponen, brand, dan spesifikasi lainnya.
-      </p>
-      <div class="package-list">
-        <div class="package">
-          <h3>Paket Entry Level</h3>
-          <ul>
-            <li>Processor: Intel Core i3 / AMD Ryzen 3</li>
-            <li>RAM: 8GB DDR4</li>
-            <li>Storage: SSD 256GB + HDD 1TB</li>
-            <li>Grafis: Integrated Graphics</li>
-            <li>Harga: Rp 5.000.000,-</li>
-            <li>Ideal untuk penggunaan kantor dan multimedia ringan</li>
-          </ul>
+        <section id="packages" class="section packages">
+            <h2>Pilihan Paket Rakit PC</h2>
+            <p style="font-style: italic; color: #555; margin-bottom: 25px; text-align: center;">
+                *Harga paket adalah estimasi dan dapat disesuaikan dengan permintaan Anda terkait brand, seri, dan spesifikasi komponen.
+            </p>
+            <div class="package-list">
+                <div class="package">
+                    <h3>Paket Office & Light Gaming</h3>
+                    <ul>
+                        <li><strong>Processor:</strong> Intel Core i3 / AMD Ryzen 3</li>
+                        <li><strong>RAM:</strong> 8GB DDR4</li>
+                        <li><strong>Storage:</strong> SSD 256GB + HDD 1TB</li>
+                        <li><strong>Grafis:</strong> Integrated Graphics</li>
+                    </ul>
+                    <div class="package-price">Rp 5.000.000,-</div>
+                </div>
+                <div class="package">
+                    <h3>Paket Gaming Mid-Range</h3>
+                    <ul>
+                        <li><strong>Processor:</strong> Intel Core i5 / AMD Ryzen 5</li>
+                        <li><strong>RAM:</strong> 16GB DDR4</li>
+                        <li><strong>Storage:</strong> SSD 512GB + HDD 1TB</li>
+                        <li><strong>Grafis:</strong> NVIDIA GTX 1660 Super / AMD RX 6600</li>
+                    </ul>
+                    <div class="package-price">Rp 12.000.000,-</div>
+                </div>
+                <div class="package">
+                    <h3>Paket High-End Enthusiast</h3>
+                    <ul>
+                        <li><strong>Processor:</strong> Intel Core i7/i9 / AMD Ryzen 7/9</li>
+                        <li><strong>RAM:</strong> 32GB DDR5</li>
+                        <li><strong>Storage:</strong> NVMe SSD 1TB + HDD 2TB</li>
+                        <li><strong>Grafis:</strong> NVIDIA RTX 3080 / AMD RX 6800 XT</li>
+                    </ul>
+                    <div class="package-price">Mulai Rp 25.000.000,-</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="section pricing">
+            <h2>Harga Jasa</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Jenis Jasa</th>
+                        <th>Harga</th>
+                        <th>Deskripsi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jasa Rakit PC</td>
+                        <td>Rp 300.000,-</td>
+                        <td>Perakitan dan pengujian komputer lengkap</td>
+                    </tr>
+                    <tr>
+                        <td>Instalasi Sistem Operasi</td>
+                        <td>Rp 150.000,-</td>
+                        <td>Instalasi Windows/Linux + driver & update</td>
+                    </tr>
+                    <tr>
+                        <td>Upgrade Komponen</td>
+                        <td>Rp 100.000,-</td>
+                        <td>Pemasangan komponen tambahan/upgrade</td>
+                    </tr>
+                    <tr>
+                        <td>Servis & Troubleshooting</td>
+                        <td>Rp 200.000,-</td>
+                        <td>Diagnosa dan perbaikan hardware/software</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="testimonials" class="section">
+            <h2>Testimoni Pelanggan</h2>
+            <div class="testimonial-container">
+                <blockquote class="testimonial">
+                    "Sangat puas dengan rakitan PC dari Morgul Gaming, performanya stabil dan sesuai ekspektasi. Layanan sangat ramah dan cepat."
+                    <div class="author">- Andi, Surabaya</div>
+                </blockquote>
+                <blockquote class="testimonial">
+                    "Paket gaming mid-range-nya sangat worth it! Sudah coba banyak game berat lancar semua. Recommended!"
+                    <div class="author">- Rina, Jakarta</div>
+                </blockquote>
+                <blockquote class="testimonial">
+                    "Proses konsultasi mudah dan stafnya profesional. Sangat membantu saya memilih komponen terbaik sesuai budget."
+                    <div class="author">- Budi, Bandung</div>
+                </blockquote>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <h2>Hubungi Kami</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Nama Lengkap:</label>
+                    <input type="text" id="name" name="name" placeholder="Nama Anda" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Email Anda" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">No. Telepon / WhatsApp:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="08xxxxxxxxxx" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="package">Pilih Paket Rakit PC:</label>
+                    <select id="package" name="package" required>
+                        <option value="" disabled selected>-- Pilih Paket --</option>
+                        <option value="entry">Office & Light Gaming</option>
+                        <option value="mid">Gaming Mid-Range</option>
+                        <option value="highend">High-End Enthusiast</option>
+                    </select>
+                </div>
+
+                <div id="packageDetails" class="package-details" style="display:none;"></div>
+
+                <div class="form-group">
+                    <label for="message">Pesan / Pertanyaan:</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Tuliskan pesan atau pertanyaan Anda di sini..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Kirim Pesan ke WhatsApp</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Morgul Gaming &copy; 2025. All Rights Reserved.</p>
+        <div class="social-media">
+            <a href="https://wa.me/6288291967659" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a href="https://t.me/morgul_gaming" target="_blank" rel="noopener noreferrer">Telegram</a>
         </div>
-        <div class="package">
-          <h3>Paket Gaming Mid-Range</h3>
-          <ul>
-            <li>Processor: Intel Core i5 / AMD Ryzen 5</li>
-            <li>RAM: 16GB DDR4</li>
-            <li>Storage: SSD 512GB + HDD 1TB</li>
-            <li>Grafis: NVIDIA GTX 1660 Super / AMD RX 6600</li>
-            <li>Harga: Rp 12.000.000,-</li>
-            <li>Untuk gaming dan produktivitas berat menengah</li>
-          </ul>
-        </div>
-        <div class="package">
-          <h3>Paket High-End Enthusiast</h3>
-          <ul>
-            <li>Processor: Intel Core i7/i9 / AMD Ryzen 7/9</li>
-            <li>RAM: 32GB DDR5</li>
-            <li>Storage: NVMe SSD 1TB + HDD 2TB</li>
-            <li>Grafis: NVIDIA RTX 3080 / AMD RX 6800 XT</li>
-            <li>Harga: Rp 25.000.000,- ke atas</li>
-            <li>Untuk gaming berat, editing video, dan rendering</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    </footer>
 
-    <section id="pricing" class="pricing">
-      <h2>Harga Jasa</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Jenis Jasa</th>
-            <th>Harga</th>
-            <th>Deskripsi</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Jasa Rakit PC</td>
-            <td>Rp 300.000,-</td>
-            <td>Perakitan dan pengujian komputer lengkap</td>
-          </tr>
-          <tr>
-            <td>Installasi Sistem Operasi</td>
-            <td>Rp 150.000,-</td>
-            <td>Instalasi Windows/Linux + driver & update</td>
-          </tr>
-          <tr>
-            <td>Upgrade Komponen</td>
-            <td>Rp 100.000,-</td>
-            <td>Pemasangan komponen tambahan/upgraded</td>
-          </tr>
-          <tr>
-            <td>Servis dan Troubleshooting</td>
-            <td>Rp 200.000,-</td>
-            <td>Diagnosa dan perbaikan hardware/software</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+    <script>
+        const contactForm = document.getElementById('contactForm');
+        const packageSelect = document.getElementById('package');
+        const packageDetails = document.getElementById('packageDetails');
 
-    <section id="testimonials" class="testimonials">
-      <h2>Testimoni Pelanggan</h2>
-      <blockquote>
-        "Saya sangat puas dengan rakitan PC dari Morgul Gaming, performanya stabil dan sesuai ekspektasi. Layanan sangat ramah dan cepat."
-        <div class="testimonial-author">- Andi, Surabaya</div>
-      </blockquote>
-      <blockquote>
-        "Paket gaming mid-range-nya sangat worth it! Sudah coba banyak game berat lancar semua. Recommended!"
-        <div class="testimonial-author">- Rina, Jakarta</div>
-      </blockquote>
-      <blockquote>
-        "Proses konsultasi mudah dan stafnya profesional. Sangat membantu saya memilih komponen terbaik sesuai budget."
-        <div class="testimonial-author">- Budi, Bandung</div>
-      </blockquote>
-    </section>
+        const packages = {
+            entry: `Paket Office & Light Gaming: Processor Intel Core i3 / AMD Ryzen 3, RAM 8GB DDR4, Storage SSD 256GB + HDD 1TB, Grafis Integrated Graphics, Harga Rp 5.000.000,-`,
+            mid: `Paket Gaming Mid-Range: Processor Intel Core i5 / AMD Ryzen 5, RAM 16GB DDR4, Storage SSD 512GB + HDD 1TB, Grafis NVIDIA GTX 1660 Super / AMD RX 6600, Harga Rp 12.000.000,-`,
+            highend: `Paket High-End Enthusiast: Processor Intel Core i7/i9 / AMD Ryzen 7/9, RAM 32GB DDR5, Storage NVMe SSD 1TB + HDD 2TB, Grafis NVIDIA RTX 3080 / AMD RX 6800 XT, Harga Mulai Rp 25.000.000,-`
+        };
 
-    <section id="contact" class="contact">
-      <h2>Kontak Kami</h2>
-      <form id="contactForm">
-        <label for="name">Nama Lengkap:</label>
-        <input type="text" id="name" name="name" placeholder="Nama Anda" required />
+        packageSelect.addEventListener('change', () => {
+            const selected = packageSelect.value;
+            if (selected && packages[selected]) {
+                packageDetails.style.display = 'block';
+                packageDetails.textContent = packages[selected];
+            } else {
+                packageDetails.style.display = 'none';
+                packageDetails.textContent = '';
+            }
+        });
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="Email Anda" required />
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
 
-        <label for="phone">No. Telepon / WhatsApp:</label>
-        <input type="tel" id="phone" name="phone" placeholder="08xxxxxxxxxx" required />
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const pkg = packageSelect.value;
+            const message = document.getElementById('message').value.trim();
 
-        <label for="package">Paket Rakit PC:</label>
-        <select id="package" name="package" required>
-          <option value="" disabled selected>-- Pilih Paket --</option>
-          <option value="entry">Entry Level</option>
-          <option value="mid">Gaming Mid-Range</option>
-          <option value="highend">High-End Enthusiast</option>
-        </select>
+            if (!name || !email || !phone || !pkg || !message) {
+                alert('Mohon lengkapi semua kolom yang tersedia.');
+                return;
+            }
 
-        <div id="packageDetails" style="display:none;"></div>
+            let textMessage = 
+                `Halo Morgul Gaming,%0A` +
+                `Saya ingin konsultasi dan pemesanan dengan data berikut:%0A` +
+                `Nama: ${name}%0A` +
+                `Email: ${email}%0A` +
+                `No. Telepon: ${phone}%0A` +
+                `Paket Rakit PC: ${pkg.toUpperCase()} - ${packages[pkg]}%0A` +
+                `Pesan: ${message}`;
 
-        <label for="message">Pesan / Pertanyaan:</label>
-        <textarea id="message" name="message" rows="4" placeholder="Tuliskan pesan atau pertanyaan Anda di sini..." required></textarea>
+            const waNumber = '6288291967659';
+            const waURL = `https://wa.me/${waNumber}?text=${encodeURIComponent(textMessage)}`;
 
-        <button type="submit">Kirim Pesan</button>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    <p>Morgul Gaming &copy; 2025. All Rights Reserved.</p>
-    <div class="contact-info">
-      <a href="https://wa.me/6288291967659" target="_blank" rel="noopener noreferrer">WhatsApp: +62 882-9196-7659</a>
-      <a href="https://t.me/morgul_gaming" class="telegram" target="_blank" rel="noopener noreferrer">Telegram: @morgul_gaming</a>
-    </div>
-  </footer>
-
-  <script>
-    const contactForm = document.getElementById('contactForm');
-    const packageSelect = document.getElementById('package');
-    const packageDetails = document.getElementById('packageDetails');
-
-    const packages = {
-      entry: `Paket Entry Level: Processor Intel Core i3 / AMD Ryzen 3, RAM 8GB DDR4, Storage SSD 256GB + HDD 1TB, Grafis Integrated Graphics, Harga Rp 5.000.000,-`,
-      mid: `Paket Gaming Mid-Range: Processor Intel Core i5 / AMD Ryzen 5, RAM 16GB DDR4, Storage SSD 512GB + HDD 1TB, Grafis NVIDIA GTX 1660 Super / AMD RX 6600, Harga Rp 12.000.000,-`,
-      highend: `Paket High-End Enthusiast: Processor Intel Core i7/i9 / AMD Ryzen 7/9, RAM 32GB DDR5, Storage NVMe SSD 1TB + HDD 2TB, Grafis NVIDIA RTX 3080 / AMD RX 6800 XT, Harga Rp 25.000.000,- ke atas`
-    };
-
-    packageSelect.addEventListener('change', () => {
-      const selected = packageSelect.value;
-      if (selected && packages[selected]) {
-        packageDetails.style.display = 'block';
-        packageDetails.textContent = packages[selected];
-      } else {
-        packageDetails.style.display = 'none';
-        packageDetails.textContent = '';
-      }
-    });
-
-    contactForm.addEventListener('submit', function(event) {
-      event.preventDefault(); // cegah form submit default
-
-      // Ambil data form
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const pkg = packageSelect.value;
-      const message = document.getElementById('message').value.trim();
-
-      if (!name || !email || !phone || !pkg || !message) {
-        alert('Mohon lengkapi semua kolom yang tersedia.');
-        return;
-      }
-
-      // Buat pesan yang akan dikirim ke WhatsApp
-      let textMessage = 
-        `Halo Morgul Gaming,%0A` +
-        `Saya ingin konsultasi dan pemesanan dengan data berikut:%0A` +
-        `Nama: ${name}%0A` +
-        `Email: ${email}%0A` +
-        `No. Telepon: ${phone}%0A` +
-        `Paket Rakit PC: ${pkg.toUpperCase()} - ${packages[pkg]}%0A` +
-        `Pesan: ${message}`;
-
-      // URL WhatsApp API (nomor harus tanpa 0/ +, pakai kode negara langsung)
-      const waNumber = '6288291967659';
-      const waURL = `https://wa.me/${waNumber}?text=${textMessage}`;
-
-      // Buka WhatsApp di tab baru
-      window.open(waURL, '_blank');
-    });
-  </script>
+            window.open(waURL, '_blank');
+        });
+    </script>
 </body>
 </html>
